@@ -10,6 +10,11 @@
 /*********************************/
 /**    BEGIN Debug Libraries    **/
 /*********************************/
+#pragma comment(lib,"sfml-graphics-d.lib")
+#pragma comment(lib,"sfml-audio-d.lib")
+#pragma comment(lib,"sfml-system-d.lib")
+#pragma comment(lib,"sfml-window-d.lib")
+#pragma comment(lib,"sfml-network-d.lib")
 /*********************************/
 /**     END Debug Libraries     **/
 /*********************************/
@@ -19,6 +24,11 @@
 /*********************************/
 /**   BEGIN Release Libraries   **/
 /*********************************/
+#pragma comment(lib,"sfml-graphics.lib")
+#pragma comment(lib,"sfml-audio.lib")
+#pragma comment(lib,"sfml-system.lib")
+#pragma comment(lib,"sfml-window.lib")
+#pragma comment(lib,"sfml-network.lib")
 /*********************************/
 /**    END Release Libraries    **/
 /*********************************/
@@ -81,4 +91,17 @@
 /**         Includes here       **/
 /*********************************/
 
+// SFML
+#include <SFML/Main.hpp>
+#include <SFML/Config.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/GpuPreference.hpp>
+#include <SFML/Graphics.hpp>
 
+// Modern Json
+#include <Js/json.hpp>
+
+// Entt
+#include <Entt/entt.hpp>
