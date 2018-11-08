@@ -13,6 +13,48 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\systems">
+      <UniqueIdentifier>{b6a1a7fa-94a3-484f-be8e-9f94b406222a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\components">
+      <UniqueIdentifier>{4b2f3abc-c259-40d1-b0a5-4b6229aa32c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\factories">
+      <UniqueIdentifier>{55c40324-7721-4427-980d-b8c5512047ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\components">
+      <UniqueIdentifier>{895c78be-5f61-4c05-85cc-c1e62c92ea78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\systems">
+      <UniqueIdentifier>{0e05d6c8-017e-456d-ba42-c85023782174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\factories">
+      <UniqueIdentifier>{72f0db28-deb4-43a6-9afa-4eec275d291e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utilities">
+      <UniqueIdentifier>{a841528c-914c-4369-a87e-862aff9a4f52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utilities">
+      <UniqueIdentifier>{1aa0fe14-25cc-425a-b40b-c851aebe8536}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math">
+      <UniqueIdentifier>{34d04f96-0a8f-45d5-9d9f-42db07aa3f11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\math">
+      <UniqueIdentifier>{018d50d6-6e60-43eb-b5df-4859074b6c43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\visitors">
+      <UniqueIdentifier>{11f47091-8ac9-46ca-a0af-c58bc52ca361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\visitors">
+      <UniqueIdentifier>{9423e6d8-1050-4fbb-bbe3-14ac5c6fb7b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\input">
+      <UniqueIdentifier>{f0058d2f-1dcf-4262-b806-778602277eda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\input">
+      <UniqueIdentifier>{7fe3a0b8-3808-4867-9924-54ce5ea36fef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -24,6 +66,42 @@
     <ClCompile Include="src\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\systems\BaseSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\Time.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\RenderSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\Registry.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\Location.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\Render.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\math\Vector2.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\visitors\RenderVisitor.cpp">
+      <Filter>Source Files\visitors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\Console.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\Dimension.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\Keyhandler.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\MouseHandler.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\stdafx.h">
@@ -31,6 +109,42 @@
     </ClInclude>
     <ClInclude Include="src\Game.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\BaseSystem.h">
+      <Filter>Header Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities\Time.h">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\RenderSystem.h">
+      <Filter>Header Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities\Registry.h">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Location.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Render.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\Vector2.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\visitors\RenderVisitor.h">
+      <Filter>Header Files\visitors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Dimension.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities\Console.h">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\Keyhandler.h">
+      <Filter>Header Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\MouseHandler.h">
+      <Filter>Header Files\input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
