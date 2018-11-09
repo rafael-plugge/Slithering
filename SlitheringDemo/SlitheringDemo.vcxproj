@@ -174,16 +174,42 @@ C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\release\*.dll" "$(TargetDir)
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\components\Dimension.cpp" />
+    <ClCompile Include="src\components\Location.cpp" />
+    <ClCompile Include="src\components\Render.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\input\Keyhandler.cpp" />
+    <ClCompile Include="src\input\MouseHandler.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\math\Vector2.cpp" />
     <ClCompile Include="src\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\systems\BaseSystem.cpp" />
+    <ClCompile Include="src\systems\RenderSystem.cpp" />
+    <ClCompile Include="src\utilities\Console.cpp" />
+    <ClCompile Include="src\utilities\Registry.cpp" />
+    <ClCompile Include="src\utilities\Time.cpp" />
+    <ClCompile Include="src\visitors\RenderVisitor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\components\Dimension.h" />
+    <ClInclude Include="src\components\Location.h" />
+    <ClInclude Include="src\components\Render.h" />
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\input\Keyhandler.h" />
+    <ClInclude Include="src\input\MouseHandler.h" />
+    <ClInclude Include="src\math\Vector2.h" />
     <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\systems\BaseSystem.h" />
+    <ClInclude Include="src\systems\RenderSystem.h" />
+    <ClInclude Include="src\utilities\Console.h" />
+    <ClInclude Include="src\utilities\Registry.h" />
+    <ClInclude Include="src\utilities\Time.h" />
+    <ClInclude Include="src\visitors\RenderVisitor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

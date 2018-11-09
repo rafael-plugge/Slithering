@@ -105,3 +105,10 @@
 
 // Entt
 #include <Entt/entt.hpp>
+
+// Global namespace
+namespace app
+{
+	typedef uint32_t Entity;
+	typedef entt::Registry<Entity> Registry;
+}
