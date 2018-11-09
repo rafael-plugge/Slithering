@@ -11,112 +11,112 @@ app::math::Vector2<T>::Vector2(T const & _x, T const & _y)
 // Static functions
 
 template<typename T>
-app::math::Vector2<T> app::math::Vector2<T>::operator+(Vector2 const & leftV, Vector2 const & rightV)
+app::math::Vector2<T> app::math::operator+(Vector2<T> const & leftV, Vector2<T> const & rightV)
 {
 	return Vector2(leftV.x + rightV.x, leftV.y + rightV.y);
 }
 
 template<typename T>
-app::math::Vector2<T> app::math::Vector2<T>::operator+(Vector2 const & v, T const & t)
+app::math::Vector2<T> app::math::operator+(Vector2<T> const & v, T const & t)
 {
 	return Vector2(v.x + t, v.y + t);
 }
 
 template<typename T>
-app::math::Vector2<T> app::math::Vector2<T>::operator+(T const & t, Vector2 const & v)
+app::math::Vector2<T> app::math::operator+(T const & t, Vector2<T> const & v)
 {
 	return Vector2(v.x + t, v.y + t);
 }
 
 template<typename T>
-app::math::Vector2<T> app::math::Vector2<T>::operator-(Vector2 const & leftV, Vector2 const & rightV)
+app::math::Vector2<T> app::math::operator-(Vector2<T> const & leftV, Vector2<T> const & rightV)
 {
 	return Vector2(leftV.x - rightV.x, leftV.y - rightV.y);
 }
 
 template<typename T>
-app::math::Vector2<T> app::math::Vector2<T>::operator-(Vector2 const & v, T const & t)
+app::math::Vector2<T> app::math::operator-(Vector2<T> const & v, T const & t)
 {
 	return Vector2(v.x - t, v.y - t);
 }
 
 template<typename T>
-app::math::Vector2<T> app::math::Vector2<T>::operator-(T const & t, Vector2 const & v)
+app::math::Vector2<T> app::math::operator-(T const & t, Vector2<T> const & v)
 {
 	return Vector2(t - v.x, t - v.y);
 }
 
 template<typename T>
-app::math::Vector2<T> app::math::Vector2<T>::operator*(Vector2 const & leftV, Vector2 const & rightV)
+app::math::Vector2<T> app::math::operator*(Vector2<T> const & leftV, Vector2<T> const & rightV)
 {
 	return Vector2(leftV.x * rightV.x, leftV.y * rightV.y);
 }
 
 template<typename T>
-app::math::Vector2<T> app::math::Vector2<T>::operator*(Vector2 const & v, T const & t)
+app::math::Vector2<T> app::math::operator*(Vector2<T> const & v, T const & t)
 {
 	return Vector2(v.x * t, v.y * t);
 }
 
 template<typename T>
-app::math::Vector2<T> app::math::Vector2<T>::operator*(T const & t, Vector2 const & v)
+app::math::Vector2<T> app::math::operator*(T const & t, Vector2<T> const & v)
 {
 	return Vector2(v.x * t, v.y * t);
 }
 
 template<typename T>
-app::math::Vector2<T> app::math::Vector2<T>::operator/(Vector2 const & leftV, Vector2 const & rightV)
+app::math::Vector2<T> app::math::operator/(Vector2<T> const & leftV, Vector2<T> const & rightV)
 {
 	assert(rightV.x || rightV.y);
 	return Vector2(leftV.x / rightV.x, leftV.y / rightV.y);
 }
 
 template<typename T>
-app::math::Vector2<T> app::math::Vector2<T>::operator/(Vector2 const & v, T const & t)
+app::math::Vector2<T> app::math::operator/(Vector2<T> const & v, T const & t)
 {
 	assert(t);
 	return Vector2(v.x / t, v.y / t);
 }
 
 template<typename T>
-app::math::Vector2<T> app::math::Vector2<T>::operator/(T const & t, Vector2 const & v)
+app::math::Vector2<T> app::math::operator/(T const & t, Vector2<T> const & v)
 {
 	assert(v.x || v.y);
 	return Vector2(t / v.x, t / v.y);
 }
 
 template<typename T>
-constexpr bool app::math::Vector2<T>::operator==(Vector2 const & leftV, Vector2 const & rightV)
+constexpr bool app::math::operator==(Vector2<T> const & leftV, Vector2<T> const & rightV)
 {
 	return leftV.x == rightV.x && leftV.y == rightV.y;
 }
 
 template<typename T>
-constexpr bool app::math::Vector2<T>::operator==(Vector2 const & v, T const & t)
+constexpr bool app::math::operator==(Vector2<T> const & v, T const & t)
 {
 	return v.x == t && v.y == t;
 }
 
 template<typename T>
-constexpr bool app::math::Vector2<T>::operator==(T const & t, Vector2 const & v)
+constexpr bool app::math::operator==(T const & t, Vector2<T> const & v)
 {
 	return t == v.x && t == v.y;
 }
 
 template<typename T>
-constexpr bool app::math::Vector2<T>::operator!=(Vector2 const & leftV, Vector2 const rightV)
+constexpr bool app::math::operator!=(Vector2<T> const & leftV, Vector2<T> const rightV)
 {
 	return leftV.x != rightV.x && leftV.y != rightV.y;
 }
 
 template<typename T>
-constexpr bool app::math::Vector2<T>::operator!=(Vector2 const & v, T const & t)
+constexpr bool app::math::operator!=(Vector2<T> const & v, T const & t)
 {
 	return v.x != t && v.y != t;
 }
 
 template<typename T>
-constexpr bool app::math::Vector2<T>::operator!=(T const & t, Vector2 const & v)
+constexpr bool app::math::operator!=(T const & t, Vector2<T> const & v)
 {
 	return t != v.x && t != v.y;
 }

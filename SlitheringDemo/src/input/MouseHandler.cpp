@@ -1,6 +1,17 @@
 ﻿#include "stdafx.h"
 #include "MouseHandler.h"
 
+app::inp::MouseHandler::MouseHandler()
+	: m_keyNowMap()
+	, m_keyPrevMap()
+	, m_mouse(0, 0)
+{
+}
+
+app::inp::MouseHandler::~MouseHandler()
+{
+}
+
 void app::inp::MouseHandler::updateButton(std::uint8_t const & buttonIndex, bool const & pressed)
 {
 	if (auto const & itt = m_keyNowMap.find(static_cast<MouseHandler::ButtonType>(buttonIndex)); itt != m_keyNowMap.end())

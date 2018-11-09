@@ -16,7 +16,7 @@ namespace app::util
 		Registry & operator=(Registry &&) = delete;
 
 	public: // Public Static Functions
-		static inline app::Registry & get();
+		static app::Registry & get();
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables

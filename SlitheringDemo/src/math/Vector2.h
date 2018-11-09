@@ -18,45 +18,6 @@ namespace app::math
 		Vector2 & operator=(Vector2 &&) = default;
 
 	public: // Public Static Functions
-
-		// Plus operators
-		
-		static Vector2 operator+(Vector2 const & leftV, Vector2 const & rightV);
-		static Vector2 operator+(Vector2 const & v, T const & t);
-		static Vector2 operator+(T const & t, Vector2 const & v);
-
-		// Minus operators
-
-		static Vector2 operator-(Vector2 const & leftV, Vector2 const & rightV);
-		static Vector2 operator-(Vector2 const & v, T const & t);
-		static Vector2 operator-(T const & t, Vector2 const & v);
-
-		// Multiplication operators
-
-		static Vector2 operator*(Vector2 const & leftV, Vector2 const & rightV);
-		static Vector2 operator*(Vector2 const & v, T const & t);
-		static Vector2 operator*(T const & t, Vector2 const & v);
-
-		// Division operators
-
-		static Vector2 operator/(Vector2 const & leftV, Vector2 const & rightV);
-		static Vector2 operator/(Vector2 const & v, T const & t);
-		static Vector2 operator/(T const & t, Vector2 const & v);
-
-		// Equality operators
-
-		static constexpr bool operator==(Vector2 const & leftV, Vector2 const & rightV);
-		static constexpr bool operator==(Vector2 const & v, T const & t);
-		static constexpr bool operator==(T const & t, Vector2 const & v);
-
-		// Inequality operators
-
-		static constexpr bool operator!=(Vector2 const & leftV, Vector2 const rightV);
-		static constexpr bool operator!=(Vector2 const & v, T const & t);
-		static constexpr bool operator!=(T const & t, Vector2 const & v);
-
-
-
 	public: // Public Member Functions
 		Vector2 & operator+=(Vector2 const & v);
 		Vector2 & operator+=(T const & t);
@@ -87,6 +48,42 @@ namespace app::math
 	private: // Private Static Variables
 	private: // Private Member Variables
 	};
+
+	// Plus operators
+
+	template<typename T> Vector2<T> operator+(Vector2<T> const & leftV, Vector2<T> const & rightV);
+	template<typename T> Vector2<T> operator+(Vector2<T> const & v, T const & t);
+	template<typename T> Vector2<T> operator+(T const & t, Vector2<T> const & v);
+
+	// Minus operators
+
+	template<typename T> Vector2<T> operator-(Vector2<T> const & leftV, Vector2<T> const & rightV);
+	template<typename T> Vector2<T> operator-(Vector2<T> const & v, T const & t);
+	template<typename T> Vector2<T> operator-(T const & t, Vector2<T> const & v);
+
+	// Multiplication operators
+
+	template<typename T> Vector2<T> operator*(Vector2<T> const & leftV, Vector2<T> const & rightV);
+	template<typename T> Vector2<T> operator*(Vector2<T> const & v, T const & t);
+	template<typename T> Vector2<T> operator*(T const & t, Vector2<T> const & v);
+
+	// Division operators
+
+	template<typename T> Vector2<T> operator/(Vector2<T> const & leftV, Vector2<T> const & rightV);
+	template<typename T> Vector2<T> operator/(Vector2<T> const & v, T const & t);
+	template<typename T> Vector2<T> operator/(T const & t, Vector2<T> const & v);
+
+	// Equality operators
+
+	template<typename T> constexpr bool operator==(Vector2<T> const & leftV, Vector2<T> const & rightV);
+	template<typename T> constexpr bool operator==(Vector2<T> const & v, T const & t);
+	template<typename T> constexpr bool operator==(T const & t, Vector2<T> const & v);
+
+	// Inequality operators
+
+	template<typename T> constexpr bool operator!=(Vector2<T> const & leftV, Vector2<T> const rightV);
+	template<typename T> constexpr bool operator!=(Vector2<T> const & v, T const & t);
+	template<typename T> constexpr bool operator!=(T const & t, Vector2<T> const & v);
 
 	typedef Vector2<double> Vector2d;
 	typedef Vector2<float> Vector2f;

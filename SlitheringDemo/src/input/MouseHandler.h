@@ -12,11 +12,11 @@ namespace app::inp
 	private: // Private typedefs
 		typedef std::map<const ButtonType, bool> map;
 	public: // Constructors/Destructor/Assignments
-		MouseHandler() = default;
+		MouseHandler();
 		MouseHandler(MouseHandler const &) = default;
 		MouseHandler(MouseHandler &&) = default;
 
-		~MouseHandler() = default;
+		~MouseHandler();
 
 		MouseHandler & operator=(MouseHandler const &) = default;
 		MouseHandler & operator=(MouseHandler &&) = default;

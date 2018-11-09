@@ -8,27 +8,18 @@ namespace app
 	class Console
 	{
 	public: // Constructors/Destructor/Assignments
-		Console() = delete;
-		Console(Console const &) = delete;
-		Console(Console &&) = delete;
-
-		~Console() = delete;
-
-		Console & operator=(Console const &) = delete;
-		Console & operator=(Console &&) = delete;
-
 	public: // Public Static Functions
 		#ifdef _DEBUG
 
-		constexpr static void write(std::string const & text) { std::cout << text; }
-		constexpr static void writeLine() { std::cout << std::endl; }
-		constexpr static void writeLine(std::string const & text) { std::cout << text << std::endl; }
+		inline static void write(std::string const & text) { std::cout << text; }
+		inline static void writeLine() { std::cout << std::endl; }
+		inline static void writeLine(std::string const & text) { std::cout << text << std::endl; }
 
 		#else
 
-		constexpr static void write(std::string const & text) {}
-		constexpr static void writeLine() {}
-		constexpr static void writeLine(std::string const & text) {}
+		inline static void write(std::string const & text) {}
+		inline static void writeLine() {}
+		inline static void writeLine(std::string const & text) {}
 
 		#endif
 	public: // Public Member Functions
@@ -42,6 +33,14 @@ namespace app
 	private: // Private Member Functions
 	private: // Private Static Variables
 	private: // Private Member Variables
+		Console() = default;
+		Console(Console const &) = default;
+		Console(Console &&) = default;
+
+		~Console() = default;
+
+		Console & operator=(Console const &) = default;
+		Console & operator=(Console &&) = default;
 	};
 }
 

@@ -46,7 +46,7 @@ int app::Game::run()
 
 bool app::Game::init()
 {
-	return this->createSystems();
+	return this->createSystems() && this->createEntities();
 }
 
 bool app::Game::createSystems()
