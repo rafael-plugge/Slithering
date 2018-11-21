@@ -18,6 +18,7 @@ app::sys::RenderSystem::RenderSystem()
 
 app::sys::RenderSystem::~RenderSystem()
 {
+	if (m_window.isOpen()) { m_window.close(); }
 }
 
 void app::sys::RenderSystem::update(app::time::nanoseconds const & dt)

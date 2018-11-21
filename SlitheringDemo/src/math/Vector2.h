@@ -7,17 +7,20 @@ namespace app::math
 	class Vector2
 	{
 	public: // Constructors/Destructor/Assignments
-		Vector2() = default;
+		Vector2();
 		Vector2(T const & _x, T const & _y);
-		Vector2(Vector2 const &) = default;
-		Vector2(Vector2 &&) = default;
+		Vector2(sf::Vector2<T> const & v);
 
 		~Vector2() = default;
 
+		Vector2(Vector2 const &) = default;
 		Vector2 & operator=(Vector2 const &) = default;
+
+		Vector2(Vector2 &&) = default;
 		Vector2 & operator=(Vector2 &&) = default;
 
 	public: // Public Static Functions
+		static Vector2<T> const unit(Vector2<T> const & v);
 	public: // Public Member Functions
 		Vector2 & operator+=(Vector2 const & v);
 		Vector2 & operator+=(T const & t);
@@ -35,7 +38,9 @@ namespace app::math
 
 		T magnitudeSqr() const;
 		T magnitude() const;
-		Vector2<T> unit() const;
+		Vector2<T> & unit();
+
+		operator sf::Vector2<T>();
 	public: // Public Static Variables
 	public: // Public Member Variables
 		T x, y;
@@ -46,6 +51,7 @@ namespace app::math
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables
+		constexpr static T const zero = static_cast<T>(0);
 	private: // Private Member Variables
 	};
 
