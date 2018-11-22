@@ -106,9 +106,17 @@
 // Entt
 #include <Entt/entt.hpp>
 
+#include "input/Keyhandler.h"
+#include "input/MouseHandler.h"
+
 // Global namespace
 namespace app
 {
 	typedef uint32_t Entity;
 	typedef entt::Registry<Entity> Registry;
+	namespace inp
+	{
+		typedef app::inp::KeyHandler<sf::Keyboard::Key> Keyhandler;
+		typedef app::inp::MouseHandler<sf::Mouse::Button> Mousehandler;
+	}
 }

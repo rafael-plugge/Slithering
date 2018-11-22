@@ -2,6 +2,7 @@
 #include "Game.h"
 
 // systems
+#include "systems/InputSystem.h"
 #include "systems/RenderSystem.h"
 
 app::Game::Game()
@@ -9,6 +10,7 @@ app::Game::Game()
 	, m_registry(app::util::Registry::get())
 	, m_updateSystems()
 	, m_renderSystems()
+	, m_pollEventsSignal()
 {
 }
 
@@ -29,7 +31,7 @@ int app::Game::run()
 
 	while (m_gameLoop)
 	{
-		// poll events
+		this->pollEvents();
 		deltaRenderStep =
 			(elapsedTime += app::time::toNanos(clock::now() - deltaTimePoint));
 		deltaTimePoint = clock::now();
@@ -54,17 +56,20 @@ bool app::Game::createSystems()
 	try
 	{
 		m_updateSystems = {
+			std::make_unique<sys::InputSystem>(m_keyHandler, m_mouseHandler)
 		};
 
+		auto renderSystem = std::make_unique<sys::RenderSystem>();
+		m_pollEventsSignal.sink().connect<app::sys::RenderSystem, &app::sys::RenderSystem::pollEvents>(renderSystem.get());
 		m_renderSystems = {
-			std::make_unique<sys::RenderSystem>()
+			std::move(renderSystem)
 		};
 
 		return true;
 	}
-	catch (const std::exception& error)
+	catch (std::exception const & e)
 	{
-		app::Console::writeLine(error.what());
+		app::Console::writeLine({ "Error: ", e.what() });
 		return false;
 	}
 }
@@ -75,16 +80,16 @@ bool app::Game::createEntities()
 	{
 		return true;
 	}
-	catch (const std::exception& error)
+	catch (std::exception const & e)
 	{
-		app::Console::writeLine(error.what());
+		app::Console::writeLine({ "Error: ", e.what() });
 		return false;
 	}
 }
 
 void app::Game::pollEvents()
 {
-
+	m_pollEventsSignal.publish(m_keyHandler, m_mouseHandler);
 }
 
 void app::Game::update(app::time::nanoseconds const & dt)

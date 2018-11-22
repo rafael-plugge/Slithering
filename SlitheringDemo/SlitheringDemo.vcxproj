@@ -189,6 +189,7 @@ C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\release\*.dll" "$(TargetDir)
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\systems\BaseSystem.cpp" />
+    <ClCompile Include="src\systems\InputSystem.cpp" />
     <ClCompile Include="src\systems\RenderSystem.cpp" />
     <ClCompile Include="src\utilities\Console.cpp" />
     <ClCompile Include="src\utilities\Registry.cpp" />
@@ -205,6 +206,7 @@ C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\release\*.dll" "$(TargetDir)
     <ClInclude Include="src\math\Vector2.h" />
     <ClInclude Include="src\stdafx.h" />
     <ClInclude Include="src\systems\BaseSystem.h" />
+    <ClInclude Include="src\systems\InputSystem.h" />
     <ClInclude Include="src\systems\RenderSystem.h" />
     <ClInclude Include="src\utilities\Console.h" />
     <ClInclude Include="src\utilities\Registry.h" />

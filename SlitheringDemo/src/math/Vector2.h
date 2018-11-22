@@ -34,13 +34,10 @@ namespace app::math
 		Vector2 & operator/=(Vector2 const & v);
 		Vector2 & operator/=(T const & t);
 
-		operator sf::Vector2<T>() const { return sf::Vector2<T>(this->x, this->y); }
-
 		T magnitudeSqr() const;
 		T magnitude() const;
 		Vector2<T> & unit();
 
-		operator sf::Vector2<T>();
 	public: // Public Static Variables
 	public: // Public Member Variables
 		T x, y;
