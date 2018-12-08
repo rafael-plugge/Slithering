@@ -1,2 +1,2 @@
 ﻿#include "stdafx.h"
-#include "Location.h"
+#include <src/components/Location.h>

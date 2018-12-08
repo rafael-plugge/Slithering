@@ -70,16 +70,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)deps\include;$(ProjectDir)deps\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)deps\include;$(ProjectDir)deps\include;$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(SolutionDir)deps\include;$(ProjectDir)deps\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)deps\include;$(ProjectDir)deps\include;$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)deps\include;$(ProjectDir)deps\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)deps\include;$(ProjectDir)deps\include;$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)deps\include;$(ProjectDir)deps\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)deps\include;$(ProjectDir)deps\include;$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -87,20 +87,21 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)deps\lib;$(ProjectDir)deps\lib;$(SolutionDir)deps\lib\debug;$(ProjectDir)deps\lib\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)deps\lib;$(SolutionDir)deps\lib\$(IntDir);$(ProjectDir)deps\lib;$(ProjectDir)deps\lib\$(IntDir)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>C:\windows\system32\xcopy /Y "$(SolutionDir)deps\bin\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(SolutionDir)deps\bin\debug\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\debug\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(SolutionDir)deps\bin\debug\*.pdg" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\debug\*.pdg" "$(TargetDir)"</Command>
+      <Command>C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -109,20 +110,21 @@ C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\debug\*.pdg" "$(TargetDir)"<
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)deps\lib;$(ProjectDir)deps\lib;$(SolutionDir)deps\lib\debug;$(ProjectDir)deps\lib\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)deps\lib;$(SolutionDir)deps\lib\$(IntDir);$(ProjectDir)deps\lib;$(ProjectDir)deps\lib\$(IntDir)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>C:\windows\system32\xcopy /Y "$(SolutionDir)deps\bin\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(SolutionDir)deps\bin\debug\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\debug\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(SolutionDir)deps\bin\debug\*.pdg" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\debug\*.pdg" "$(TargetDir)"</Command>
+      <Command>C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -133,20 +135,23 @@ C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\debug\*.pdg" "$(TargetDir)"<
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)deps\lib;$(ProjectDir)deps\lib;$(SolutionDir)deps\lib\release;$(ProjectDir)deps\lib\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)deps\lib;$(SolutionDir)deps\lib\$(IntDir);$(ProjectDir)deps\lib;$(ProjectDir)deps\lib\$(IntDir)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>C:\windows\system32\xcopy /Y "$(SolutionDir)deps\bin\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(SolutionDir)deps\bin\release\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\release\*.dll" "$(TargetDir)"</Command>
+      <Command>C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -157,20 +162,23 @@ C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\release\*.dll" "$(TargetDir)
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)deps\lib;$(ProjectDir)deps\lib;$(SolutionDir)deps\lib\release;$(ProjectDir)deps\lib\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)deps\lib;$(SolutionDir)deps\lib\$(IntDir);$(ProjectDir)deps\lib;$(ProjectDir)deps\lib\$(IntDir)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>C:\windows\system32\xcopy /Y "$(SolutionDir)deps\bin\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(SolutionDir)deps\bin\release\*.dll" "$(TargetDir)"
-C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\release\*.dll" "$(TargetDir)"</Command>
+      <Command>C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -182,12 +190,6 @@ C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\release\*.dll" "$(TargetDir)
     <ClCompile Include="src\input\MouseHandler.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\math\Vector2.cpp" />
-    <ClCompile Include="src\stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="src\systems\BaseSystem.cpp" />
     <ClCompile Include="src\systems\InputSystem.cpp" />
     <ClCompile Include="src\systems\RenderSystem.cpp" />
@@ -195,6 +197,12 @@ C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\release\*.dll" "$(TargetDir)
     <ClCompile Include="src\utilities\Registry.cpp" />
     <ClCompile Include="src\utilities\Time.cpp" />
     <ClCompile Include="src\visitors\RenderVisitor.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\components\Dimension.h" />
@@ -204,7 +212,6 @@ C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\release\*.dll" "$(TargetDir)
     <ClInclude Include="src\input\Keyhandler.h" />
     <ClInclude Include="src\input\MouseHandler.h" />
     <ClInclude Include="src\math\Vector2.h" />
-    <ClInclude Include="src\stdafx.h" />
     <ClInclude Include="src\systems\BaseSystem.h" />
     <ClInclude Include="src\systems\InputSystem.h" />
     <ClInclude Include="src\systems\RenderSystem.h" />
@@ -212,6 +219,7 @@ C:\windows\system32\xcopy /Y "$(ProjectDir)deps\bin\release\*.dll" "$(TargetDir)
     <ClInclude Include="src\utilities\Registry.h" />
     <ClInclude Include="src\utilities\Time.h" />
     <ClInclude Include="src\visitors\RenderVisitor.h" />
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

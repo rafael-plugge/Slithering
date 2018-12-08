@@ -1,5 +1,5 @@
 ﻿#include "stdafx.h"
-#include "Registry.h"
+#include <src/utilities/Registry.h>
 
 std::unique_ptr<app::Registry> app::util::Registry::s_uptrRegistry = nullptr;
 

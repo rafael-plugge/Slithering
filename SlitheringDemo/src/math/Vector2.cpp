@@ -1,5 +1,5 @@
 ﻿#include "stdafx.h"
-#include "Vector2.h"
+#include <src/math/Vector2.h>
 
 template<typename T>
 app::math::Vector2<T>::Vector2()

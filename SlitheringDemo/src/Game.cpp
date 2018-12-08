@@ -1,9 +1,9 @@
 ﻿#include "stdafx.h"
-#include "Game.h"
+#include <src/Game.h>
 
 // systems
-#include "systems/InputSystem.h"
-#include "systems/RenderSystem.h"
+#include <src/systems/InputSystem.h>
+#include <src/systems/RenderSystem.h>
 
 app::Game::Game()
 	: m_gameLoop(true)

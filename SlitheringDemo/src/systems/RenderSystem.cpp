@@ -1,12 +1,12 @@
 ﻿#include "stdafx.h"
-#include "RenderSystem.h"
+#include <src/systems/RenderSystem.h>
 
-#include "visitors/RenderVisitor.h"
+#include <src/visitors/RenderVisitor.h>
 
 // components
-#include "components/Location.h"
-#include "components/Dimension.h"
-#include "components/Render.h"
+#include <src/components/Location.h>
+#include <src/components/Dimension.h>
+#include <src/components/Render.h>
 
 app::sys::RenderSystem::RenderSystem()
 	: BaseSystem()

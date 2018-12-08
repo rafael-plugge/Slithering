@@ -1,5 +1,5 @@
 ﻿#include "stdafx.h"
-#include "InputSystem.h"
+#include <src/systems/InputSystem.h>
 
 app::sys::InputSystem::InputSystem(inp::Keyhandler & keyHandler, inp::Mousehandler & mouseHandler)
 	: m_keyHandler(keyHandler)

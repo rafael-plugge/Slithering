@@ -1,7 +1,7 @@
 ﻿#ifndef _INPUT_SYSTEM_H
 #define _INPUT_SYSTEM_H
 
-#include "BaseSystem.h"
+#include <src/systems/BaseSystem.h>
 
 namespace app::sys
 {

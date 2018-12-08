@@ -1,11 +1,11 @@
 ﻿#ifndef _GAME_H
 #define _GAME_H
 
-#include "systems/BaseSystem.h"
+#include <src/systems/BaseSystem.h>
 
-#include "utilities/Time.h"
-#include "utilities/Registry.h"
-#include "utilities/Console.h"
+#include <src/utilities/Time.h>
+#include <src/utilities/Registry.h>
+#include <src/utilities/Console.h>
 
 namespace app
 {

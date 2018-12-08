@@ -87,10 +87,6 @@
 #include <future>
 #include <condition_variable>
 
-/*********************************/
-/**         Includes here       **/
-/*********************************/
-
 // SFML
 #include <SFML/Main.hpp>
 #include <SFML/Config.hpp>
@@ -106,8 +102,12 @@
 // Entt
 #include <Entt/entt.hpp>
 
-#include "input/Keyhandler.h"
-#include "input/MouseHandler.h"
+/*********************************/
+/**         Includes here       **/
+/*********************************/
+
+#include <src/input/Keyhandler.h>
+#include <src/input/MouseHandler.h>
 
 // Global namespace
 namespace app

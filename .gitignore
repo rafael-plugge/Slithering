@@ -330,13 +330,9 @@ ASALocalRun/
 .mfractor/
 
 # Custom Exclusions
+!**/deps/**/[Dd]ebug
+!**/deps/**/[Rr]elease
 !**/deps/lib
-!**/deps/lib/[Dd]ebug
-!**/deps/lib/[Rr]elease
-!**/deps/lib/x64/[Dd]ebug
-!**/deps/lib/x64/[Rr]elease
+!**/deps/lib/x64
 !**/deps/bin
-!**/deps/bin/[Dd]ebug
-!**/deps/bin/[Rr]elease
-!**/deps/bin/x64/[Dd]ebug
-!**/deps/bin/x64/[Rr]elease
+!**/deps/bin/x64

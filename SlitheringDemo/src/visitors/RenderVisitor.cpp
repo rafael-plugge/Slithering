@@ -1,5 +1,5 @@
 ﻿#include "stdafx.h"
-#include "RenderVisitor.h"
+#include <src/visitors/RenderVisitor.h>
 
 app::vis::RenderVisitor::RenderVisitor(sf::RectangleShape & rectangleShape)
 	: m_rectangleShape(rectangleShape)

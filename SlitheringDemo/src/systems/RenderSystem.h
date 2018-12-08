@@ -1,9 +1,9 @@
 ﻿#ifndef _RENDER_SYSTEM_H
 #define _RENDER_SYSTEM_H
 
-#include "BaseSystem.h"
-#include "input/Keyhandler.h"
-#include "input/MouseHandler.h"
+#include <src/systems/BaseSystem.h>
+#include <src/input/Keyhandler.h>
+#include <src/input/MouseHandler.h>
 
 namespace app::sys
 {
