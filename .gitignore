@@ -332,8 +332,8 @@ ASALocalRun/
 # Custom Exclusions
 # Custom Inclusions
 !**/deps/lib
-!**/deps/lib/debug
-!**/deps/lib/release
+!**/deps/lib/[Dd]ebug
+!**/deps/lib/[Rr]elease
 !**/deps/bin
-!**/deps/bin/debug
-!**/deps/bin/release
+!**/deps/bin/[Dd]ebug
+!**/deps/bin/[Rr]elease
