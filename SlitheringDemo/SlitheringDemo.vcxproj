@@ -183,9 +183,13 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\components\Dimension.cpp" />
+    <ClCompile Include="src\components\Input.cpp" />
     <ClCompile Include="src\components\Location.cpp" />
     <ClCompile Include="src\components\Render.cpp" />
+    <ClCompile Include="src\factories\EntityFactory.cpp" />
+    <ClCompile Include="src\factories\PlayerFactory.cpp" />
     <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\input\Actions.cpp" />
     <ClCompile Include="src\input\Keyhandler.cpp" />
     <ClCompile Include="src\input\MouseHandler.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -193,6 +197,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClCompile Include="src\systems\BaseSystem.cpp" />
     <ClCompile Include="src\systems\InputSystem.cpp" />
     <ClCompile Include="src\systems\RenderSystem.cpp" />
+    <ClCompile Include="src\tags\Player.cpp" />
     <ClCompile Include="src\utilities\Console.cpp" />
     <ClCompile Include="src\utilities\Registry.cpp" />
     <ClCompile Include="src\utilities\Time.cpp" />
@@ -206,20 +211,28 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\components\Dimension.h" />
+    <ClInclude Include="src\components\Input.h" />
     <ClInclude Include="src\components\Location.h" />
     <ClInclude Include="src\components\Render.h" />
+    <ClInclude Include="src\factories\EntityFactory.h" />
+    <ClInclude Include="src\factories\PlayerFactory.h" />
     <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\input\Actions.h" />
     <ClInclude Include="src\input\Keyhandler.h" />
     <ClInclude Include="src\input\MouseHandler.h" />
     <ClInclude Include="src\math\Vector2.h" />
     <ClInclude Include="src\systems\BaseSystem.h" />
     <ClInclude Include="src\systems\InputSystem.h" />
     <ClInclude Include="src\systems\RenderSystem.h" />
+    <ClInclude Include="src\tags\Player.h" />
     <ClInclude Include="src\utilities\Console.h" />
     <ClInclude Include="src\utilities\Registry.h" />
     <ClInclude Include="src\utilities\Time.h" />
     <ClInclude Include="src\visitors\RenderVisitor.h" />
     <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\neural_network.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -46,7 +46,7 @@ namespace app
 		app::Registry & m_registry;
 		inp::Keyhandler m_keyHandler;
 		inp::Mousehandler m_mouseHandler;
-		std::array<std::unique_ptr<sys::BaseSystem>, 0> m_updateSystems;
+		std::array<std::unique_ptr<sys::BaseSystem>, 1> m_updateSystems;
 		std::array<std::unique_ptr<sys::BaseSystem>, 1> m_renderSystems;
 		entt::SigH<void(inp::KeyHandler<sf::Keyboard::Key> &, inp::MouseHandler<sf::Mouse::Button> &)> m_pollEventsSignal;
 	};

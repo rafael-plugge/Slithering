@@ -15,6 +15,7 @@
 #pragma comment(lib,"sfml-system-d.lib")
 #pragma comment(lib,"sfml-window-d.lib")
 #pragma comment(lib,"sfml-network-d.lib")
+#pragma comment(lib,"dlib-d.lib")
 /*********************************/
 /**     END Debug Libraries     **/
 /*********************************/
@@ -29,6 +30,7 @@
 #pragma comment(lib,"sfml-system.lib")
 #pragma comment(lib,"sfml-window.lib")
 #pragma comment(lib,"sfml-network.lib")
+#pragma comment(lib,"dlib.lib")
 /*********************************/
 /**    END Release Libraries    **/
 /*********************************/
@@ -101,6 +103,9 @@
 
 // Entt
 #include <Entt/entt.hpp>
+
+// Dlib Neural Network
+#include <dlib/mlp.h>
 
 /*********************************/
 /**         Includes here       **/
