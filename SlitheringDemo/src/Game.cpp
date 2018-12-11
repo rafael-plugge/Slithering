@@ -22,7 +22,7 @@ app::Game::Game()
 	// Create a multi-layer perceptron network.   This network has 2 nodes on the input layer 
 	// (which means it takes column vectors of length 2 as input), 3 nodes in the first 
 	// hidden layer, 0 nodes in the second hidden layer and 1 node in the output layer.
-	// Note that the other 4 variables in the mlp's constructor are left at their default values.  
+	// Note that the other 2 variables in the mlp's constructor are left at their default values.  
 	auto neuralNetwork = NeuralNetworkType(2, 3, 0, 1);
 
 	try
