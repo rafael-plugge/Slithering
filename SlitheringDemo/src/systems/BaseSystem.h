@@ -1,8 +1,8 @@
 ﻿#ifndef _BASE_SYSTEM_H
 #define _BASE_SYSTEM_H
 
-#include "utilities/Registry.h"
-#include "utilities/Time.h"
+#include <src/utilities/Registry.h>
+#include <src/utilities/Time.h>
 
 namespace app::sys
 {

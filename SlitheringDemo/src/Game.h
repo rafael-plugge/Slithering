@@ -1,14 +1,11 @@
 ﻿#ifndef _GAME_H
 #define _GAME_H
 
-#include "systems/BaseSystem.h"
+#include <src/systems/BaseSystem.h>
 
-#include "utilities/Time.h"
-#include "utilities/Registry.h"
-#include "utilities/Console.h"
-
-#include "input/Keyhandler.h"
-#include "input/MouseHandler.h"
+#include <src/utilities/Time.h>
+#include <src/utilities/Registry.h>
+#include <src/utilities/Console.h>
 
 namespace app
 {
@@ -47,10 +44,11 @@ namespace app
 	private: // Private Member Variables
 		bool m_gameLoop;
 		app::Registry & m_registry;
-		inp::KeyHandler<sf::Keyboard::Key> m_keyHandler;
-		inp::MouseHandler m_mouseHandler;
-		std::array<std::unique_ptr<sys::BaseSystem>, 2> m_updateSystems;
+		inp::Keyhandler m_keyHandler;
+		inp::Mousehandler m_mouseHandler;
+		std::array<std::unique_ptr<sys::BaseSystem>, 1> m_updateSystems;
 		std::array<std::unique_ptr<sys::BaseSystem>, 1> m_renderSystems;
+		entt::SigH<void(inp::KeyHandler<sf::Keyboard::Key> &, inp::MouseHandler<sf::Mouse::Button> &)> m_pollEventsSignal;
 	};
 }
 

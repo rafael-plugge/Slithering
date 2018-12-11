@@ -1,7 +1,9 @@
 ﻿#ifndef _RENDER_SYSTEM_H
 #define _RENDER_SYSTEM_H
 
-#include "BaseSystem.h"
+#include <src/systems/BaseSystem.h>
+#include <src/input/Keyhandler.h>
+#include <src/input/MouseHandler.h>
 
 namespace app::sys
 {
@@ -20,6 +22,7 @@ namespace app::sys
 
 	public: // Public Static Functions
 	public: // Public Member Functions
+		void pollEvents(app::inp::KeyHandler<sf::Keyboard::Key> & keyHandler, app::inp::MouseHandler<sf::Mouse::Button> & mouseHandler);
 		virtual void update(app::time::nanoseconds const & dt) override;
 	public: // Public Static Variables
 	public: // Public Member Variables
@@ -31,6 +34,7 @@ namespace app::sys
 		sf::ContextSettings m_contextSettings;
 		sf::RenderWindow m_window;
 		sf::RenderStates const m_renderState;
+		sf::Event m_event;
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables

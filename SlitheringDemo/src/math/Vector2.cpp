@@ -1,10 +1,24 @@
 ﻿#include "stdafx.h"
-#include "Vector2.h"
+#include <src/math/Vector2.h>
+
+template<typename T>
+app::math::Vector2<T>::Vector2()
+	: x(zero)
+	, y(zero)
+{
+}
 
 template<typename T>
 app::math::Vector2<T>::Vector2(T const & _x, T const & _y)
 	: x(_x)
 	, y(_y)
+{
+}
+
+template<typename T>
+app::math::Vector2<T>::Vector2(sf::Vector2<T> const & v)
+	: x(v.x)
+	, y(v.y)
 {
 }
 
@@ -67,21 +81,21 @@ app::math::Vector2<T> app::math::operator*(T const & t, Vector2<T> const & v)
 template<typename T>
 app::math::Vector2<T> app::math::operator/(Vector2<T> const & leftV, Vector2<T> const & rightV)
 {
-	assert(rightV.x || rightV.y);
+	assert(rightV.x != app::math::Vector2<T>::zero && rightV.y != app::math::Vector2<T>::zero);
 	return Vector2(leftV.x / rightV.x, leftV.y / rightV.y);
 }
 
 template<typename T>
 app::math::Vector2<T> app::math::operator/(Vector2<T> const & v, T const & t)
 {
-	assert(t);
+	assert(t != app::math::Vector2<T>::zero);
 	return Vector2(v.x / t, v.y / t);
 }
 
 template<typename T>
 app::math::Vector2<T> app::math::operator/(T const & t, Vector2<T> const & v)
 {
-	assert(v.x || v.y);
+	assert(v.x != app::math::Vector2<T>::zero && v.y != app::math::Vector2<T>::zero);
 	return Vector2(t / v.x, t / v.y);
 }
 
@@ -122,6 +136,14 @@ constexpr bool app::math::operator!=(T const & t, Vector2<T> const & v)
 }
 
 // Member functions
+
+template<typename T>
+app::math::Vector2<T> const app::math::Vector2<T>::unit(Vector2<T> const & v)
+{
+	auto const length = v.magnitude();
+	assert(length != app::math::Vector2<T>::zero);
+	return Vector2<T>(v.x / length, v.y / length);
+}
 
 template<typename T>
 app::math::Vector2<T> & app::math::Vector2<T>::operator+=(Vector2 const & v)
@@ -174,7 +196,7 @@ app::math::Vector2<T> & app::math::Vector2<T>::operator*=(T const & t)
 template<typename T>
 app::math::Vector2<T> & app::math::Vector2<T>::operator/=(Vector2 const & v)
 {
-	assert(v.x || v.y);
+	assert(v.x != app::math::Vector2<T>::zero && v.y != app::math::Vector2<T>::zero);
 	this->x /= v.x;
 	this->y /= v.y;
 	return *this;
@@ -183,7 +205,7 @@ app::math::Vector2<T> & app::math::Vector2<T>::operator/=(Vector2 const & v)
 template<typename T>
 app::math::Vector2<T> & app::math::Vector2<T>::operator/=(T const & t)
 {
-	assert(t);
+	assert(t != app::math::Vector2<T>::zero);
 	this->x /= t;
 	this->y /= t;
 	return *this;
@@ -202,10 +224,13 @@ T app::math::Vector2<T>::magnitude() const
 }
 
 template<typename T>
-app::math::Vector2<T> app::math::Vector2<T>::unit() const
+app::math::Vector2<T> & app::math::Vector2<T>::unit()
 {
 	auto const length = this->magnitude();
-	return Vector2<T>(this->x / length, this->y / length);
+	assert(length != app::math::Vector2<T>::zero);
+	this->x /= length;
+	this->y /= length;
+	return *this;
 }
 
 template class app::math::Vector2<double>;

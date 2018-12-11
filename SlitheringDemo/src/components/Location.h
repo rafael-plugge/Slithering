@@ -1,7 +1,7 @@
 ﻿#ifndef _COMP_LOCATION_H
 #define _COMP_LOCATION_H
 
-#include "math/Vector2.h"
+#include <src/math/Vector2.h>
 
 namespace app::comp
 {
