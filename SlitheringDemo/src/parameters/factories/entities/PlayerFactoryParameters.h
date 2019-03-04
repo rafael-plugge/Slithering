@@ -1,29 +1,24 @@
-﻿#ifndef _UTIL_REGISTRY_H
-#define _UTIL_REGISTRY_H
+﻿#ifndef _PLAYER_FACTORY_PARAMETERS_H
+#define _PLAYER_FACTORY_PARAMETERS_H
 
-namespace app::util
+#include <src/parameters/factories/base/EntityFactoryParameters.h>
+
+namespace app::par::fact::ent
 {
-	class Registry
+	struct PlayerFactoryParameters : public EntityFactoryParameters
 	{
+	public: // Public Usings/Typedefs/Enums
+	protected: // Protected Usings/Typedefs/Enums
+	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		Registry() = delete;
-		Registry(Registry const &) = delete;
-		Registry(Registry &&) = delete;
-
-		~Registry() = delete;
-
-		Registry & operator=(Registry const &) = delete;
-		Registry & operator=(Registry &&) = delete;
-
 	public: // Public Static Functions
-		static app::Registry & get();
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
+		math::Vector2f position;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
-		static std::unique_ptr<app::Registry> s_uptrRegistry;
 	protected: // Protected Member Variables
 	private: // Private Static Functions
 	private: // Private Member Functions
@@ -32,4 +27,4 @@ namespace app::util
 	};
 }
 
-#endif // !_UTIL_REGISTRY_H
+#endif // !_PLAYER_FACTORY_PARAMETERS_H

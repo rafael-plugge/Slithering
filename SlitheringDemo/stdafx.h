@@ -111,13 +111,17 @@
 /**         Includes here       **/
 /*********************************/
 
+#include <src/math/Vector2.h>
+
 #include <src/input/Keyhandler.h>
 #include <src/input/MouseHandler.h>
+
+#include <src/utilities/Console.h>
 
 // Global namespace
 namespace app
 {
-	typedef uint32_t Entity;
+	typedef std::uint32_t Entity;
 	typedef entt::Registry<Entity> Registry;
 	namespace inp
 	{

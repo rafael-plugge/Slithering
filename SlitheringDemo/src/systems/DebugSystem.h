@@ -1,25 +1,28 @@
-﻿#ifndef _INPUT_SYSTEM_H
-#define _INPUT_SYSTEM_H
+﻿#ifndef _DEBUG_SYSTEM_H
+#define _DEBUG_SYSTEM_H
 
-#include <src/systems/BaseSystem.h>
+#include "BaseSystem.h"
 
 namespace app::sys
 {
-	class InputSystem : public BaseSystem
+	class DebugSystem : public BaseSystem
 	{
+	public: // Public Usings/Typedefs/Enums
+	protected: // Protected Usings/Typedefs/Enums
+	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		InputSystem(inp::Keyhandler & keyHandler, inp::Mousehandler & mouseHandler);
+		DebugSystem() = default;
+		virtual ~DebugSystem() = default;
 
-		~InputSystem() = default;
+		DebugSystem(DebugSystem const &) = default;
+		DebugSystem & operator=(DebugSystem const &) = default;
 
-		InputSystem(InputSystem const &) = default;
-		InputSystem & operator=(InputSystem const &) = default;
-
-		InputSystem(InputSystem &&) = default;
-		InputSystem & operator=(InputSystem &&) = default;
+		DebugSystem(DebugSystem &&) = default;
+		DebugSystem & operator=(DebugSystem &&) = default;
 
 	public: // Public Static Functions
 	public: // Public Member Functions
+		// Inherited via BaseSystem
 		virtual void init() final override;
 		virtual void update(app::time::nanoseconds const & dt) final override;
 	public: // Public Static Variables
@@ -32,9 +35,7 @@ namespace app::sys
 	private: // Private Member Functions
 	private: // Private Static Variables
 	private: // Private Member Variables
-		inp::Keyhandler & m_keyHandler;
-		inp::Mousehandler & m_mouseHandler;
 	};
 }
 
-#endif // !_INPUT_SYSTEM_H
+#endif // !_DEBUG_SYSTEM_H

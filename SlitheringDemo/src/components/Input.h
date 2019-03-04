@@ -15,15 +15,6 @@ namespace app::comp
 		typedef std::unordered_map<Button, bool> MapButtonsPressed;
 		typedef std::unordered_map<app::inp::Actions, MapButtonsPressed> MapActionButtons;
 	public: // Constructors/Destructor/Assignments
-		Input() = default;
-		~Input() = default;
-
-		Input(Input const &) = default;
-		Input & operator=(Input const &) = default;
-
-		Input(Input &&) = default;
-		Input & operator=(Input &&) = default;
-
 	public: // Public Static Functions
 	public: // Public Member Functions
 	public: // Public Static Variables

@@ -1,22 +1,29 @@
-﻿#ifndef _COMP_RENDER_H
-#define _COMP_RENDER_H
+﻿#ifndef _UTIL_REGISTRY_H
+#define _UTIL_REGISTRY_H
 
-namespace app::comp
+namespace app::sin
 {
-	struct Render
+	class Registry
 	{
 	public: // Constructors/Destructor/Assignments
+		Registry() = delete;
+		virtual ~Registry() = delete;
+
+		Registry(Registry const &) = delete;
+		Registry(Registry &&) = delete;
+
+		Registry & operator=(Registry const &) = delete;
+		Registry & operator=(Registry &&) = delete;
+
 	public: // Public Static Functions
+		static app::Registry & get();
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
-		std::variant<std::shared_ptr<sf::Texture>, sf::Color> fill;
-		std::optional<sf::IntRect> source;
-		math::Vector2f border;
-		math::Vector2f offset;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
+		static std::unique_ptr<app::Registry> s_uptrRegistry;
 	protected: // Protected Member Variables
 	private: // Private Static Functions
 	private: // Private Member Functions
@@ -25,4 +32,4 @@ namespace app::comp
 	};
 }
 
-#endif // !_COMP_RENDER_H
+#endif // !_UTIL_REGISTRY_H

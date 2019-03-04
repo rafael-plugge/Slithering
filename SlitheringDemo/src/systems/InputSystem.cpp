@@ -10,6 +10,10 @@ app::sys::InputSystem::InputSystem(inp::Keyhandler & keyHandler, inp::Mousehandl
 {
 }
 
+void app::sys::InputSystem::init()
+{
+}
+
 void app::sys::InputSystem::update(app::time::nanoseconds const & dt)
 {
 	m_registry.view<comp::Input>()

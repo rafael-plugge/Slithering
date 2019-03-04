@@ -8,15 +8,6 @@ namespace app::comp
 	struct Dimension
 	{
 	public: // Constructors/Destructor/Assignments
-		Dimension() = default;
-		Dimension(Dimension const &) = default;
-		Dimension(Dimension &&) = default;
-
-		~Dimension() = default;
-
-		Dimension & operator=(Dimension const &) = default;
-		Dimension & operator=(Dimension &&) = default;
-
 	public: // Public Static Functions
 	public: // Public Member Functions
 	public: // Public Static Variables
