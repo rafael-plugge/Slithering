@@ -1,14 +1,19 @@
 ﻿#ifndef _FACTORIES_PLAYER_H
 #define _FACTORIES_PLAYER_H
 
-#include <src/factories/EntityFactory.h>
+#include <src/factories/base/EntityFactory.h>
+#include <src/parameters/factories/entities/PlayerFactoryParameters.h>
 
 namespace app::fact
 {
 	class PlayerFactory : public EntityFactory
 	{
+	public: // Public Usings/Typedefs/Enums
+	protected: // Protected Usings/Typedefs/Enums
+	private: // Private Usings/Typedefs/Enums
+		using Parameters = app::par::fact::ent::PlayerFactoryParameters;
 	public: // Constructors/Destructor/Assignments
-		PlayerFactory() = default;
+		PlayerFactory(Parameters const & params);
 		~PlayerFactory() = default;
 
 		PlayerFactory(PlayerFactory const &) = default;
@@ -19,7 +24,7 @@ namespace app::fact
 
 	public: // Public Static Functions
 	public: // Public Member Functions
-		virtual std::optional<app::Entity> create() override;
+		virtual app::Entity const create() final override;
 	public: // Public Static Variables
 	public: // Public Member Variables
 	protected: // Protected Static Functions
@@ -30,6 +35,7 @@ namespace app::fact
 	private: // Private Member Functions
 	private: // Private Static Variables
 	private: // Private Member Variables
+		Parameters const & m_params;
 	};
 }
 

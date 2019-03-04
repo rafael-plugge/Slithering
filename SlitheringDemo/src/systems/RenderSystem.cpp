@@ -53,6 +53,10 @@ void app::sys::RenderSystem::pollEvents(app::inp::KeyHandler<sf::Keyboard::Key>&
 	}
 }
 
+void app::sys::RenderSystem::init()
+{
+}
+
 void app::sys::RenderSystem::update(app::time::nanoseconds const & dt)
 {
 	m_window.clear({ 0u, 0u, 0u, 255u });
@@ -60,7 +64,7 @@ void app::sys::RenderSystem::update(app::time::nanoseconds const & dt)
 		.each([this](app::Entity const entity, comp::Location & location, comp::Dimension & dimension, comp::Render & render)
 	{
 		m_renderShape.setPosition(location.position.x, location.position.y);
-		m_renderShape.setRotation(location.angle);
+		m_renderShape.setRotation(location.orientation);
 		std::visit(vis::RenderVisitor{ m_renderShape }, render.fill);
 		m_renderShape.setSize({ dimension.size.x, dimension.size.y });
 		m_renderShape.setOrigin(dimension.origin.x, dimension.origin.y);

@@ -1,4 +1,7 @@
 # Slithering
+
+[![Build Status](https://dev.azure.com/C00203250/Slithering/_apis/build/status/Slithering-Build?branchName=master)](https://dev.azure.com/C00203250/Slithering/_build/latest?definitionId=4&branchName=master)
+
 Fourth year main project demonstration for Research Project done for
 
 ## Comparison between Artificial neural networks and Finite state machines
