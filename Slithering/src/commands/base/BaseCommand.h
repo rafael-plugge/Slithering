@@ -1,31 +1,33 @@
-﻿#ifndef _COMPONENT_INPUT_H
-#define _COMPONENT_INPUT_H
+﻿#ifndef _BASE_COMMAND_H
+#define _BASE_COMMAND_H
 
-#include <src/commands/MoveCommand.h>
-
-namespace app::comp
+namespace app::com
 {
-	struct Input
+	class BaseCommand
 	{
 	public: // Public Usings/Typedefs/Enums
-		using Command = std::variant<
-			com::MoveCommand
-		>;
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
-		using KeyMap = std::map<app::inp::KeyCode, Command>;
-		using MouseMap = std::map<app::inp::ButtonCode, Command>;
 	public: // Constructors/Destructor/Assignments
+		BaseCommand();
+		virtual ~BaseCommand() = default;
+
+		BaseCommand(BaseCommand const &) = default;
+		BaseCommand & operator=(BaseCommand const &) = default;
+
+		BaseCommand(BaseCommand &&) = default;
+		BaseCommand & operator=(BaseCommand &&) = default;
+
 	public: // Public Static Functions
 	public: // Public Member Functions
+		virtual void execute() const abstract;
 	public: // Public Static Variables
 	public: // Public Member Variables
-		KeyMap keyDownCommands, keyUpCommands, keyPressedCommands;
-		MouseMap mouseDownCommands, mouseUpCommands, mousePressedCommands;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
 	protected: // Protected Member Variables
+		app::Registry & m_registry;
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables
@@ -33,4 +35,4 @@ namespace app::comp
 	};
 }
 
-#endif // !_COMPONENT_INPUT_H
+#endif // !_BASE_COMMAND_H

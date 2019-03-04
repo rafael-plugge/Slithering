@@ -183,6 +183,8 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\commands\base\BaseCommand.cpp" />
+    <ClCompile Include="src\commands\MoveCommand.cpp" />
     <ClCompile Include="src\components\Camera.cpp" />
     <ClCompile Include="src\components\Dimension.cpp" />
     <ClCompile Include="src\components\Input.cpp" />
@@ -192,6 +194,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClCompile Include="src\components\Render.cpp" />
     <ClCompile Include="src\factories\base\BaseFactory.cpp" />
     <ClCompile Include="src\factories\base\EntityFactory.cpp" />
+    <ClCompile Include="src\factories\entities\CameraFactory.cpp" />
     <ClCompile Include="src\factories\entities\ImageFactory.cpp" />
     <ClCompile Include="src\factories\entities\PlayerFactory.cpp" />
     <ClCompile Include="src\factories\GameFactory.cpp" />
@@ -205,6 +208,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClCompile Include="src\math\Vector2.cpp" />
     <ClCompile Include="src\parameters\factories\base\BaseFactoryParameters.cpp" />
     <ClCompile Include="src\parameters\factories\base\EntityFactoryParameters.cpp" />
+    <ClCompile Include="src\parameters\factories\entities\CameraFactoryParameters.cpp" />
     <ClCompile Include="src\parameters\factories\entities\ImageFactoryParameters.cpp" />
     <ClCompile Include="src\parameters\factories\entities\PlayerFactoryParameters.cpp" />
     <ClCompile Include="src\singletons\RegistrySingleton.cpp" />
@@ -227,6 +231,8 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\commands\base\BaseCommand.h" />
+    <ClInclude Include="src\commands\MoveCommand.h" />
     <ClInclude Include="src\components\Camera.h" />
     <ClInclude Include="src\components\Dimension.h" />
     <ClInclude Include="src\components\Input.h" />
@@ -236,6 +242,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClInclude Include="src\components\Render.h" />
     <ClInclude Include="src\factories\base\BaseFactory.h" />
     <ClInclude Include="src\factories\base\EntityFactory.h" />
+    <ClInclude Include="src\factories\entities\CameraFactory.h" />
     <ClInclude Include="src\factories\entities\ImageFactory.h" />
     <ClInclude Include="src\factories\entities\PlayerFactory.h" />
     <ClInclude Include="src\factories\GameFactory.h" />
@@ -248,6 +255,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClInclude Include="src\math\Vector2.h" />
     <ClInclude Include="src\parameters\factories\base\BaseFactoryParameters.h" />
     <ClInclude Include="src\parameters\factories\base\EntityFactoryParameters.h" />
+    <ClInclude Include="src\parameters\factories\entities\CameraFactoryParameters.h" />
     <ClInclude Include="src\parameters\factories\entities\ImageFactoryParameters.h" />
     <ClInclude Include="src\parameters\factories\entities\PlayerFactoryParameters.h" />
     <ClInclude Include="src\singletons\RegistrySingleton.h" />

@@ -16,6 +16,7 @@ namespace app::par::fact::ent
 	public: // Public Static Variables
 	public: // Public Member Variables
 		math::Vector2f position;
+		std::uint16_t zIndex;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables

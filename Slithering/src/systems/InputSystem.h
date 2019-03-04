@@ -8,7 +8,7 @@ namespace app::sys
 	class InputSystem : public BaseSystem
 	{
 	public: // Constructors/Destructor/Assignments
-		InputSystem(inp::Keyhandler & keyHandler, inp::Mousehandler & mouseHandler);
+		InputSystem(inp::KeyHandler & keyHandler, inp::MouseHandler & mouseHandler);
 
 		~InputSystem() = default;
 
@@ -32,8 +32,8 @@ namespace app::sys
 	private: // Private Member Functions
 	private: // Private Static Variables
 	private: // Private Member Variables
-		inp::Keyhandler & m_keyHandler;
-		inp::Mousehandler & m_mouseHandler;
+		inp::KeyHandler & m_keyHandler;
+		inp::MouseHandler & m_mouseHandler;
 	};
 }
 

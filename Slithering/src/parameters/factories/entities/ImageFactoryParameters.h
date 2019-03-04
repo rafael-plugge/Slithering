@@ -17,6 +17,7 @@ namespace app::par::fact::ent
 	public: // Public Member Variables
 		math::Vector2f position, size, origin;
 		std::float_t orientation;
+		std::uint16_t zIndex;
 		std::variant<std::shared_ptr<sf::Texture>, sf::Color> fill;
 		std::optional<sf::IntRect> source;
 		math::Vector2f border, offset;

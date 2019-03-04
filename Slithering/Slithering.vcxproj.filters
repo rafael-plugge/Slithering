@@ -54,6 +54,12 @@
     <Filter Include="Source Files\factories\base">
       <UniqueIdentifier>{7bd83c72-de82-475c-a76b-66baeb162e08}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\commands">
+      <UniqueIdentifier>{6104cba7-638b-4d62-92c2-e856ce132502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\base">
+      <UniqueIdentifier>{2432b67b-e551-4c74-a0d0-1ac3dd0b5222}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -167,6 +173,18 @@
     <ClCompile Include="src\components\Camera.cpp">
       <Filter>Source Files\components</Filter>
     </ClCompile>
+    <ClCompile Include="src\commands\base\BaseCommand.cpp">
+      <Filter>Source Files\commands\base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\MoveCommand.cpp">
+      <Filter>Source Files\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factories\entities\CameraFactory.cpp">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parameters\factories\entities\CameraFactoryParameters.cpp">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -276,6 +294,18 @@
     </ClInclude>
     <ClInclude Include="src\components\Camera.h">
       <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\commands\base\BaseCommand.h">
+      <Filter>Source Files\commands\base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\commands\MoveCommand.h">
+      <Filter>Source Files\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factories\entities\CameraFactory.h">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parameters\factories\entities\CameraFactoryParameters.h">
+      <Filter>Source Files\parameters\factories\entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

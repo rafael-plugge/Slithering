@@ -1,26 +1,26 @@
-﻿#ifndef _FACTORIES_PLAYER_H
-#define _FACTORIES_PLAYER_H
+﻿#ifndef _CAMERA_FACTORY_H
+#define _CAMERA_FACTORY_H
 
 #include <src/factories/base/EntityFactory.h>
-#include <src/parameters/factories/entities/PlayerFactoryParameters.h>
+#include <src/parameters/factories/entities/CameraFactoryParameters.h>
 
 namespace app::fact::ent
 {
-	class PlayerFactory : public EntityFactory
+	class CameraFactory : public EntityFactory
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
-		using Parameters = app::par::fact::ent::PlayerFactoryParameters;
+		using Parameters = par::fact::ent::CameraFactoryParameters;
 	public: // Constructors/Destructor/Assignments
-		PlayerFactory(Parameters const & params);
-		~PlayerFactory() = default;
+		CameraFactory(Parameters const & params);
+		virtual ~CameraFactory() = default;
 
-		PlayerFactory(PlayerFactory const &) = default;
-		PlayerFactory & operator=(PlayerFactory const &) = default;
+		CameraFactory(CameraFactory const &) = default;
+		CameraFactory & operator=(CameraFactory const &) = default;
 
-		PlayerFactory(PlayerFactory &&) = default;
-		PlayerFactory & operator=(PlayerFactory &&) = default;
+		CameraFactory(CameraFactory &&) = default;
+		CameraFactory & operator=(CameraFactory &&) = default;
 
 	public: // Public Static Functions
 	public: // Public Member Functions
@@ -39,4 +39,4 @@ namespace app::fact::ent
 	};
 }
 
-#endif // !_FACTORIES_PLAYER_H
+#endif // !_CAMERA_FACTORY_H

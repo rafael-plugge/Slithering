@@ -1,27 +1,22 @@
-﻿#ifndef _COMPONENT_INPUT_H
-#define _COMPONENT_INPUT_H
+﻿#ifndef _CAMERA_FACTORY_PARAMETERS_H
+#define _CAMERA_FACTORY_PARAMETERS_H
 
-#include <src/commands/MoveCommand.h>
+#include "../base/EntityFactoryParameters.h"
 
-namespace app::comp
+namespace app::par::fact::ent
 {
-	struct Input
+	struct CameraFactoryParameters : public EntityFactoryParameters
 	{
 	public: // Public Usings/Typedefs/Enums
-		using Command = std::variant<
-			com::MoveCommand
-		>;
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
-		using KeyMap = std::map<app::inp::KeyCode, Command>;
-		using MouseMap = std::map<app::inp::ButtonCode, Command>;
 	public: // Constructors/Destructor/Assignments
 	public: // Public Static Functions
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
-		KeyMap keyDownCommands, keyUpCommands, keyPressedCommands;
-		MouseMap mouseDownCommands, mouseUpCommands, mousePressedCommands;
+		math::Vector2f position, size;
+		std::optional<app::Entity> target;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
@@ -33,4 +28,4 @@ namespace app::comp
 	};
 }
 
-#endif // !_COMPONENT_INPUT_H
+#endif // !_CAMERA_FACTORY_PARAMETERS_H

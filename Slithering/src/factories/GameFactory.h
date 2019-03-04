@@ -32,7 +32,9 @@ namespace app::fact
 	private: // Private Static Functions
 		void insertInto(std::vector<app::Entity> & entities, std::vector<app::Entity> insert);
 	private: // Private Member Functions
+		std::vector<app::Entity> createCameras();
 		std::vector<app::Entity> createImages();
+		std::vector<app::Entity> createPlayer();
 	private: // Private Static Variables
 	private: // Private Member Variables
 	};

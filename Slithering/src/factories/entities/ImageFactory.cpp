@@ -4,6 +4,7 @@
 // components
 #include <src/components/Location.h>
 #include <src/components/Dimension.h>
+#include <src/components/Layer.h>
 #include <src/components/Render.h>
 
 app::fact::ent::ImageFactory::ImageFactory(Parameters const & params)
@@ -25,6 +26,10 @@ app::Entity const app::fact::ent::ImageFactory::create()
 	dimensions.size = m_params.size;
 	dimensions.origin = m_params.origin;
 	m_registry.assign<decltype(dimensions)>(imageEntity, std::move(dimensions));
+
+	auto layer = comp::Layer();
+	layer.zIndex = m_params.zIndex;
+	m_registry.assign<decltype(layer)>(imageEntity, std::move(layer));
 
 	auto render = comp::Render();
 	render.fill = m_params.fill;

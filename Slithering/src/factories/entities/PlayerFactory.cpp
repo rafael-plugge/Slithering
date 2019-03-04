@@ -4,22 +4,26 @@
 // Components
 #include <src/components/Location.h>
 #include <src/components/Dimension.h>
+#include <src/components/Layer.h>
 #include <src/components/Render.h>
 #include <src/components/Input.h>
 
 // Tags
 #include <src/tags/Player.h>
 
-app::fact::PlayerFactory::PlayerFactory(Parameters const & params)
+app::fact::ent::PlayerFactory::PlayerFactory(Parameters const & params)
 	: EntityFactory(params)
 	, m_params(params)
 {
 }
 
-app::Entity const app::fact::PlayerFactory::create()
+app::Entity const app::fact::ent::PlayerFactory::create()
 {
 	using Key = sf::Keyboard::Key;
 	using Button = sf::Mouse::Button;
+	using Command = comp::Input::Command;
+	constexpr auto MOVE_RIGHT = true;
+	constexpr auto MOVE_LEFT = false;
 
 	app::Entity const playerEntity = EntityFactory::create();
 
@@ -30,48 +34,26 @@ app::Entity const app::fact::PlayerFactory::create()
 
 	auto dimensions = comp::Dimension();
 	dimensions.size = { 100.0f, 100.0f };
-	dimensions.origin = {
-		dimensions.size.x / 2.0f,
-		dimensions.size.y / 2.0f
-	};
+	dimensions.origin = dimensions.size / 2.0f;
 	m_registry.assign<decltype(dimensions)>(playerEntity, std::move(dimensions));
 
 	auto input = comp::Input();
-	input.keys = {
-		std::make_pair(
-			inp::Actions::MoveUp, comp::Input::MapKeysPressed{
-				std::make_pair(Key::Up, false),
-				std::make_pair(Key::W, false)
-			}
-		),
-		std::make_pair(
-			inp::Actions::MoveDown, comp::Input::MapKeysPressed{
-				std::make_pair(Key::S, false),
-				std::make_pair(Key::Down, false)
-			}
-		),
-		std::make_pair(
-			inp::Actions::MoveLeft, comp::Input::MapKeysPressed{
-				std::make_pair(Key::A, false),
-				std::make_pair(Key::Left, false)
-			}
-		),
-		std::make_pair(
-			inp::Actions::MoveRight, comp::Input::MapKeysPressed{
-				std::make_pair(Key::D, false),
-				std::make_pair(Key::Right, false)
-			}
-		)
+	input.keyUpCommands = {};
+	input.keyDownCommands = {
+		  std::make_pair(Key::Left, Command(std::in_place_type<com::MoveCommand>, playerEntity, MOVE_LEFT))
+		, std::make_pair(Key::A, Command(std::in_place_type<com::MoveCommand>, playerEntity, MOVE_LEFT))
+		, std::make_pair(Key::Right, Command(std::in_place_type<com::MoveCommand>, playerEntity, MOVE_RIGHT))
+		, std::make_pair(Key::D, Command(std::in_place_type<com::MoveCommand>, playerEntity, MOVE_RIGHT))
 	};
-	input.buttons = {
-		std::make_pair(
-			inp::Actions::Stuff, comp::Input::MapButtonsPressed{
-				std::make_pair(Button::Left, false),
-				std::make_pair(Button::Right, false)
-			}
-		)
-	};
+	input.keyPressedCommands = {};
+	input.mouseDownCommands = {};
+	input.mouseUpCommands = {};
+	input.mousePressedCommands = {};
 	m_registry.assign<decltype(input)>(playerEntity, std::move(input));
+
+	auto layer = comp::Layer();
+	layer.zIndex = m_params.zIndex;
+	m_registry.assign<decltype(layer)>(playerEntity, std::move(layer));
 
 	auto render = comp::Render();
 	render.fill = sf::Color(0u, 255u, 0u, 255u);

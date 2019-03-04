@@ -64,8 +64,8 @@ namespace app
 	private: // Private Member Variables
 		bool m_gameLoop;
 		app::Registry & m_registry;
-		inp::Keyhandler m_keyHandler;
-		inp::Mousehandler m_mouseHandler;
+		inp::KeyHandler m_keyHandler;
+		inp::MouseHandler m_mouseHandler;
 		UpdateSystems m_updateSystems;
 		RenderSystems m_renderSystems;
 		fact::GameFactory m_gameFactory;
