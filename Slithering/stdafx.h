@@ -125,7 +125,7 @@ namespace app
 	typedef entt::Registry<Entity> Registry;
 	namespace inp
 	{
-		typedef app::inp::KeyHandler<sf::Keyboard::Key> Keyhandler;
-		typedef app::inp::MouseHandler<sf::Mouse::Button> Mousehandler;
+		typedef app::inp::Keyhandler<sf::Keyboard::Key> KeyHandler;
+		typedef app::inp::Mousehandler<sf::Mouse::Button> MouseHandler;
 	}
 }

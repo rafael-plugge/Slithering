@@ -3,11 +3,11 @@
 namespace app::inp
 {
 	template<typename KeyType>
-	class KeyHandler
+	class Keyhandler
 	{
 	public:
 	public:
-		KeyHandler() = default;
+		Keyhandler() = default;
 
 		void updateKey(KeyType const & key, bool const & pressed);
 		void update();
@@ -26,7 +26,7 @@ namespace app::inp
 
 
 	template<typename KeyType>
-	void app::inp::KeyHandler<KeyType>::updateKey(KeyType const & key, bool const & pressed)
+	void app::inp::Keyhandler<KeyType>::updateKey(KeyType const & key, bool const & pressed)
 	{
 		if (auto itt = _keyNowMap.find(key); itt != _keyNowMap.end())
 		{
@@ -41,13 +41,13 @@ namespace app::inp
 	}
 
 	template<typename KeyType>
-	void app::inp::KeyHandler<KeyType>::update()
+	void app::inp::Keyhandler<KeyType>::update()
 	{
 		_keyPrevMap = _keyNowMap;
 	}
 
 	template<typename KeyType>
-	bool app::inp::KeyHandler<KeyType>::isKeyDown(KeyType const & key) const
+	bool app::inp::Keyhandler<KeyType>::isKeyDown(KeyType const & key) const
 	{
 		if (auto const & itt = _keyNowMap.find(key); itt != _keyNowMap.end())
 		{
@@ -58,7 +58,7 @@ namespace app::inp
 	}
 
 	template<typename KeyType>
-	bool app::inp::KeyHandler<KeyType>::isKeyDown(std::initializer_list<KeyType> const & keys) const
+	bool app::inp::Keyhandler<KeyType>::isKeyDown(std::initializer_list<KeyType> const & keys) const
 	{
 		for (auto const &[mapKey, mapValue] : _keyNowMap)
 		{
@@ -68,7 +68,7 @@ namespace app::inp
 	}
 
 	template<typename KeyType>
-	bool app::inp::KeyHandler<KeyType>::isKeyUp(KeyType const & key) const
+	bool app::inp::Keyhandler<KeyType>::isKeyUp(KeyType const & key) const
 	{
 		if (auto const & itt = _keyNowMap.find(key); itt != _keyNowMap.end())
 		{
@@ -79,7 +79,7 @@ namespace app::inp
 	}
 
 	template<typename KeyType>
-	bool app::inp::KeyHandler<KeyType>::isKeyUp(std::initializer_list<KeyType> const & keys) const
+	bool app::inp::Keyhandler<KeyType>::isKeyUp(std::initializer_list<KeyType> const & keys) const
 	{
 		for (auto const &[mapKey, mapValue] : _keyNowMap)
 		{
@@ -89,7 +89,7 @@ namespace app::inp
 	}
 
 	template<typename KeyType>
-	bool app::inp::KeyHandler<KeyType>::isKeyPressed(KeyType const & keyPressed) const
+	bool app::inp::Keyhandler<KeyType>::isKeyPressed(KeyType const & keyPressed) const
 	{
 		if (auto const & itt = _keyNowMap.find(keyPressed); itt != _keyNowMap.end())
 		{

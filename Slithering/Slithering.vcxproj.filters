@@ -161,6 +161,12 @@
     <ClCompile Include="src\factories\GameFactory.cpp">
       <Filter>Source Files\factories</Filter>
     </ClCompile>
+    <ClCompile Include="src\components\Layer.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\Camera.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -264,6 +270,12 @@
     </ClInclude>
     <ClInclude Include="src\factories\GameFactory.h">
       <Filter>Source Files\factories</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Layer.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Camera.h">
+      <Filter>Source Files\components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

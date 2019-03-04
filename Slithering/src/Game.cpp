@@ -16,7 +16,7 @@ app::Game::Game()
 		, UpdateSystem(std::in_place_type<sys::InputSystem>, m_keyHandler, m_mouseHandler)
 	})
 	, m_renderSystems{
-		RenderSystem(std::in_place_type<sys::RenderSystem>)
+		RenderSystem(std::in_place_type<sys::RenderSystem>, m_gameLoop)
 	}
 	, m_gameFactory()
 {
@@ -36,13 +36,9 @@ bool app::Game::initSystems()
 	try
 	{
 		for (UpdateSystem & updateSystem : m_updateSystems)
-		{
 			std::visit([](auto & sys) { sys.init(); }, updateSystem);
-		}
 		for (RenderSystem & renderSystem : m_renderSystems)
-		{
 			std::visit([](auto & sys) { sys.init(); }, renderSystem);
-		}
 		return true;
 	}
 	catch (std::exception const & e)

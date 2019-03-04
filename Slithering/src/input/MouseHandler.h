@@ -4,19 +4,19 @@
 namespace app::inp
 {
 	template<typename ButtonType>
-	class MouseHandler
+	class Mousehandler
 	{
 	private: // Private typedefs
 		typedef std::map<const ButtonType, bool> map;
 	public: // Constructors/Destructor/Assignments
-		MouseHandler() = default;
-		MouseHandler(MouseHandler<ButtonType> const &) = default;
-		MouseHandler(MouseHandler<ButtonType> &&) = default;
+		Mousehandler() = default;
+		Mousehandler(Mousehandler<ButtonType> const &) = default;
+		Mousehandler(Mousehandler<ButtonType> &&) = default;
 
-		~MouseHandler() = default;
+		~Mousehandler() = default;
 
-		MouseHandler<ButtonType> & operator=(MouseHandler<ButtonType> const &) = default;
-		MouseHandler<ButtonType> & operator=(MouseHandler<ButtonType> &&) = default;
+		Mousehandler<ButtonType> & operator=(Mousehandler<ButtonType> const &) = default;
+		Mousehandler<ButtonType> & operator=(Mousehandler<ButtonType> &&) = default;
 
 	public: // Public Static Functions
 	public: // Public Member Functions
@@ -56,7 +56,7 @@ namespace app::inp
 	#pragma region Implementation
 
 	template<typename ButtonType>
-	void app::inp::MouseHandler<ButtonType>::updateButton(ButtonType const & button, bool const & pressed)
+	void app::inp::Mousehandler<ButtonType>::updateButton(ButtonType const & button, bool const & pressed)
 	{
 		if (auto const & itt = m_keyNowMap.find(button); itt != m_keyNowMap.end())
 		{
@@ -71,51 +71,51 @@ namespace app::inp
 	}
 
 	template<typename ButtonType>
-	void app::inp::MouseHandler<ButtonType>::updatePosition(std::int32_t const & x, std::int32_t const & y)
+	void app::inp::Mousehandler<ButtonType>::updatePosition(std::int32_t const & x, std::int32_t const & y)
 	{
 		m_mouse.x = x;
 		m_mouse.y = y;
 	}
 
 	template<typename ButtonType>
-	void app::inp::MouseHandler<ButtonType>::update()
+	void app::inp::Mousehandler<ButtonType>::update()
 	{
 		m_keyPrevMap = m_keyNowMap;
 	}
 
 	template<typename ButtonType>
-	bool app::inp::MouseHandler<ButtonType>::isButtonDown(ButtonType const & button) const
+	bool app::inp::Mousehandler<ButtonType>::isButtonDown(ButtonType const & button) const
 	{
-		return app::inp::MouseHandler<ButtonType>::isButtonDown(m_keyNowMap, button);
+		return app::inp::Mousehandler<ButtonType>::isButtonDown(m_keyNowMap, button);
 	}
 
 	template<typename ButtonType>
-	bool app::inp::MouseHandler<ButtonType>::isButtonDown(std::initializer_list<ButtonType> const & buttons) const
+	bool app::inp::Mousehandler<ButtonType>::isButtonDown(std::initializer_list<ButtonType> const & buttons) const
 	{
-		return app::inp::MouseHandler<ButtonType>::isButtonDown(m_keyNowMap, buttons);
+		return app::inp::Mousehandler<ButtonType>::isButtonDown(m_keyNowMap, buttons);
 	}
 
 	template<typename ButtonType>
-	bool app::inp::MouseHandler<ButtonType>::isButtonUp(ButtonType const & button) const
+	bool app::inp::Mousehandler<ButtonType>::isButtonUp(ButtonType const & button) const
 	{
-		return app::inp::MouseHandler<ButtonType>::isButtonUp(m_keyNowMap, button);
+		return app::inp::Mousehandler<ButtonType>::isButtonUp(m_keyNowMap, button);
 	}
 
 	template<typename ButtonType>
-	bool app::inp::MouseHandler<ButtonType>::isButtonUp(std::initializer_list<ButtonType> const & buttons) const
+	bool app::inp::Mousehandler<ButtonType>::isButtonUp(std::initializer_list<ButtonType> const & buttons) const
 	{
-		return app::inp::MouseHandler<ButtonType>::isButtonUp(m_keyNowMap, buttons);
+		return app::inp::Mousehandler<ButtonType>::isButtonUp(m_keyNowMap, buttons);
 	}
 
 	template<typename ButtonType>
-	bool app::inp::MouseHandler<ButtonType>::isButtonPressed(ButtonType const & button) const
+	bool app::inp::Mousehandler<ButtonType>::isButtonPressed(ButtonType const & button) const
 	{
-		return app::inp::MouseHandler<ButtonType>::isButtonUp(m_keyPrevMap, button)
-			&& app::inp::MouseHandler<ButtonType>::isButtonDown(m_keyNowMap, button);
+		return app::inp::Mousehandler<ButtonType>::isButtonUp(m_keyPrevMap, button)
+			&& app::inp::Mousehandler<ButtonType>::isButtonDown(m_keyNowMap, button);
 	}
 
 	template<typename ButtonType>
-	bool app::inp::MouseHandler<ButtonType>::isButtonPressed(std::initializer_list<ButtonType> const & buttons) const
+	bool app::inp::Mousehandler<ButtonType>::isButtonPressed(std::initializer_list<ButtonType> const & buttons) const
 	{
 		for (auto const &[mapKey, mapValue] : m_keyNowMap)
 		{
@@ -132,17 +132,17 @@ namespace app::inp
 	}
 
 	template<typename ButtonType>
-	inline bool app::inp::MouseHandler<ButtonType>::isButtonDown(map const & keyMap, ButtonType const & button)
+	inline bool app::inp::Mousehandler<ButtonType>::isButtonDown(map const & keyMap, ButtonType const & button)
 	{
-		using pair = std::pair<MouseHandler::map::key_type, MouseHandler::map::mapped_type>;
+		using pair = std::pair<Mousehandler::map::key_type, Mousehandler::map::mapped_type>;
 		const auto predicate = [&button](pair const & p) constexpr { return p.first == button && p.second; };
 		return std::find_if(keyMap.begin(), keyMap.end(), predicate) != keyMap.end();
 	}
 
 	template<typename ButtonType>
-	inline bool app::inp::MouseHandler<ButtonType>::isButtonDown(map const & keyMap, std::initializer_list<ButtonType> const & buttons)
+	inline bool app::inp::Mousehandler<ButtonType>::isButtonDown(map const & keyMap, std::initializer_list<ButtonType> const & buttons)
 	{
-		using pair = std::pair<MouseHandler::map::key_type, MouseHandler::map::mapped_type>;
+		using pair = std::pair<Mousehandler::map::key_type, Mousehandler::map::mapped_type>;
 		const auto predicate = [&buttons](pair const & p) constexpr
 		{
 			return p.second &&
@@ -152,17 +152,17 @@ namespace app::inp
 	}
 
 	template<typename ButtonType>
-	inline bool app::inp::MouseHandler<ButtonType>::isButtonUp(map const & keyMap, ButtonType const & button)
+	inline bool app::inp::Mousehandler<ButtonType>::isButtonUp(map const & keyMap, ButtonType const & button)
 	{
-		using pair = std::pair<MouseHandler::map::key_type, MouseHandler::map::mapped_type>;
+		using pair = std::pair<Mousehandler::map::key_type, Mousehandler::map::mapped_type>;
 		const auto predicate = [&button](pair const & p) constexpr { return p.first == button && !p.second; };
 		return std::find_if(keyMap.begin(), keyMap.end(), predicate) != keyMap.end();
 	}
 
 	template<typename ButtonType>
-	inline bool app::inp::MouseHandler<ButtonType>::isButtonUp(map const & keyMap, std::initializer_list<ButtonType> const & buttons)
+	inline bool app::inp::Mousehandler<ButtonType>::isButtonUp(map const & keyMap, std::initializer_list<ButtonType> const & buttons)
 	{
-		using pair = std::pair<MouseHandler::map::key_type, MouseHandler::map::mapped_type>;
+		using pair = std::pair<Mousehandler::map::key_type, Mousehandler::map::mapped_type>;
 		const auto predicate = [&buttons](pair const & p) constexpr
 		{
 			return !p.second &&

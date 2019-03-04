@@ -32,10 +32,10 @@ namespace app
 		using RenderSystems = std::array<RenderSystem, 1>;
 	public: // Constructors/Destructor/Assignments
 		Game();
+		~Game();
+
 		Game(Game const &) = delete;
 		Game(Game &&) = delete;
-
-		~Game();
 
 		Game & operator=(Game const &) = delete;
 		Game & operator=(Game &&) = delete;

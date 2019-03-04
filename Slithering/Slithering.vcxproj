@@ -183,8 +183,10 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\components\Camera.cpp" />
     <ClCompile Include="src\components\Dimension.cpp" />
     <ClCompile Include="src\components\Input.cpp" />
+    <ClCompile Include="src\components\Layer.cpp" />
     <ClCompile Include="src\components\Location.cpp" />
     <ClCompile Include="src\components\NeuraNetwork.cpp" />
     <ClCompile Include="src\components\Render.cpp" />
@@ -225,8 +227,10 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\components\Camera.h" />
     <ClInclude Include="src\components\Dimension.h" />
     <ClInclude Include="src\components\Input.h" />
+    <ClInclude Include="src\components\Layer.h" />
     <ClInclude Include="src\components\Location.h" />
     <ClInclude Include="src\components\NeuraNetwork.h" />
     <ClInclude Include="src\components\Render.h" />
