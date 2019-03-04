@@ -27,7 +27,7 @@ app::Entity const app::fact::ent::ImageFactory::create()
 	m_registry.assign<decltype(dimensions)>(imageEntity, std::move(dimensions));
 
 	auto render = comp::Render();
-	render.fill = m_params.texture;
+	render.fill = m_params.fill;
 	render.source = m_params.source;
 	render.border = m_params.border;
 	render.offset = m_params.offset;

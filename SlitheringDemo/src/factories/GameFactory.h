@@ -30,7 +30,9 @@ namespace app::fact
 	protected: // Protected Static Variables
 	protected: // Protected Member Variables
 	private: // Private Static Functions
+		void insertInto(std::vector<app::Entity> & entities, std::vector<app::Entity> insert);
 	private: // Private Member Functions
+		std::vector<app::Entity> createImages();
 	private: // Private Static Variables
 	private: // Private Member Variables
 	};
