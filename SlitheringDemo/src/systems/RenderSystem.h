@@ -23,7 +23,8 @@ namespace app::sys
 	public: // Public Static Functions
 	public: // Public Member Functions
 		void pollEvents(app::inp::KeyHandler<sf::Keyboard::Key> & keyHandler, app::inp::MouseHandler<sf::Mouse::Button> & mouseHandler);
-		virtual void update(app::time::nanoseconds const & dt) override;
+		virtual void init() final override;
+		virtual void update(app::time::nanoseconds const & dt) final override;
 	public: // Public Static Variables
 	public: // Public Member Variables
 	protected: // Protected Static Functions

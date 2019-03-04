@@ -1,16 +1,35 @@
 ﻿#ifndef _GAME_H
 #define _GAME_H
 
+#include <src/utilities/Time.h>
+#include <src/utilities/Console.h>
+#include <src/factories/GameFactory.h>
+
 #include <src/systems/BaseSystem.h>
 
-#include <src/utilities/Time.h>
-#include <src/utilities/Registry.h>
-#include <src/utilities/Console.h>
+// update systems
+#include <src/systems/DebugSystem.h>
+#include <src/systems/InputSystem.h>
+
+// render systems
+#include <src/systems/RenderSystem.h>
 
 namespace app
 {
 	class Game
 	{
+	public: // Public Usings/Typedefs/Enums
+	protected: // Protected Usings/Typedefs/Enums
+	private: // Private Usings/Typedefs/Enums
+		using UpdateSystem = std::variant<
+			  sys::DebugSystem
+			, sys::InputSystem
+		>;
+		using UpdateSystems = std::array<UpdateSystem, 2>;
+		using RenderSystem = std::variant<
+			  sys::RenderSystem
+		>;
+		using RenderSystems = std::array<RenderSystem, 1>;
 	public: // Constructors/Destructor/Assignments
 		Game();
 		Game(Game const &) = delete;
@@ -23,7 +42,12 @@ namespace app
 
 	public: // Public Static Functions
 	public: // Public Member Functions
-		int run();
+		bool init();
+		constexpr bool const & isRunning() const { return m_gameLoop; }
+		void pollEvents();
+		void update(app::time::nanoseconds const & dt);
+		void render(app::time::nanoseconds const & dt);
+
 	public: // Public Static Variables
 	public: // Public Member Variables
 	protected: // Protected Static Functions
@@ -32,23 +56,19 @@ namespace app
 	protected: // Protected Member Variables
 	private: // Private Static Functions
 	private: // Private Member Functions
-		bool init();
-		
-		bool createSystems();
+		bool initSystems();
 		bool createEntities();
+		bool aiTrainingExample();
 
-		void pollEvents();
-		void update(app::time::nanoseconds const & dt);
-		void render(app::time::nanoseconds const & dt);
 	private: // Private Static Variables
 	private: // Private Member Variables
 		bool m_gameLoop;
 		app::Registry & m_registry;
 		inp::Keyhandler m_keyHandler;
 		inp::Mousehandler m_mouseHandler;
-		std::array<std::unique_ptr<sys::BaseSystem>, 1> m_updateSystems;
-		std::array<std::unique_ptr<sys::BaseSystem>, 1> m_renderSystems;
-		entt::SigH<void(inp::KeyHandler<sf::Keyboard::Key> &, inp::MouseHandler<sf::Mouse::Button> &)> m_pollEventsSignal;
+		UpdateSystems m_updateSystems;
+		RenderSystems m_renderSystems;
+		fact::GameFactory m_gameFactory;
 	};
 }
 

@@ -1,5 +1,5 @@
 ﻿#include "stdafx.h"
-#include <src/factories/PlayerFactory.h>
+#include <src/factories/entities/PlayerFactory.h>
 
 // Components
 #include <src/components/Location.h>
@@ -10,17 +10,23 @@
 // Tags
 #include <src/tags/Player.h>
 
-std::optional<app::Entity> app::fact::PlayerFactory::create()
+app::fact::PlayerFactory::PlayerFactory(Parameters const & params)
+	: EntityFactory(params)
+	, m_params(params)
+{
+}
+
+app::Entity const app::fact::PlayerFactory::create()
 {
 	using Key = sf::Keyboard::Key;
 	using Button = sf::Mouse::Button;
 
-	app::Entity const entity = m_registry.create();
+	app::Entity const playerEntity = EntityFactory::create();
 
 	auto location = comp::Location();
-	location.position = { 10.0f, 10.0f };
-	location.angle = 0.0f;
-	m_registry.assign<decltype(location)>(entity, std::move(location));
+	location.position = m_params.position;
+	location.orientation = 0.0f;
+	m_registry.assign<decltype(location)>(playerEntity, std::move(location));
 
 	auto dimensions = comp::Dimension();
 	dimensions.size = { 100.0f, 100.0f };
@@ -28,7 +34,7 @@ std::optional<app::Entity> app::fact::PlayerFactory::create()
 		dimensions.size.x / 2.0f,
 		dimensions.size.y / 2.0f
 	};
-	m_registry.assign<decltype(dimensions)>(entity, std::move(dimensions));
+	m_registry.assign<decltype(dimensions)>(playerEntity, std::move(dimensions));
 
 	auto input = comp::Input();
 	input.keys = {
@@ -65,14 +71,14 @@ std::optional<app::Entity> app::fact::PlayerFactory::create()
 			}
 		)
 	};
-	m_registry.assign<decltype(input)>(entity, std::move(input));
+	m_registry.assign<decltype(input)>(playerEntity, std::move(input));
 
 	auto render = comp::Render();
 	render.fill = sf::Color(0u, 255u, 0u, 255u);
-	m_registry.assign<decltype(render)>(entity, std::move(render));
+	m_registry.assign<decltype(render)>(playerEntity, std::move(render));
 
 	auto player = tag::Player();
-	m_registry.assign<decltype(player)>(entt::tag_t{}, entity, std::move(player));
+	m_registry.assign<decltype(player)>(entt::tag_t{}, playerEntity, std::move(player));
 
-	return entity;
+	return playerEntity;
 }
