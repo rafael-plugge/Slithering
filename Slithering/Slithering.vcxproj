@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{AAD793F7-8D93-4743-BB7F-0DD493DD7B1E}</ProjectGuid>
+    <RootNamespace>Slithering</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <ProjectName>Slithering</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)deps\include;$(ProjectDir)deps\include;$(ProjectDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir)deps\include;$(ProjectDir)deps\include;$(ProjectDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir)deps\include;$(ProjectDir)deps\include;$(ProjectDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)deps\include;$(ProjectDir)deps\include;$(ProjectDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)deps\lib;$(SolutionDir)deps\lib\$(IntDir);$(ProjectDir)deps\lib;$(ProjectDir)deps\lib\$(IntDir)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)deps\lib;$(SolutionDir)deps\lib\$(IntDir);$(ProjectDir)deps\lib;$(ProjectDir)deps\lib\$(IntDir)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)deps\lib;$(SolutionDir)deps\lib\$(IntDir);$(ProjectDir)deps\lib;$(ProjectDir)deps\lib\$(IntDir)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)deps\lib;$(SolutionDir)deps\lib\$(IntDir);$(ProjectDir)deps\lib;$(ProjectDir)deps\lib\$(IntDir)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.dll" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(SolutionDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"
+C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(TargetDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\commands\base\BaseCommand.cpp" />
+    <ClCompile Include="src\commands\movement\MoveCommand.cpp" />
+    <ClCompile Include="src\commands\movement\TurnCommand.cpp" />
+    <ClCompile Include="src\commands\movement\TurnLeftCommand.cpp" />
+    <ClCompile Include="src\commands\movement\TurnRightCommand.cpp" />
+    <ClCompile Include="src\components\Camera.cpp" />
+    <ClCompile Include="src\components\Dimension.cpp" />
+    <ClCompile Include="src\components\Input.cpp" />
+    <ClCompile Include="src\components\Layer.cpp" />
+    <ClCompile Include="src\components\Location.cpp" />
+    <ClCompile Include="src\components\Motion.cpp" />
+    <ClCompile Include="src\components\NeuraNetwork.cpp" />
+    <ClCompile Include="src\components\Render.cpp" />
+    <ClCompile Include="src\factories\base\BaseFactory.cpp" />
+    <ClCompile Include="src\factories\base\EntityFactory.cpp" />
+    <ClCompile Include="src\factories\entities\CameraFactory.cpp" />
+    <ClCompile Include="src\factories\entities\ImageFactory.cpp" />
+    <ClCompile Include="src\factories\entities\PlayerFactory.cpp" />
+    <ClCompile Include="src\factories\GameFactory.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\input\Actions.cpp" />
+    <ClCompile Include="src\input\Keyhandler.cpp" />
+    <ClCompile Include="src\input\MouseHandler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\math\Math.cpp" />
+    <ClCompile Include="src\math\Rect.cpp" />
+    <ClCompile Include="src\math\Vector2.cpp" />
+    <ClCompile Include="src\parameters\factories\base\BaseFactoryParameters.cpp" />
+    <ClCompile Include="src\parameters\factories\base\EntityFactoryParameters.cpp" />
+    <ClCompile Include="src\parameters\factories\entities\CameraFactoryParameters.cpp" />
+    <ClCompile Include="src\parameters\factories\entities\ImageFactoryParameters.cpp" />
+    <ClCompile Include="src\parameters\factories\entities\PlayerFactoryParameters.cpp" />
+    <ClCompile Include="src\singletons\RegistrySingleton.cpp" />
+    <ClCompile Include="src\systems\BaseSystem.cpp" />
+    <ClCompile Include="src\systems\DebugSystem.cpp" />
+    <ClCompile Include="src\systems\InputSystem.cpp" />
+    <ClCompile Include="src\systems\MotionSystem.cpp" />
+    <ClCompile Include="src\systems\RenderSystem.cpp" />
+    <ClCompile Include="src\tags\Player.cpp" />
+    <ClCompile Include="src\utilities\Console.cpp" />
+    <ClCompile Include="src\utilities\Makers.cpp" />
+    <ClCompile Include="src\utilities\Random.cpp" />
+    <ClCompile Include="src\utilities\Time.cpp" />
+    <ClCompile Include="src\utilities\Variant.cpp" />
+    <ClCompile Include="src\visitors\RenderVisitor.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\commands\base\BaseCommand.h" />
+    <ClInclude Include="src\commands\movement\MoveCommand.h" />
+    <ClInclude Include="src\commands\movement\TurnCommand.h" />
+    <ClInclude Include="src\commands\movement\TurnLeftCommand.h" />
+    <ClInclude Include="src\commands\movement\TurnRightCommand.h" />
+    <ClInclude Include="src\components\Camera.h" />
+    <ClInclude Include="src\components\Dimension.h" />
+    <ClInclude Include="src\components\Input.h" />
+    <ClInclude Include="src\components\Layer.h" />
+    <ClInclude Include="src\components\Location.h" />
+    <ClInclude Include="src\components\Motion.h" />
+    <ClInclude Include="src\components\NeuraNetwork.h" />
+    <ClInclude Include="src\components\Render.h" />
+    <ClInclude Include="src\factories\base\BaseFactory.h" />
+    <ClInclude Include="src\factories\base\EntityFactory.h" />
+    <ClInclude Include="src\factories\entities\CameraFactory.h" />
+    <ClInclude Include="src\factories\entities\ImageFactory.h" />
+    <ClInclude Include="src\factories\entities\PlayerFactory.h" />
+    <ClInclude Include="src\factories\GameFactory.h" />
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\input\Actions.h" />
+    <ClInclude Include="src\input\Keyhandler.h" />
+    <ClInclude Include="src\input\MouseHandler.h" />
+    <ClInclude Include="src\math\Math.h" />
+    <ClInclude Include="src\math\Rect.h" />
+    <ClInclude Include="src\math\Vector2.h" />
+    <ClInclude Include="src\parameters\factories\base\BaseFactoryParameters.h" />
+    <ClInclude Include="src\parameters\factories\base\EntityFactoryParameters.h" />
+    <ClInclude Include="src\parameters\factories\entities\CameraFactoryParameters.h" />
+    <ClInclude Include="src\parameters\factories\entities\ImageFactoryParameters.h" />
+    <ClInclude Include="src\parameters\factories\entities\PlayerFactoryParameters.h" />
+    <ClInclude Include="src\singletons\RegistrySingleton.h" />
+    <ClInclude Include="src\systems\BaseSystem.h" />
+    <ClInclude Include="src\systems\DebugSystem.h" />
+    <ClInclude Include="src\systems\InputSystem.h" />
+    <ClInclude Include="src\systems\MotionSystem.h" />
+    <ClInclude Include="src\systems\RenderSystem.h" />
+    <ClInclude Include="src\tags\Player.h" />
+    <ClInclude Include="src\utilities\Console.h" />
+    <ClInclude Include="src\utilities\Makers.h" />
+    <ClInclude Include="src\utilities\Random.h" />
+    <ClInclude Include="src\utilities\Time.h" />
+    <ClInclude Include="src\utilities\Variant.h" />
+    <ClInclude Include="src\visitors\RenderVisitor.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\neural_network.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

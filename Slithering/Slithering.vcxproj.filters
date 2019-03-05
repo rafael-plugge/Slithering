@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\components">
+      <UniqueIdentifier>{895c78be-5f61-4c05-85cc-c1e62c92ea78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\systems">
+      <UniqueIdentifier>{0e05d6c8-017e-456d-ba42-c85023782174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\factories">
+      <UniqueIdentifier>{72f0db28-deb4-43a6-9afa-4eec275d291e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utilities">
+      <UniqueIdentifier>{1aa0fe14-25cc-425a-b40b-c851aebe8536}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math">
+      <UniqueIdentifier>{34d04f96-0a8f-45d5-9d9f-42db07aa3f11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\visitors">
+      <UniqueIdentifier>{9423e6d8-1050-4fbb-bbe3-14ac5c6fb7b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\input">
+      <UniqueIdentifier>{f0058d2f-1dcf-4262-b806-778602277eda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tags">
+      <UniqueIdentifier>{bcbc66bd-6379-44fa-994c-ae1d246c0d44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\singletons">
+      <UniqueIdentifier>{68a39702-1f50-4ccf-9050-778bae81e202}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\factories\entities">
+      <UniqueIdentifier>{6d321fd9-e25f-465f-8dcb-af751fb01911}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\parameters">
+      <UniqueIdentifier>{cb821b88-b39d-41b3-bc81-85756885d3e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\parameters\factories">
+      <UniqueIdentifier>{c962c4d2-f4f2-435b-80e9-27be3dee2278}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\parameters\factories\entities">
+      <UniqueIdentifier>{e5ac19ae-a218-4519-9af8-7a480ab52194}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\parameters\factories\base">
+      <UniqueIdentifier>{964fdfbe-a391-49f1-92aa-185e9580bbc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\factories\base">
+      <UniqueIdentifier>{7bd83c72-de82-475c-a76b-66baeb162e08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands">
+      <UniqueIdentifier>{6104cba7-638b-4d62-92c2-e856ce132502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\base">
+      <UniqueIdentifier>{2432b67b-e551-4c74-a0d0-1ac3dd0b5222}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\movement">
+      <UniqueIdentifier>{705a3033-7b6c-4e0d-8079-ca65ab95d9c4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\BaseSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\Time.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\RenderSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\Location.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\Render.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\math\Vector2.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\visitors\RenderVisitor.cpp">
+      <Filter>Source Files\visitors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\Console.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\Dimension.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\Keyhandler.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\MouseHandler.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\InputSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\Input.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tags\Player.cpp">
+      <Filter>Source Files\tags</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\Actions.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\NeuraNetwork.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\Variant.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\Makers.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\Random.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\DebugSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\singletons\RegistrySingleton.cpp">
+      <Filter>Source Files\singletons</Filter>
+    </ClCompile>
+    <ClCompile Include="src\math\Math.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\math\Rect.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factories\entities\ImageFactory.cpp">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parameters\factories\entities\ImageFactoryParameters.cpp">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parameters\factories\base\BaseFactoryParameters.cpp">
+      <Filter>Source Files\parameters\factories\base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factories\base\BaseFactory.cpp">
+      <Filter>Source Files\factories\base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factories\base\EntityFactory.cpp">
+      <Filter>Source Files\factories\base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parameters\factories\base\EntityFactoryParameters.cpp">
+      <Filter>Source Files\parameters\factories\base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factories\entities\PlayerFactory.cpp">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parameters\factories\entities\PlayerFactoryParameters.cpp">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factories\GameFactory.cpp">
+      <Filter>Source Files\factories</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\Layer.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\Camera.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\base\BaseCommand.cpp">
+      <Filter>Source Files\commands\base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factories\entities\CameraFactory.cpp">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parameters\factories\entities\CameraFactoryParameters.cpp">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\movement\TurnLeftCommand.cpp">
+      <Filter>Source Files\commands\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\movement\TurnRightCommand.cpp">
+      <Filter>Source Files\commands\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\movement\MoveCommand.cpp">
+      <Filter>Source Files\commands\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\movement\TurnCommand.cpp">
+      <Filter>Source Files\commands\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\Motion.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\MotionSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Game.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Dimension.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Input.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Location.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Render.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\Actions.h">
+      <Filter>Source Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\Keyhandler.h">
+      <Filter>Source Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\MouseHandler.h">
+      <Filter>Source Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\Vector2.h">
+      <Filter>Source Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\BaseSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\InputSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\RenderSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tags\Player.h">
+      <Filter>Source Files\tags</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities\Time.h">
+      <Filter>Source Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities\Console.h">
+      <Filter>Source Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\visitors\RenderVisitor.h">
+      <Filter>Source Files\visitors</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\NeuraNetwork.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities\Variant.h">
+      <Filter>Source Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities\Makers.h">
+      <Filter>Source Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities\Random.h">
+      <Filter>Source Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\DebugSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\singletons\RegistrySingleton.h">
+      <Filter>Source Files\singletons</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\Math.h">
+      <Filter>Source Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\Rect.h">
+      <Filter>Source Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factories\entities\ImageFactory.h">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parameters\factories\entities\ImageFactoryParameters.h">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parameters\factories\base\BaseFactoryParameters.h">
+      <Filter>Source Files\parameters\factories\base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factories\base\BaseFactory.h">
+      <Filter>Source Files\factories\base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factories\base\EntityFactory.h">
+      <Filter>Source Files\factories\base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parameters\factories\base\EntityFactoryParameters.h">
+      <Filter>Source Files\parameters\factories\base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factories\entities\PlayerFactory.h">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parameters\factories\entities\PlayerFactoryParameters.h">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factories\GameFactory.h">
+      <Filter>Source Files\factories</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Layer.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Camera.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\commands\base\BaseCommand.h">
+      <Filter>Source Files\commands\base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factories\entities\CameraFactory.h">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parameters\factories\entities\CameraFactoryParameters.h">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\commands\movement\TurnLeftCommand.h">
+      <Filter>Source Files\commands\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="src\commands\movement\TurnRightCommand.h">
+      <Filter>Source Files\commands\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="src\commands\movement\MoveCommand.h">
+      <Filter>Source Files\commands\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="src\commands\movement\TurnCommand.h">
+      <Filter>Source Files\commands\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Motion.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\MotionSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\neural_network.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
