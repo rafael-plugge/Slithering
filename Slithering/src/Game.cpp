@@ -14,6 +14,7 @@ app::Game::Game()
 	, m_updateSystems({
 		  UpdateSystem(std::in_place_type<sys::DebugSystem>)
 		, UpdateSystem(std::in_place_type<sys::InputSystem>, m_keyHandler, m_mouseHandler)
+		, UpdateSystem(std::in_place_type<sys::MotionSystem>)
 	})
 	, m_renderSystems{
 		RenderSystem(std::in_place_type<sys::RenderSystem>, m_gameLoop)
@@ -182,13 +183,13 @@ void app::Game::pollEvents()
 		}, renderSystem);
 }
 
-void app::Game::update(app::time::nanoseconds const & dt)
+void app::Game::update(app::time::seconds const & dt)
 {
 	for (UpdateSystem & updateSystem : m_updateSystems)
 		std::visit([&dt](auto & sys) { sys.update(dt); }, updateSystem);
 }
 
-void app::Game::render(app::time::nanoseconds const & dt)
+void app::Game::render(app::time::seconds const & dt)
 {
 	for (RenderSystem & renderSystem : m_renderSystems)
 		std::visit([&dt](auto & sys) { sys.update(dt); }, renderSystem);

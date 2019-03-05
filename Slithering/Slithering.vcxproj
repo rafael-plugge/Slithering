@@ -219,6 +219,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClCompile Include="src\systems\BaseSystem.cpp" />
     <ClCompile Include="src\systems\DebugSystem.cpp" />
     <ClCompile Include="src\systems\InputSystem.cpp" />
+    <ClCompile Include="src\systems\MotionSystem.cpp" />
     <ClCompile Include="src\systems\RenderSystem.cpp" />
     <ClCompile Include="src\tags\Player.cpp" />
     <ClCompile Include="src\utilities\Console.cpp" />
@@ -270,6 +271,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClInclude Include="src\systems\BaseSystem.h" />
     <ClInclude Include="src\systems\DebugSystem.h" />
     <ClInclude Include="src\systems\InputSystem.h" />
+    <ClInclude Include="src\systems\MotionSystem.h" />
     <ClInclude Include="src\systems\RenderSystem.h" />
     <ClInclude Include="src\tags\Player.h" />
     <ClInclude Include="src\utilities\Console.h" />

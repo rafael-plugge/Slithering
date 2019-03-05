@@ -15,17 +15,25 @@ namespace app::comp
 			, com::TurnLeftCommand
 			, com::TurnRightCommand
 		>;
+		struct KeyCommand
+		{
+			std::vector<app::inp::KeyCode> keys;
+			Command command;
+		};
+		struct MouseCommand
+		{
+			std::vector<app::inp::ButtonCode> buttons;
+			Command command;
+		};
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
-		using KeyMap = std::map<app::inp::KeyCode, Command>;
-		using MouseMap = std::map<app::inp::ButtonCode, Command>;
 	public: // Constructors/Destructor/Assignments
 	public: // Public Static Functions
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
-		KeyMap keyDownCommands, keyUpCommands, keyPressedCommands;
-		MouseMap mouseDownCommands, mouseUpCommands, mousePressedCommands;
+		std::vector<KeyCommand> keyDownCommands, keyUpCommands, keyPressedCommands;
+		std::vector<MouseCommand> mouseDownCommands, mouseUpCommands, mousePressedCommands;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables

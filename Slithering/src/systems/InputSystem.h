@@ -21,7 +21,7 @@ namespace app::sys
 	public: // Public Static Functions
 	public: // Public Member Functions
 		virtual void init() final override;
-		virtual void update(app::time::nanoseconds const & dt) final override;
+		virtual void update(app::time::seconds const & dt) final override;
 	public: // Public Static Variables
 	public: // Public Member Variables
 	protected: // Protected Static Functions

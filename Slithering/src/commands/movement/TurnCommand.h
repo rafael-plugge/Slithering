@@ -2,7 +2,6 @@
 #define _TURN_COMMAND_H
 
 #include "../base/BaseCommand.h"
-#include <src/math/Math.h>
 
 namespace app::com
 {
@@ -28,7 +27,7 @@ namespace app::com
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
-		constexpr static float TURN_RATE = 1.0f;
+		constexpr static float TURN_RATE = 2.0f;
 	protected: // Protected Member Variables
 		app::Entity const m_entity;
 	private: // Private Static Functions

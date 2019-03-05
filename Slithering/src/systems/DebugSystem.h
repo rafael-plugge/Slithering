@@ -24,7 +24,7 @@ namespace app::sys
 	public: // Public Member Functions
 		// Inherited via BaseSystem
 		virtual void init() final override;
-		virtual void update(app::time::nanoseconds const & dt) final override;
+		virtual void update(app::time::seconds const & dt) final override;
 	public: // Public Static Variables
 	public: // Public Member Variables
 	protected: // Protected Static Functions
@@ -34,6 +34,7 @@ namespace app::sys
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables
+		constexpr static bool DEBUG_MODE = app::cout::DEBUG_MODE && false;
 	private: // Private Member Variables
 	};
 }

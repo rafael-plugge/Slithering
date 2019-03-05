@@ -200,6 +200,9 @@
     <ClCompile Include="src\components\Motion.cpp">
       <Filter>Source Files\components</Filter>
     </ClCompile>
+    <ClCompile Include="src\systems\MotionSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -333,6 +336,9 @@
     </ClInclude>
     <ClInclude Include="src\components\Motion.h">
       <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\MotionSystem.h">
+      <Filter>Source Files\systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

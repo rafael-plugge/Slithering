@@ -1,5 +1,6 @@
 ﻿#include "stdafx.h"
 #include <src/factories/entities/PlayerFactory.h>
+#include <src/utilities/Makers.h>
 
 // Components
 #include <src/components/Location.h>
@@ -22,9 +23,9 @@ app::Entity const app::fact::ent::PlayerFactory::create()
 {
 	using Key = sf::Keyboard::Key;
 	using Button = sf::Mouse::Button;
+	using KeyCommand = comp::Input::KeyCommand;
+	using MouseCommand = comp::Input::MouseCommand;
 	using Command = comp::Input::Command;
-	constexpr auto MOVE_RIGHT = true;
-	constexpr auto MOVE_LEFT = false;
 
 	app::Entity const playerEntity = EntityFactory::create();
 
@@ -39,21 +40,19 @@ app::Entity const app::fact::ent::PlayerFactory::create()
 	m_registry.assign<decltype(dimensions)>(playerEntity, std::move(dimensions));
 
 	auto input = comp::Input();
-	input.keyUpCommands = {};
-	input.keyDownCommands = {
-		  std::make_pair(Key::Left, Command(std::in_place_type<com::MoveCommand>, playerEntity, MOVE_LEFT))
-		, std::make_pair(Key::A, Command(std::in_place_type<com::MoveCommand>, playerEntity, MOVE_LEFT))
-		, std::make_pair(Key::Right, Command(std::in_place_type<com::MoveCommand>, playerEntity, MOVE_RIGHT))
-		, std::make_pair(Key::D, Command(std::in_place_type<com::MoveCommand>, playerEntity, MOVE_RIGHT))
-	};
-	input.keyPressedCommands = {};
-	input.mouseDownCommands = {};
-	input.mouseUpCommands = {};
-	input.mousePressedCommands = {};
+	input.keyUpCommands.reserve(0);
+	input.keyDownCommands = util::make_vector({
+		  KeyCommand{ { Key::Left, Key::A }, Command(std::in_place_type<com::TurnLeftCommand>, playerEntity) }
+		, KeyCommand{ { Key::Right, Key::D }, Command(std::in_place_type<com::TurnRightCommand>, playerEntity) }
+	});
+	input.keyPressedCommands.reserve(0);
+	input.mouseDownCommands.reserve(0);
+	input.mouseUpCommands.reserve(0);
+	input.mousePressedCommands.reserve(0);
 	m_registry.assign<decltype(input)>(playerEntity, std::move(input));
 
 	auto motion = comp::Motion();
-	motion.speed = 0.0f;
+	motion.speed = 3.0f;
 	m_registry.assign<decltype(motion)>(playerEntity, std::move(motion));
 
 	auto layer = comp::Layer();

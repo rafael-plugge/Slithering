@@ -1,28 +1,29 @@
-﻿#ifndef _MOVE_COMMAND_H
-#define _MOVE_COMMAND_H
+﻿#ifndef _MOTION_SYSTEM_H
+#define _MOTION_SYSTEM_H
 
-#include "../base/BaseCommand.h"
+#include "BaseSystem.h"
 
-namespace app::com
+namespace app::sys
 {
-	class MoveCommand : public BaseCommand
+	class MotionSystem : public BaseSystem
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		MoveCommand(app::Entity entity, bool moveRight);
-		virtual ~MoveCommand() = default;
+		MotionSystem() = default;
+		virtual ~MotionSystem() = default;
 
-		MoveCommand(MoveCommand const &) = default;
-		MoveCommand & operator=(MoveCommand const &) = default;
+		MotionSystem(MotionSystem const &) = default;
+		MotionSystem & operator=(MotionSystem const &) = default;
 
-		MoveCommand(MoveCommand &&) = default;
-		MoveCommand & operator=(MoveCommand &&) = default;
+		MotionSystem(MotionSystem &&) = default;
+		MotionSystem & operator=(MotionSystem &&) = default;
 
 	public: // Public Static Functions
 	public: // Public Member Functions
-		virtual void execute() const final override;
+		virtual void init() final override;
+		virtual void update(app::time::seconds const & dt) final override;
 	public: // Public Static Variables
 	public: // Public Member Variables
 	protected: // Protected Static Functions
@@ -32,11 +33,8 @@ namespace app::com
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables
-		constexpr static std::float_t s_MOVE_AMOUNT = 10.0f;
 	private: // Private Member Variables
-		app::Entity const m_entity;
-		bool const m_moveRight;
 	};
 }
 
-#endif // !_MOVE_COMMAND_H
+#endif // !_MOTION_SYSTEM_H

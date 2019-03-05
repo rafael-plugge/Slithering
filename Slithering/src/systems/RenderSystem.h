@@ -49,7 +49,7 @@ namespace app::sys
 	public: // Public Member Functions
 		void pollEvents(app::inp::KeyHandler & keyHandler, app::inp::MouseHandler & mouseHandler);
 		virtual void init() final override;
-		virtual void update(app::time::nanoseconds const & dt) final override;
+		virtual void update(app::time::seconds const & dt) final override;
 	public: // Public Static Variables
 	public: // Public Member Variables
 	protected: // Protected Static Functions
