@@ -3,10 +3,16 @@
 
 void app::sys::DebugSystem::init()
 {
-	app::cout::wrl("Debug system initialized");
+	if constexpr (DEBUG_MODE)
+	{
+		app::cout::wrl("Debug system initialized");
+	}
 }
 
-void app::sys::DebugSystem::update(app::time::nanoseconds const & dt)
+void app::sys::DebugSystem::update(app::time::seconds const & dt)
 {
-	app::cout::wrl("Debug system updated");
+	if constexpr (DEBUG_MODE)
+	{
+		app::cout::wrl("Debug system updated");
+	}
 }

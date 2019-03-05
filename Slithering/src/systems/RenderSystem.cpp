@@ -68,7 +68,7 @@ void app::sys::RenderSystem::init()
 	sys::RenderSystem::sortLayers(m_registry, 0u);
 }
 
-void app::sys::RenderSystem::update(app::time::nanoseconds const & dt)
+void app::sys::RenderSystem::update(app::time::seconds const & dt)
 {
 	m_window.clear(sf::Color::Black);
 	auto const & renderView = m_registry.view<comp::Layer, comp::Location, comp::Dimension, comp::Render>(entt::persistent_t());

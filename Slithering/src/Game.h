@@ -10,6 +10,7 @@
 // update systems
 #include <src/systems/DebugSystem.h>
 #include <src/systems/InputSystem.h>
+#include <src/systems/MotionSystem.h>
 
 // render systems
 #include <src/systems/RenderSystem.h>
@@ -24,8 +25,9 @@ namespace app
 		using UpdateSystem = std::variant<
 			  sys::DebugSystem
 			, sys::InputSystem
+			, sys::MotionSystem
 		>;
-		using UpdateSystems = std::array<UpdateSystem, 2>;
+		using UpdateSystems = std::array<UpdateSystem, 3>;
 		using RenderSystem = std::variant<
 			  sys::RenderSystem
 		>;
@@ -45,8 +47,8 @@ namespace app
 		bool init();
 		constexpr bool const & isRunning() const { return m_gameLoop; }
 		void pollEvents();
-		void update(app::time::nanoseconds const & dt);
-		void render(app::time::nanoseconds const & dt);
+		void update(app::time::seconds const & dt);
+		void render(app::time::seconds const & dt);
 
 	public: // Public Static Variables
 	public: // Public Member Variables

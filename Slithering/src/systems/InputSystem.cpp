@@ -14,23 +14,31 @@ void app::sys::InputSystem::init()
 {
 }
 
-void app::sys::InputSystem::update(app::time::nanoseconds const & dt)
+void app::sys::InputSystem::update(app::time::seconds const & dt)
 {
+	constexpr auto visitor = [](auto const & com) constexpr -> void { com.execute(); };
 	m_registry.view<comp::Input>()
-		.each([&dt, this](app::Entity const entity, comp::Input & input) -> void
+		.each([&, this](app::Entity const entity, comp::Input & input) -> void
 	{
-		for (auto const &[key, command] : input.keyUpCommands)
-			if (m_keyHandler.isKeyUp(key)) { std::visit([](auto const & com) { com.execute(); }, command); }
-		for (auto const &[key, command] : input.keyDownCommands)
-			if (m_keyHandler.isKeyDown(key)) { std::visit([](auto const & com) { com.execute(); }, command); }
-		for (auto const &[key, command] : input.keyPressedCommands)
-			if (m_keyHandler.isKeyPressed(key)) { std::visit([](auto const & com) { com.execute(); }, command); }
-		for (auto const &[button, command] : input.mouseUpCommands)
-			if (m_mouseHandler.isButtonUp(button)) { std::visit([](auto const & com) { com.execute(); }, command); }
-		for (auto const &[button, command] : input.mouseDownCommands)
-			if (m_mouseHandler.isButtonDown(button)) { std::visit([](auto const & com) { com.execute(); }, command); }
-		for (auto const &[button, command] : input.mousePressedCommands)
-			if (m_mouseHandler.isButtonPressed(button)) { std::visit([](auto const & com) { com.execute(); }, command); }
+		for (auto const & keyCommand : input.keyUpCommands)
+			for (auto const & key : keyCommand.keys)
+				if (m_keyHandler.isKeyUp(key)) { std::visit(visitor, keyCommand.command); break; }
+		for (auto const & keyCommand : input.keyDownCommands)
+			for (auto const & key : keyCommand.keys)
+				if (m_keyHandler.isKeyDown(key)) { std::visit(visitor, keyCommand.command); break; }
+		for (auto const & keyCommand : input.keyPressedCommands)
+			for (auto const & key : keyCommand.keys)
+				if (m_keyHandler.isKeyPressed(key)) { std::visit(visitor, keyCommand.command); break; }
+
+		for (auto const & buttonCommand : input.mouseUpCommands)
+			for (auto const & button : buttonCommand.buttons)
+				if (m_mouseHandler.isButtonUp(button)) { std::visit(visitor, buttonCommand.command); break; }
+		for (auto const & buttonCommand : input.mouseDownCommands)
+			for (auto const & button : buttonCommand.buttons)
+				if (m_mouseHandler.isButtonDown(button)) { std::visit(visitor, buttonCommand.command); break; }
+		for (auto const & buttonCommand : input.mousePressedCommands)
+			for (auto const & button : buttonCommand.buttons)
+				if (m_mouseHandler.isButtonPressed(button)) { std::visit(visitor, buttonCommand.command); break; }
 	});
 
 	m_keyHandler.update();

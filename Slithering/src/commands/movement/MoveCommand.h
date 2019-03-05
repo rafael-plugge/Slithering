@@ -1,7 +1,7 @@
 ﻿#ifndef _MOVE_COMMAND_H
 #define _MOVE_COMMAND_H
 
-#include "base/BaseCommand.h"
+#include "../base/BaseCommand.h"
 
 namespace app::com
 {

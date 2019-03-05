@@ -1,30 +1,28 @@
-﻿#ifndef _DEBUG_SYSTEM_H
-#define _DEBUG_SYSTEM_H
+﻿#ifndef _TURN_LEFT_COMMAND_H
+#define _TURN_LEFT_COMMAND_H
 
-#include "BaseSystem.h"
+#include "TurnCommand.h"
 
-namespace app::sys
+namespace app::com
 {
-	class DebugSystem : public BaseSystem
+	class TurnLeftCommand : public TurnCommand
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		DebugSystem() = default;
-		virtual ~DebugSystem() = default;
+		TurnLeftCommand(app::Entity entity);
+		virtual ~TurnLeftCommand() = default;
 
-		DebugSystem(DebugSystem const &) = default;
-		DebugSystem & operator=(DebugSystem const &) = default;
+		TurnLeftCommand(TurnLeftCommand const &) = default;
+		TurnLeftCommand & operator=(TurnLeftCommand const &) = default;
 
-		DebugSystem(DebugSystem &&) = default;
-		DebugSystem & operator=(DebugSystem &&) = default;
+		TurnLeftCommand(TurnLeftCommand &&) = default;
+		TurnLeftCommand & operator=(TurnLeftCommand &&) = default;
 
 	public: // Public Static Functions
 	public: // Public Member Functions
-		// Inherited via BaseSystem
-		virtual void init() final override;
-		virtual void update(app::time::seconds const & dt) final override;
+		virtual void execute() const final override;
 	public: // Public Static Variables
 	public: // Public Member Variables
 	protected: // Protected Static Functions
@@ -34,9 +32,8 @@ namespace app::sys
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables
-		constexpr static bool DEBUG_MODE = app::cout::DEBUG_MODE && false;
 	private: // Private Member Variables
 	};
 }
 
-#endif // !_DEBUG_SYSTEM_H
+#endif // !_TURN_LEFT_COMMAND_H

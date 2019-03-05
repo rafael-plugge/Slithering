@@ -1,22 +1,24 @@
-﻿#ifndef _INPUT_SYSTEM_H
-#define _INPUT_SYSTEM_H
+﻿#ifndef _MOTION_SYSTEM_H
+#define _MOTION_SYSTEM_H
 
-#include <src/systems/BaseSystem.h>
+#include "BaseSystem.h"
 
 namespace app::sys
 {
-	class InputSystem : public BaseSystem
+	class MotionSystem : public BaseSystem
 	{
+	public: // Public Usings/Typedefs/Enums
+	protected: // Protected Usings/Typedefs/Enums
+	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		InputSystem(inp::KeyHandler & keyHandler, inp::MouseHandler & mouseHandler);
+		MotionSystem() = default;
+		virtual ~MotionSystem() = default;
 
-		~InputSystem() = default;
+		MotionSystem(MotionSystem const &) = default;
+		MotionSystem & operator=(MotionSystem const &) = default;
 
-		InputSystem(InputSystem const &) = default;
-		InputSystem & operator=(InputSystem const &) = default;
-
-		InputSystem(InputSystem &&) = default;
-		InputSystem & operator=(InputSystem &&) = default;
+		MotionSystem(MotionSystem &&) = default;
+		MotionSystem & operator=(MotionSystem &&) = default;
 
 	public: // Public Static Functions
 	public: // Public Member Functions
@@ -32,9 +34,7 @@ namespace app::sys
 	private: // Private Member Functions
 	private: // Private Static Variables
 	private: // Private Member Variables
-		inp::KeyHandler & m_keyHandler;
-		inp::MouseHandler & m_mouseHandler;
 	};
 }
 
-#endif // !_INPUT_SYSTEM_H
+#endif // !_MOTION_SYSTEM_H

@@ -20,7 +20,7 @@ namespace app::sys
 	public: // Public Static Functions
 	public: // Public Member Functions
 		virtual void init() abstract;
-		virtual void update(app::time::nanoseconds const & dt) abstract;
+		virtual void update(app::time::seconds const & dt) abstract;
 	public: // Public Static Variables
 	public: // Public Member Variables
 	protected: // Protected Static Functions
