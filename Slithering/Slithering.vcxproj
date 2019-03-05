@@ -196,6 +196,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClCompile Include="src\components\Motion.cpp" />
     <ClCompile Include="src\components\NeuraNetwork.cpp" />
     <ClCompile Include="src\components\Render.cpp" />
+    <ClCompile Include="src\components\Segment.cpp" />
     <ClCompile Include="src\factories\base\BaseFactory.cpp" />
     <ClCompile Include="src\factories\base\EntityFactory.cpp" />
     <ClCompile Include="src\factories\entities\CameraFactory.cpp" />
@@ -249,6 +250,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClInclude Include="src\components\Motion.h" />
     <ClInclude Include="src\components\NeuraNetwork.h" />
     <ClInclude Include="src\components\Render.h" />
+    <ClInclude Include="src\components\Segment.h" />
     <ClInclude Include="src\factories\base\BaseFactory.h" />
     <ClInclude Include="src\factories\base\EntityFactory.h" />
     <ClInclude Include="src\factories\entities\CameraFactory.h" />

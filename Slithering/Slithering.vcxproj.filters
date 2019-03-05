@@ -203,6 +203,9 @@
     <ClCompile Include="src\systems\MotionSystem.cpp">
       <Filter>Source Files\systems</Filter>
     </ClCompile>
+    <ClCompile Include="src\components\Segment.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -339,6 +342,9 @@
     </ClInclude>
     <ClInclude Include="src\systems\MotionSystem.h">
       <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Segment.h">
+      <Filter>Source Files\components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
