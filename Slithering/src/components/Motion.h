@@ -1,31 +1,20 @@
-﻿#ifndef _COMPONENT_INPUT_H
-#define _COMPONENT_INPUT_H
-
-#include <src/commands/movement/MoveCommand.h>
-#include <src/commands/movement/TurnLeftCommand.h>
-#include <src/commands/movement/TurnRightCommand.h>
+﻿#ifndef _COMP_MOTION_H
+#define _COMP_MOTION_H
 
 namespace app::comp
 {
-	struct Input
+	struct Motion
 	{
 	public: // Public Usings/Typedefs/Enums
-		using Command = std::variant<
-			  com::MoveCommand
-			, com::TurnLeftCommand
-			, com::TurnRightCommand
-		>;
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
-		using KeyMap = std::map<app::inp::KeyCode, Command>;
-		using MouseMap = std::map<app::inp::ButtonCode, Command>;
 	public: // Constructors/Destructor/Assignments
 	public: // Public Static Functions
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
-		KeyMap keyDownCommands, keyUpCommands, keyPressedCommands;
-		MouseMap mouseDownCommands, mouseUpCommands, mousePressedCommands;
+		std::float_t speed;
+		std::optional<std::float_t> direction;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
@@ -37,4 +26,4 @@ namespace app::comp
 	};
 }
 
-#endif // !_COMPONENT_INPUT_H
+#endif // !_COMP_MOTION_H

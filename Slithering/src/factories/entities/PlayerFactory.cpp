@@ -7,6 +7,7 @@
 #include <src/components/Layer.h>
 #include <src/components/Render.h>
 #include <src/components/Input.h>
+#include <src/components/Motion.h>
 
 // Tags
 #include <src/tags/Player.h>
@@ -50,6 +51,10 @@ app::Entity const app::fact::ent::PlayerFactory::create()
 	input.mouseUpCommands = {};
 	input.mousePressedCommands = {};
 	m_registry.assign<decltype(input)>(playerEntity, std::move(input));
+
+	auto motion = comp::Motion();
+	motion.speed = 0.0f;
+	m_registry.assign<decltype(motion)>(playerEntity, std::move(motion));
 
 	auto layer = comp::Layer();
 	layer.zIndex = m_params.zIndex;

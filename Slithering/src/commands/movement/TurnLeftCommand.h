@@ -1,31 +1,30 @@
-﻿#ifndef _COMPONENT_INPUT_H
-#define _COMPONENT_INPUT_H
+﻿#ifndef _TURN_LEFT_COMMAND_H
+#define _TURN_LEFT_COMMAND_H
 
-#include <src/commands/movement/MoveCommand.h>
-#include <src/commands/movement/TurnLeftCommand.h>
-#include <src/commands/movement/TurnRightCommand.h>
+#include "TurnCommand.h"
 
-namespace app::comp
+namespace app::com
 {
-	struct Input
+	class TurnLeftCommand : public TurnCommand
 	{
 	public: // Public Usings/Typedefs/Enums
-		using Command = std::variant<
-			  com::MoveCommand
-			, com::TurnLeftCommand
-			, com::TurnRightCommand
-		>;
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
-		using KeyMap = std::map<app::inp::KeyCode, Command>;
-		using MouseMap = std::map<app::inp::ButtonCode, Command>;
 	public: // Constructors/Destructor/Assignments
+		TurnLeftCommand(app::Entity entity);
+		virtual ~TurnLeftCommand() = default;
+
+		TurnLeftCommand(TurnLeftCommand const &) = default;
+		TurnLeftCommand & operator=(TurnLeftCommand const &) = default;
+
+		TurnLeftCommand(TurnLeftCommand &&) = default;
+		TurnLeftCommand & operator=(TurnLeftCommand &&) = default;
+
 	public: // Public Static Functions
 	public: // Public Member Functions
+		virtual void execute() const final override;
 	public: // Public Static Variables
 	public: // Public Member Variables
-		KeyMap keyDownCommands, keyUpCommands, keyPressedCommands;
-		MouseMap mouseDownCommands, mouseUpCommands, mousePressedCommands;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
@@ -37,4 +36,4 @@ namespace app::comp
 	};
 }
 
-#endif // !_COMPONENT_INPUT_H
+#endif // !_TURN_LEFT_COMMAND_H
