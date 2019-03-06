@@ -5,7 +5,7 @@
 
 namespace app::par::fact::ent
 {
-	struct ImageFactoryParameters : public EntityFactoryParameters
+	struct ImageFactoryParameters
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
@@ -15,6 +15,7 @@ namespace app::par::fact::ent
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
+		EntityFactoryParameters entityFactoryParams;
 		math::Vector2f position, size, origin;
 		std::float_t orientation;
 		std::uint16_t zIndex;

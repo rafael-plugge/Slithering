@@ -10,8 +10,8 @@ namespace app::fact
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
-	private: // Private Usings/Typedefs/Enums
 		using Parameters = par::fact::EntityFactoryParameters;
+	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
 		EntityFactory(Parameters const & params);
 		~EntityFactory() = default;

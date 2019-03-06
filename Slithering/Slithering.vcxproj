@@ -202,6 +202,8 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClCompile Include="src\factories\entities\CameraFactory.cpp" />
     <ClCompile Include="src\factories\entities\ImageFactory.cpp" />
     <ClCompile Include="src\factories\entities\PlayerFactory.cpp" />
+    <ClCompile Include="src\factories\entities\SegmentFactory.cpp" />
+    <ClCompile Include="src\factories\entities\SnakeFactory.cpp" />
     <ClCompile Include="src\factories\GameFactory.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\input\Actions.cpp" />
@@ -216,6 +218,8 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClCompile Include="src\parameters\factories\entities\CameraFactoryParameters.cpp" />
     <ClCompile Include="src\parameters\factories\entities\ImageFactoryParameters.cpp" />
     <ClCompile Include="src\parameters\factories\entities\PlayerFactoryParameters.cpp" />
+    <ClCompile Include="src\parameters\factories\entities\SegmentFactoryParameters.cpp" />
+    <ClCompile Include="src\parameters\factories\entities\SnakeFactoryParameters.cpp" />
     <ClCompile Include="src\singletons\RegistrySingleton.cpp" />
     <ClCompile Include="src\systems\BaseSystem.cpp" />
     <ClCompile Include="src\systems\DebugSystem.cpp" />
@@ -256,6 +260,8 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClInclude Include="src\factories\entities\CameraFactory.h" />
     <ClInclude Include="src\factories\entities\ImageFactory.h" />
     <ClInclude Include="src\factories\entities\PlayerFactory.h" />
+    <ClInclude Include="src\factories\entities\SegmentFactory.h" />
+    <ClInclude Include="src\factories\entities\SnakeFactory.h" />
     <ClInclude Include="src\factories\GameFactory.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\input\Actions.h" />
@@ -269,6 +275,8 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClInclude Include="src\parameters\factories\entities\CameraFactoryParameters.h" />
     <ClInclude Include="src\parameters\factories\entities\ImageFactoryParameters.h" />
     <ClInclude Include="src\parameters\factories\entities\PlayerFactoryParameters.h" />
+    <ClInclude Include="src\parameters\factories\entities\SegmentFactoryParameters.h" />
+    <ClInclude Include="src\parameters\factories\entities\SnakeFactoryParameters.h" />
     <ClInclude Include="src\singletons\RegistrySingleton.h" />
     <ClInclude Include="src\systems\BaseSystem.h" />
     <ClInclude Include="src\systems\DebugSystem.h" />

@@ -1,43 +1,34 @@
-﻿#ifndef _IMAGE_FACTORY_H
-#define _IMAGE_FACTORY_H
+﻿#ifndef _SNAKE_FACTORY_PARAMETERS_H
+#define _SNAKE_FACTORY_PARAMETERS_H
 
-#include <src/factories/base/EntityFactory.h>
 #include <src/parameters/factories/entities/ImageFactoryParameters.h>
 
-namespace app::fact::ent
+namespace app::par::fact::ent
 {
-	class ImageFactory : public EntityFactory
+	struct SnakeFactoryParameters
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
-		using Parameters = par::fact::ent::ImageFactoryParameters;
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		ImageFactory(Parameters const & params);
-		virtual ~ImageFactory() = default;
-
-		ImageFactory(ImageFactory const &) = default;
-		ImageFactory & operator=(ImageFactory const &) = default;
-
-		ImageFactory(ImageFactory &&) = default;
-		ImageFactory & operator=(ImageFactory &&) = default;
-
 	public: // Public Static Functions
 	public: // Public Member Functions
-		virtual app::Entity const create() override;
 	public: // Public Static Variables
 	public: // Public Member Variables
+		par::fact::ent::ImageFactoryParameters imageFactoryParams;
+		math::Vector2f offset;
+		std::variant<std::shared_ptr<sf::Texture>, sf::Color>
+			segmentFill, tailFill;
+		std::size_t amount;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
 	protected: // Protected Member Variables
-		EntityFactory::Parameters const & m_entityParams;
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables
 	private: // Private Member Variables
-		Parameters const & m_params;
 	};
 }
 
-#endif // !_IMAGE_FACTORY_H
+#endif // !_SNAKE_FACTORY_PARAMETERS_H

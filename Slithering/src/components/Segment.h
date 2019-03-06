@@ -10,6 +10,7 @@ namespace app::comp
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
 	public: // Public Static Functions
+		static void apply(app::Registry & registry, app::Entity const entity, std::optional<app::Entity> parent = std::nullopt, std::optional<app::Entity> child = std::nullopt);
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables

@@ -1,37 +1,36 @@
-﻿#ifndef _IMAGE_FACTORY_H
-#define _IMAGE_FACTORY_H
+﻿#ifndef _SEGMENT_FACTORY_H
+#define _SEGMENT_FACTORY_H
 
-#include <src/factories/base/EntityFactory.h>
-#include <src/parameters/factories/entities/ImageFactoryParameters.h>
+#include <src/factories/entities/ImageFactory.h>
+#include <src/parameters/factories/entities/SegmentFactoryParameters.h>
 
 namespace app::fact::ent
 {
-	class ImageFactory : public EntityFactory
+	class SegmentFactory : public ImageFactory
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
-		using Parameters = par::fact::ent::ImageFactoryParameters;
 	private: // Private Usings/Typedefs/Enums
+		using Parameters = par::fact::ent::SegmentFactoryParameters;
 	public: // Constructors/Destructor/Assignments
-		ImageFactory(Parameters const & params);
-		virtual ~ImageFactory() = default;
+		SegmentFactory(Parameters const & params);
+		virtual ~SegmentFactory() = default;
 
-		ImageFactory(ImageFactory const &) = default;
-		ImageFactory & operator=(ImageFactory const &) = default;
+		SegmentFactory(SegmentFactory const &) = default;
+		SegmentFactory & operator=(SegmentFactory const &) = default;
 
-		ImageFactory(ImageFactory &&) = default;
-		ImageFactory & operator=(ImageFactory &&) = default;
+		SegmentFactory(SegmentFactory &&) = default;
+		SegmentFactory & operator=(SegmentFactory &&) = default;
 
 	public: // Public Static Functions
 	public: // Public Member Functions
-		virtual app::Entity const create() override;
+		virtual app::Entity const create() final override;
 	public: // Public Static Variables
 	public: // Public Member Variables
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
 	protected: // Protected Member Variables
-		EntityFactory::Parameters const & m_entityParams;
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables
@@ -40,4 +39,4 @@ namespace app::fact::ent
 	};
 }
 
-#endif // !_IMAGE_FACTORY_H
+#endif // !_SEGMENT_FACTORY_H

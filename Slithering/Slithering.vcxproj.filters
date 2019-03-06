@@ -206,6 +206,18 @@
     <ClCompile Include="src\components\Segment.cpp">
       <Filter>Source Files\components</Filter>
     </ClCompile>
+    <ClCompile Include="src\factories\entities\SnakeFactory.cpp">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parameters\factories\entities\SnakeFactoryParameters.cpp">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factories\entities\SegmentFactory.cpp">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parameters\factories\entities\SegmentFactoryParameters.cpp">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -345,6 +357,18 @@
     </ClInclude>
     <ClInclude Include="src\components\Segment.h">
       <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factories\entities\SnakeFactory.h">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parameters\factories\entities\SnakeFactoryParameters.h">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factories\entities\SegmentFactory.h">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parameters\factories\entities\SegmentFactoryParameters.h">
+      <Filter>Source Files\parameters\factories\entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

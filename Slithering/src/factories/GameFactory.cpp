@@ -5,6 +5,7 @@
 #include <src/factories/entities/ImageFactory.h>
 #include <src/factories/entities/PlayerFactory.h>
 #include <src/factories/entities/CameraFactory.h>
+#include <src/factories/entities/SnakeFactory.h>
 
 std::vector<app::Entity> app::fact::GameFactory::create()
 {
@@ -12,6 +13,7 @@ std::vector<app::Entity> app::fact::GameFactory::create()
 
 	GameFactory::insertInto(gameEntities, this->createCameras());
 	GameFactory::insertInto(gameEntities, this->createImages());
+	GameFactory::insertInto(gameEntities, this->createSnake());
 	GameFactory::insertInto(gameEntities, this->createPlayer());
 
 	return std::move(gameEntities);
@@ -62,6 +64,30 @@ std::vector<app::Entity> app::fact::GameFactory::createPlayer()
 		params.position = { 500.0f, 500.0f };
 		params.zIndex = 1000u;
 		entities.push_back(playerFactory.create());
+	}
+
+	return std::move(entities);
+}
+
+std::vector<app::Entity> app::fact::GameFactory::createSnake()
+{
+	auto entities = std::vector<app::Entity>();
+	auto params = par::fact::ent::SnakeFactoryParameters();
+	auto & imageParams = params.imageFactoryParams;
+	auto & entityParams = imageParams.entityFactoryParams;
+	auto snakeFactory = fact::ent::SnakeFactory(params);
+
+	{
+		entityParams.entity = EntityFactory(entityParams).create();
+		imageParams.position = { 700.0f, 200.0f };
+		imageParams.size = { 100.0f, 100.0f };
+		imageParams.origin = imageParams.size / 2.0f;
+		imageParams.fill = sf::Color::Blue;
+		imageParams.offset = math::Vector2f{ 55.0f, 55.0f };
+		params.amount = 5u;
+		params.segmentFill = sf::Color::Green;
+		params.tailFill = sf::Color::Yellow;
+		entities.push_back(snakeFactory.create());
 	}
 
 	return std::move(entities);

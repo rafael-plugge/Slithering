@@ -7,6 +7,12 @@ namespace app::comp
 	{
 	public: // Constructors/Destructor/Assignments
 	public: // Public Static Functions
+		static void apply(app::Registry & registry, app::Entity const entity
+			, std::variant<std::shared_ptr<sf::Texture>, sf::Color> fill = sf::Color::White
+			, std::optional<sf::IntRect> source = std::nullopt
+			, math::Vector2f border = math::Vector2f()
+			, math::Vector2f offset = math::Vector2f()
+		);
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
