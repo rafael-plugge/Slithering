@@ -11,10 +11,10 @@ namespace app::fact::ent
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
-	private: // Private Usings/Typedefs/Enums
 		using Parameters = app::par::fact::ent::SnakeFactoryParameters;
+	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		SnakeFactory(Parameters const & params);
+		SnakeFactory(Parameters & params);
 		virtual ~SnakeFactory() = default;
 
 		SnakeFactory(SnakeFactory const &) = default;
@@ -25,7 +25,7 @@ namespace app::fact::ent
 
 	public: // Public Static Functions
 	public: // Public Member Functions
-		virtual app::Entity const create() final override;
+		virtual app::Entity const create() override;
 	public: // Public Static Variables
 	public: // Public Member Variables
 	protected: // Protected Static Functions

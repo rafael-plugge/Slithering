@@ -8,7 +8,7 @@
 #include <src/components/Layer.h>
 #include <src/components/Render.h>
 
-app::fact::ent::SegmentFactory::SegmentFactory(Parameters const & params)
+app::fact::ent::SegmentFactory::SegmentFactory(Parameters & params)
 	: ImageFactory(params)
 	, m_params(params)
 {

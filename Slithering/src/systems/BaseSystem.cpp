@@ -2,7 +2,4 @@
 #include <src/systems/BaseSystem.h>
 #include <src/singletons/RegistrySingleton.h>
 
-app::sys::BaseSystem::BaseSystem()
-	: m_registry(app::sin::Registry::get())
-{
-}
+app::Registry & app::sys::BaseSystem::s_registry = app::sin::Registry::get();

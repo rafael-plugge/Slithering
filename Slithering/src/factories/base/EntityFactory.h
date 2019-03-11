@@ -13,7 +13,7 @@ namespace app::fact
 		using Parameters = par::fact::EntityFactoryParameters;
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		EntityFactory(Parameters const & params);
+		EntityFactory(Parameters & params);
 		~EntityFactory() = default;
 
 		EntityFactory(EntityFactory const &) = default;
@@ -36,7 +36,7 @@ namespace app::fact
 	private: // Private Member Functions
 	private: // Private Static Variables
 	private: // Private Member Variables
-		Parameters const & m_params;
+		Parameters & m_params;
 	};
 }
 

@@ -13,7 +13,7 @@ namespace app::fact::ent
 	private: // Private Usings/Typedefs/Enums
 		using Parameters = par::fact::ent::SegmentFactoryParameters;
 	public: // Constructors/Destructor/Assignments
-		SegmentFactory(Parameters const & params);
+		SegmentFactory(Parameters & params);
 		virtual ~SegmentFactory() = default;
 
 		SegmentFactory(SegmentFactory const &) = default;

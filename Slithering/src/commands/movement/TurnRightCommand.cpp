@@ -11,7 +11,7 @@ app::com::TurnRightCommand::TurnRightCommand(app::Entity entity)
 
 void app::com::TurnRightCommand::execute() const
 {
-	auto motionView = m_registry.view<comp::Motion>();
+	auto motionView = s_registry.view<comp::Motion>();
 	assert(motionView.contains(m_entity));
 
 	auto & motion = motionView.get(m_entity);
@@ -23,7 +23,7 @@ void app::com::TurnRightCommand::execute() const
 	}
 	else
 	{
-		auto view = m_registry.view<comp::Motion, comp::Location>();
+		auto view = s_registry.view<comp::Motion, comp::Location>();
 		assert(view.contains(m_entity));
 		auto & location = view.get<comp::Location>(m_entity);
 		location.orientation += TurnCommand::TURN_RATE;

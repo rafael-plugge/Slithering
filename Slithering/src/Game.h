@@ -11,6 +11,7 @@
 #include <src/systems/DebugSystem.h>
 #include <src/systems/InputSystem.h>
 #include <src/systems/MotionSystem.h>
+#include <src/systems/CameraTrackingSystem.h>
 
 // render systems
 #include <src/systems/RenderSystem.h>
@@ -26,8 +27,9 @@ namespace app
 			  sys::DebugSystem
 			, sys::InputSystem
 			, sys::MotionSystem
+			, sys::CameraTrackingSystem
 		>;
-		using UpdateSystems = std::array<UpdateSystem, 3>;
+		using UpdateSystems = std::array<UpdateSystem, 4>;
 		using RenderSystem = std::variant<
 			  sys::RenderSystem
 		>;

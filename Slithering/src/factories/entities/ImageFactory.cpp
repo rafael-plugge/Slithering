@@ -7,7 +7,7 @@
 #include <src/components/Layer.h>
 #include <src/components/Render.h>
 
-app::fact::ent::ImageFactory::ImageFactory(Parameters const & params)
+app::fact::ent::ImageFactory::ImageFactory(Parameters & params)
 	: EntityFactory(params.entityFactoryParams)
 	, m_params(params)
 	, m_entityParams(params.entityFactoryParams)

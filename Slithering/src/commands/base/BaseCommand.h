@@ -9,8 +9,8 @@ namespace app::com
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		BaseCommand();
-		virtual ~BaseCommand() = default;
+		BaseCommand() {};
+		~BaseCommand() = default;
 
 		BaseCommand(BaseCommand const &) = default;
 		BaseCommand & operator=(BaseCommand const &) = default;
@@ -26,8 +26,8 @@ namespace app::com
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
+		static app::Registry & s_registry;
 	protected: // Protected Member Variables
-		app::Registry & m_registry;
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables

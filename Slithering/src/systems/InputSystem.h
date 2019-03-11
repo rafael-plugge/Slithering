@@ -9,8 +9,7 @@ namespace app::sys
 	{
 	public: // Constructors/Destructor/Assignments
 		InputSystem(inp::KeyHandler & keyHandler, inp::MouseHandler & mouseHandler);
-
-		~InputSystem() = default;
+		virtual ~InputSystem() = default;
 
 		InputSystem(InputSystem const &) = default;
 		InputSystem & operator=(InputSystem const &) = default;
@@ -35,6 +34,12 @@ namespace app::sys
 		inp::KeyHandler & m_keyHandler;
 		inp::MouseHandler & m_mouseHandler;
 	};
+
+	static_assert(std::is_destructible<InputSystem>::value, "InputSystem must be destructible");
+	static_assert(std::is_copy_constructible<InputSystem>::value, "InputSystem must be copy constructible");
+	static_assert(std::is_copy_assignable<InputSystem>::value == false, "InputSystem must not be copy assignable");
+	static_assert(std::is_move_constructible<InputSystem>::value, "InputSystem must be move constructible");
+	static_assert(std::is_move_assignable<InputSystem>::value == false, "InputSystem must not be move assignable");
 }
 
 #endif // !_INPUT_SYSTEM_H

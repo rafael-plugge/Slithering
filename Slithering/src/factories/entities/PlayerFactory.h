@@ -1,19 +1,19 @@
 ﻿#ifndef _FACTORIES_PLAYER_H
 #define _FACTORIES_PLAYER_H
 
-#include <src/factories/base/EntityFactory.h>
+#include <src/factories/entities/SnakeFactory.h>
 #include <src/parameters/factories/entities/PlayerFactoryParameters.h>
 
 namespace app::fact::ent
 {
-	class PlayerFactory : public EntityFactory
+	class PlayerFactory : public SnakeFactory
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
-	private: // Private Usings/Typedefs/Enums
 		using Parameters = app::par::fact::ent::PlayerFactoryParameters;
+	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		PlayerFactory(Parameters const & params);
+		PlayerFactory(Parameters & params);
 		~PlayerFactory() = default;
 
 		PlayerFactory(PlayerFactory const &) = default;

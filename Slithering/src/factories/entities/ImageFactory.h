@@ -13,7 +13,7 @@ namespace app::fact::ent
 		using Parameters = par::fact::ent::ImageFactoryParameters;
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		ImageFactory(Parameters const & params);
+		ImageFactory(Parameters & params);
 		virtual ~ImageFactory() = default;
 
 		ImageFactory(ImageFactory const &) = default;

@@ -218,6 +218,15 @@
     <ClCompile Include="src\parameters\factories\entities\SegmentFactoryParameters.cpp">
       <Filter>Source Files\parameters\factories\entities</Filter>
     </ClCompile>
+    <ClCompile Include="src\systems\CameraTrackingSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\Commands.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\base\DefaultCommand.cpp">
+      <Filter>Source Files\commands\base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -369,6 +378,15 @@
     </ClInclude>
     <ClInclude Include="src\parameters\factories\entities\SegmentFactoryParameters.h">
       <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\CameraTrackingSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\Commands.h">
+      <Filter>Source Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\commands\base\DefaultCommand.h">
+      <Filter>Source Files\commands\base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

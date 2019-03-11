@@ -3,7 +3,7 @@
 #include <src/factories/entities/SegmentFactory.h>
 #include <src/components/Segment.h>
 
-app::fact::ent::SnakeFactory::SnakeFactory(SnakeFactory::Parameters const & params)
+app::fact::ent::SnakeFactory::SnakeFactory(SnakeFactory::Parameters & params)
 	: ImageFactory(params.imageFactoryParams)
 	, m_params(params)
 	, m_imageParams(params.imageFactoryParams)

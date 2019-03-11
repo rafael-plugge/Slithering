@@ -1,11 +1,12 @@
 ﻿#ifndef _PLAYER_FACTORY_PARAMETERS_H
 #define _PLAYER_FACTORY_PARAMETERS_H
 
-#include <src/parameters/factories/base/EntityFactoryParameters.h>
+#include <src/parameters/factories/entities/SnakeFactoryParameters.h>
+#include <src/input/Commands.h>
 
 namespace app::par::fact::ent
 {
-	struct PlayerFactoryParameters : public EntityFactoryParameters
+	struct PlayerFactoryParameters
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
@@ -15,8 +16,9 @@ namespace app::par::fact::ent
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
-		math::Vector2f position;
-		std::uint16_t zIndex;
+		std::vector<inp::KeyCommand> keyUps, keyDowns, keyPresses;
+		std::vector<inp::MouseCommand> mouseUps, mouseDowns, mousePresses;
+		SnakeFactoryParameters snakeFactoryParams;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables

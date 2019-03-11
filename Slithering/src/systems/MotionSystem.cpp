@@ -11,7 +11,7 @@ void app::sys::MotionSystem::init()
 
 void app::sys::MotionSystem::update(app::time::seconds const & dt)
 {
-	m_registry.view<comp::Motion, comp::Location>()
+	s_registry.view<comp::Motion, comp::Location>()
 		.each([&dt](app::Entity const entity, comp::Motion & motion, comp::Location & location)
 	{
 		auto const & velocity = math::toVector(motion.direction.value_or(location.orientation)) * motion.speed;
