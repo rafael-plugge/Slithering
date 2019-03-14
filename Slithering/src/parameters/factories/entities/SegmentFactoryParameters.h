@@ -1,29 +1,26 @@
-﻿#ifndef _UTIL_REGISTRY_H
-#define _UTIL_REGISTRY_H
+﻿#ifndef _SEGMENT_FACTORY_PARAMETERS_H
+#define _SEGMENT_FACTORY_PARAMETERS_H
 
-namespace app::sin
+#include <src/parameters/factories/entities/ImageFactoryParameters.h>
+
+namespace app::par::fact::ent
 {
-	class Registry
+	struct SegmentFactoryParameters
 	{
+	public: // Public Usings/Typedefs/Enums
+	protected: // Protected Usings/Typedefs/Enums
+	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		Registry() = delete;
-		virtual ~Registry() = delete;
-
-		Registry(Registry const &) = delete;
-		Registry(Registry &&) = delete;
-
-		Registry & operator=(Registry const &) = delete;
-		Registry & operator=(Registry &&) = delete;
-
 	public: // Public Static Functions
-		static app::Registry & get();
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
+		par::fact::ent::ImageFactoryParameters imageFactoryParams;
+		std::optional<app::Entity> head, tail;
+		math::Vector2f offset;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
-		static std::shared_ptr<app::Registry> s_uptrRegistry;
 	protected: // Protected Member Variables
 	private: // Private Static Functions
 	private: // Private Member Functions
@@ -32,4 +29,4 @@ namespace app::sin
 	};
 }
 
-#endif // !_UTIL_REGISTRY_H
+#endif // !_SEGMENT_FACTORY_PARAMETERS_H

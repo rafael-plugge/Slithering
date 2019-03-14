@@ -1,33 +1,44 @@
-﻿#ifndef _PLAYER_FACTORY_PARAMETERS_H
-#define _PLAYER_FACTORY_PARAMETERS_H
+﻿#ifndef _SNAKE_FACTORY_H
+#define _SNAKE_FACTORY_H
 
+#include "../base/EntityFactory.h"
+#include <src/factories/entities/ImageFactory.h>
 #include <src/parameters/factories/entities/SnakeFactoryParameters.h>
-#include <src/input/Commands.h>
 
-namespace app::par::fact::ent
+namespace app::fact::ent
 {
-	struct PlayerFactoryParameters
+	class SnakeFactory : public ImageFactory
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
+		using Parameters = app::par::fact::ent::SnakeFactoryParameters;
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
+		SnakeFactory(Parameters & params);
+		virtual ~SnakeFactory() = default;
+
+		SnakeFactory(SnakeFactory const &) = default;
+		SnakeFactory & operator=(SnakeFactory const &) = default;
+
+		SnakeFactory(SnakeFactory &&) = default;
+		SnakeFactory & operator=(SnakeFactory &&) = default;
+
 	public: // Public Static Functions
 	public: // Public Member Functions
+		virtual app::Entity const create() override;
 	public: // Public Static Variables
 	public: // Public Member Variables
-		std::vector<inp::KeyCommand> keyUps, keyDowns, keyPresses;
-		std::vector<inp::MouseCommand> mouseUps, mouseDowns, mousePresses;
-		SnakeFactoryParameters snakeFactoryParams;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
 	protected: // Protected Member Variables
+		ImageFactory::Parameters const & m_imageParams;
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables
 	private: // Private Member Variables
+		SnakeFactory::Parameters const & m_params;
 	};
 }
 
-#endif // !_PLAYER_FACTORY_PARAMETERS_H
+#endif // !_SNAKE_FACTORY_H

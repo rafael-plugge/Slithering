@@ -13,8 +13,10 @@ app::Game::Game()
 	, m_mouseHandler()
 	, m_updateSystems({
 		  UpdateSystem(std::in_place_type<sys::DebugSystem>)
+		, UpdateSystem(std::in_place_type<sys::SegmentSystem>)
 		, UpdateSystem(std::in_place_type<sys::InputSystem>, m_keyHandler, m_mouseHandler)
 		, UpdateSystem(std::in_place_type<sys::MotionSystem>)
+		, UpdateSystem(std::in_place_type<sys::CameraTrackingSystem>)
 	})
 	, m_renderSystems{
 		RenderSystem(std::in_place_type<sys::RenderSystem>, m_gameLoop)

@@ -1,7 +1,9 @@
 ﻿#include "stdafx.h"
 #include <src/singletons/RegistrySingleton.h>
 
-std::unique_ptr<app::Registry> app::sin::Registry::s_uptrRegistry = nullptr;
+std::shared_ptr<app::Registry> app::sin::Registry::s_uptrRegistry = app::sin::Registry::s_uptrRegistry
+	? app::sin::Registry::s_uptrRegistry
+	: std::make_shared<app::Registry>();
 
 app::Registry & app::sin::Registry::get()
 {

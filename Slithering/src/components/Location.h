@@ -9,6 +9,7 @@ namespace app::comp
 	{
 	public: // Constructors/Destructor/Assignments
 	public: // Public Static Functions
+		static void apply(app::Registry & registry, app::Entity const entity, math::Vector2f position = math::Vector2f(), std::float_t orientation = 0.0f);
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables

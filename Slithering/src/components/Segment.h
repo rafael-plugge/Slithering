@@ -1,21 +1,24 @@
-﻿#ifndef _COMP_MOTION_H
-#define _COMP_MOTION_H
+﻿#ifndef _COMP_SEGMENT_H
+#define _COMP_SEGMENT_H
 
 namespace app::comp
 {
-	struct Motion
+	struct Segment
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
 	public: // Public Static Functions
-		static void apply(app::Registry & registry, app::Entity const entity, std::float_t speed = 0.0f, std::optional<std::float_t> direction = std::nullopt);
+		static void apply(app::Registry & registry, app::Entity const entity
+			, std::optional<app::Entity> parent = std::nullopt
+			, std::optional<app::Entity> child = std::nullopt
+			, math::Vector2f offset = math::Vector2f());
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
-		std::float_t speed;
-		std::optional<std::float_t> direction;
+		std::optional<app::Entity> parent, child;
+		math::Vector2f offset;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
@@ -27,4 +30,4 @@ namespace app::comp
 	};
 }
 
-#endif // !_COMP_MOTION_H
+#endif // !_COMP_SEGMENT_H

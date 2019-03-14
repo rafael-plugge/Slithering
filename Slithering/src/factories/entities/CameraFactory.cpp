@@ -6,8 +6,8 @@
 #include <src/components/Dimension.h>
 #include <src/components/Camera.h>
 
-app::fact::ent::CameraFactory::CameraFactory(Parameters const & params)
-	: EntityFactory(params)
+app::fact::ent::CameraFactory::CameraFactory(Parameters & params)
+	: EntityFactory(params.entityFactoryParams)
 	, m_params(params)
 {
 }
