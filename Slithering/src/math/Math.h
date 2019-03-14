@@ -9,12 +9,6 @@ namespace app::math
 	template<typename T> constexpr math::Vector2<T> rotate(math::Vector2<T> const & v, T angle) { return rotateRad(v, math::toRadians(angle)); }
 	template<typename T> constexpr math::Vector2<T> rotateRad(math::Vector2<T> const & v, T rad)
 	{
-		const auto cosine = static_cast<T>(std::cos(rad));
-		const auto sine = static_cast<T>(std::sin(rad));
-		return math::Vector2<T> {
-			v.x * cosine - v.y * sine,
-			v.x * sine + v.y * cosine
-		};
 		return rotateAroundRad(v, rad, math::Vector2<T>{});
 	}
 	template<typename T> constexpr math::Vector2<T> rotateAround(math::Vector2<T> const & v, T angle, math::Vector2<T> const & point) { return rotateAroundRad(v, math::toRadians(angle), point); }
@@ -24,7 +18,7 @@ namespace app::math
 		const auto sine = static_cast<T>(std::sin(rad));
 		return math::Vector2<T> {
 			((v.x - point.x) * cosine) - ((point.y - v.y) * sine) + point.x,
-			((point.y - v.y) * cosine) - ((v.x - point.x) * sine) + point.y
+			((point.y - v.y) * cosine) + ((v.x - point.x) * sine) + point.y
 		};
 	}
 	template<typename T> constexpr math::Vector2<T> toVectorRad(T const & rad) { return math::Vector2<T>{ std::cos(rad), std::sin(rad) }; }

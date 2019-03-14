@@ -32,6 +32,7 @@ namespace app::sys
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables
+		constexpr static bool DEBUG_MODE = BaseSystem::DEBUG_MODE && true;
 	private: // Private Member Variables
 	};
 

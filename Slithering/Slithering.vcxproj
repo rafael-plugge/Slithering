@@ -185,11 +185,13 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
   <ItemGroup>
     <ClCompile Include="src\commands\base\BaseCommand.cpp" />
     <ClCompile Include="src\commands\base\DefaultCommand.cpp" />
+    <ClCompile Include="src\commands\movement\ForwardCommand.cpp" />
     <ClCompile Include="src\commands\movement\MoveCommand.cpp" />
     <ClCompile Include="src\commands\movement\TurnCommand.cpp" />
     <ClCompile Include="src\commands\movement\TurnLeftCommand.cpp" />
     <ClCompile Include="src\commands\movement\TurnRightCommand.cpp" />
     <ClCompile Include="src\components\Camera.cpp" />
+    <ClCompile Include="src\components\Commandable.cpp" />
     <ClCompile Include="src\components\Dimension.cpp" />
     <ClCompile Include="src\components\Input.cpp" />
     <ClCompile Include="src\components\Layer.cpp" />
@@ -225,6 +227,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClCompile Include="src\singletons\RegistrySingleton.cpp" />
     <ClCompile Include="src\systems\BaseSystem.cpp" />
     <ClCompile Include="src\systems\CameraTrackingSystem.cpp" />
+    <ClCompile Include="src\systems\CommandSystem.cpp" />
     <ClCompile Include="src\systems\DebugSystem.cpp" />
     <ClCompile Include="src\systems\InputSystem.cpp" />
     <ClCompile Include="src\systems\MotionSystem.cpp" />
@@ -247,11 +250,13 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
   <ItemGroup>
     <ClInclude Include="src\commands\base\BaseCommand.h" />
     <ClInclude Include="src\commands\base\DefaultCommand.h" />
+    <ClInclude Include="src\commands\movement\ForwardCommand.h" />
     <ClInclude Include="src\commands\movement\MoveCommand.h" />
     <ClInclude Include="src\commands\movement\TurnCommand.h" />
     <ClInclude Include="src\commands\movement\TurnLeftCommand.h" />
     <ClInclude Include="src\commands\movement\TurnRightCommand.h" />
     <ClInclude Include="src\components\Camera.h" />
+    <ClInclude Include="src\components\Commandable.h" />
     <ClInclude Include="src\components\Dimension.h" />
     <ClInclude Include="src\components\Input.h" />
     <ClInclude Include="src\components\Layer.h" />
@@ -286,6 +291,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClInclude Include="src\singletons\RegistrySingleton.h" />
     <ClInclude Include="src\systems\BaseSystem.h" />
     <ClInclude Include="src\systems\CameraTrackingSystem.h" />
+    <ClInclude Include="src\systems\CommandSystem.h" />
     <ClInclude Include="src\systems\DebugSystem.h" />
     <ClInclude Include="src\systems\InputSystem.h" />
     <ClInclude Include="src\systems\MotionSystem.h" />

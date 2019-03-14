@@ -3,6 +3,7 @@
 #include <src/factories/entities/SegmentFactory.h>
 // components
 #include <src/components/Motion.h>
+#include <src/components/Commandable.h>
 #include <src/components/Segment.h>
 
 app::fact::ent::SnakeFactory::SnakeFactory(SnakeFactory::Parameters & params)
@@ -22,6 +23,7 @@ app::Entity const app::fact::ent::SnakeFactory::create()
 		segmentImageParams = m_imageParams;
 		segmentImageParams.fill = m_params.segmentFill;
 	}
+	segmentFactoryParams.speed = m_params.speed;
 	auto segmentFactory = fact::ent::SegmentFactory(segmentFactoryParams);
 
 	app::Entity const snakeHeadEntity = ImageFactory::create();
@@ -33,9 +35,9 @@ app::Entity const app::fact::ent::SnakeFactory::create()
 		auto firstBody = std::optional<app::Entity>();
 		for (auto i = 0u; i < AMOUNT; ++i)
 		{
+			segmentFactoryParams.head = segmentEntityParams.entity;
 			segmentEntityParams.entity = segmentFactoryParams.tail;
 			segmentImageParams.position += m_params.offset;
-			segmentFactoryParams.head = m_entityParams.entity;
 			segmentFactoryParams.tail = m_registry.create();
 			segmentFactoryParams.offset += m_params.offset;
 			auto entity = segmentFactory.create();
@@ -43,16 +45,21 @@ app::Entity const app::fact::ent::SnakeFactory::create()
 		}
 		// Head segment
 		{
-			comp::Motion::apply(m_registry, snakeHeadEntity);
+			{
+				auto commandable = comp::Commandable();
+				commandable.loop.push_back(inp::Command(std::in_place_type<com::ForwardCommand>, snakeHeadEntity));
+				m_registry.assign<decltype(commandable)>(snakeHeadEntity, std::move(commandable));
+			}
+			comp::Motion::apply(m_registry, snakeHeadEntity, m_params.speed);
 			comp::Segment::apply(m_registry, snakeHeadEntity, std::nullopt, firstBody);
 		}
 
 		// Tail segment
 		{
+			segmentFactoryParams.head = segmentEntityParams.entity;
 			segmentEntityParams.entity = segmentFactoryParams.tail;
 			segmentImageParams.position += m_params.offset;
 			segmentImageParams.fill = m_params.tailFill;
-			segmentFactoryParams.head = m_entityParams.entity;
 			segmentFactoryParams.tail.reset();
 			segmentFactoryParams.offset += m_params.offset;
 			segmentFactory.create();
