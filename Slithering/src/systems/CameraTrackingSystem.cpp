@@ -9,8 +9,8 @@ void app::sys::CameraTrackingSystem::init()
 
 void app::sys::CameraTrackingSystem::update(app::time::seconds const & dt)
 {
-	auto const locationView = s_registry.view<comp::Location>();
-	s_registry.view<comp::Location, comp::Camera>()
+	auto const locationView = m_registry.view<comp::Location>();
+	m_registry.view<comp::Location, comp::Camera>()
 		.each([&, this](app::Entity const & entity, comp::Location & location, comp::Camera & camera) -> void
 	{
 		if (!camera.target.has_value() || !locationView.contains(camera.target.value())) { return; }

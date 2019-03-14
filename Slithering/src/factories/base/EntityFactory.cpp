@@ -9,6 +9,17 @@ app::fact::EntityFactory::EntityFactory(Parameters & params)
 {
 }
 
+app::fact::EntityFactory::EntityFactory(EntityFactory const & other)
+	: m_registry(app::sin::Registry::get())
+	, m_params(other.m_params)
+{
+}
+
+app::fact::EntityFactory & app::fact::EntityFactory::operator=(EntityFactory const & other)
+{
+	return *this;
+}
+
 app::Entity const app::fact::EntityFactory::create()
 {
 	return m_params.entity.has_value()

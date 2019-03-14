@@ -17,7 +17,7 @@ void app::sys::InputSystem::init()
 void app::sys::InputSystem::update(app::time::seconds const & dt)
 {
 	constexpr auto visitor = [](auto const & com) constexpr -> void { com.execute(); };
-	s_registry.view<comp::Input>()
+	m_registry.view<comp::Input>()
 		.each([&, this](app::Entity const entity, comp::Input & input) -> void
 	{
 		for (auto const & keyCommand : input.keyUpCommands)

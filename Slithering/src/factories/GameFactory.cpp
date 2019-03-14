@@ -80,7 +80,7 @@ std::vector<app::Entity> app::fact::GameFactory::createPlayer()
 			snakeParams.amount = 5u;
 			snakeParams.segmentFill = sf::Color::Green;
 			snakeParams.tailFill = sf::Color::Yellow;
-			snakeParams.offset = { 55.0f, 55.0f };
+			snakeParams.offset = { -55.0f, 0.0f };
 		}
 		{
 			params.keyDowns = util::make_vector({

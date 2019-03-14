@@ -16,8 +16,8 @@ namespace app::fact
 		EntityFactory(Parameters & params);
 		~EntityFactory() = default;
 
-		EntityFactory(EntityFactory const &) = default;
-		EntityFactory & operator=(EntityFactory const &) = default;
+		EntityFactory(EntityFactory const & other);
+		EntityFactory & operator=(EntityFactory const & other);
 
 		EntityFactory(EntityFactory &&) = default;
 		EntityFactory & operator=(EntityFactory &&) = default;

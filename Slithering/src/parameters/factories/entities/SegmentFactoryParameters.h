@@ -5,7 +5,7 @@
 
 namespace app::par::fact::ent
 {
-	struct SegmentFactoryParameters : public par::fact::ent::ImageFactoryParameters
+	struct SegmentFactoryParameters
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
@@ -15,7 +15,9 @@ namespace app::par::fact::ent
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
+		par::fact::ent::ImageFactoryParameters imageFactoryParams;
 		std::optional<app::Entity> head, tail;
+		math::Vector2f offset;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables

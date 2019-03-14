@@ -23,7 +23,7 @@ namespace app::sin
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
-		static std::unique_ptr<app::Registry> s_uptrRegistry;
+		static std::shared_ptr<app::Registry> s_uptrRegistry;
 	protected: // Protected Member Variables
 	private: // Private Static Functions
 	private: // Private Member Functions

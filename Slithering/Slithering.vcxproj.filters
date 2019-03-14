@@ -227,6 +227,9 @@
     <ClCompile Include="src\commands\base\DefaultCommand.cpp">
       <Filter>Source Files\commands\base</Filter>
     </ClCompile>
+    <ClCompile Include="src\systems\SegmentSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -387,6 +390,9 @@
     </ClInclude>
     <ClInclude Include="src\commands\base\DefaultCommand.h">
       <Filter>Source Files\commands\base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\SegmentSystem.h">
+      <Filter>Source Files\systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

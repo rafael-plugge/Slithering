@@ -63,23 +63,23 @@ void app::sys::RenderSystem::pollEvents(app::inp::KeyHandler & keyHandler, app::
 
 void app::sys::RenderSystem::init()
 {
-	s_registry.construction<comp::Layer>().connect<&app::sys::RenderSystem::sortLayers>();
-	s_registry.destruction<comp::Layer>().connect<&app::sys::RenderSystem::sortLayers>();
-	sys::RenderSystem::sortLayers(s_registry, 0u);
+	m_registry.construction<comp::Layer>().connect<&app::sys::RenderSystem::sortLayers>();
+	m_registry.destruction<comp::Layer>().connect<&app::sys::RenderSystem::sortLayers>();
+	sys::RenderSystem::sortLayers(m_registry, 0u);
 }
 
 void app::sys::RenderSystem::update(app::time::seconds const & dt)
 {
 	m_window.clear(sf::Color::Black);
-	auto const & renderView = s_registry.view<comp::Layer, comp::Location, comp::Dimension, comp::Render>(entt::persistent_t());
-	s_registry.view<comp::Camera, comp::Location, comp::Dimension>()
+	auto const & renderView = m_registry.view<comp::Layer, comp::Location, comp::Dimension, comp::Render>(entt::persistent_t());
+	m_registry.view<comp::Camera, comp::Location, comp::Dimension>()
 		.each([&, this](app::Entity const cameraEntity, comp::Camera const & camera, comp::Location const & cameraLocation, comp::Dimension const & cameraDimension)
 	{
 		m_view.setCenter(cameraLocation.position.x, cameraLocation.position.y);
 		m_view.setRotation(cameraLocation.orientation);
 		m_view.setSize(cameraDimension.size.x, cameraDimension.size.y);
 		m_window.setView(m_view);
-		s_registry.view<comp::Layer>()
+		m_registry.view<comp::Layer>()
 			.each([&, this](app::Entity const entity, comp::Layer const & layer)
 		{
 			auto const &[location, dimension, render] = renderView.get<comp::Location, comp::Dimension, comp::Render>(entity);

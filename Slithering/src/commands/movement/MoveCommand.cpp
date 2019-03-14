@@ -13,7 +13,7 @@ app::com::MoveCommand::MoveCommand(app::Entity entity, bool moveRight)
 
 void app::com::MoveCommand::execute() const
 {
-	auto view = s_registry.view<comp::Location>();
+	auto view = m_registry.view<comp::Location>();
 	assert(view.contains(m_entity));
 	auto & location = view.get(m_entity);
 	if (m_moveRight)

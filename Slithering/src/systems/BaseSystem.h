@@ -11,11 +11,11 @@ namespace app::sys
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		BaseSystem() = default;
+		BaseSystem();
 		~BaseSystem() = default;
 
-		BaseSystem(BaseSystem const &) = default;
-		BaseSystem & operator=(BaseSystem const &) = default;
+		BaseSystem(BaseSystem const & other);
+		BaseSystem & operator=(BaseSystem const & other);
 
 		BaseSystem(BaseSystem &&) = default;
 		BaseSystem & operator=(BaseSystem &&) = default;
@@ -30,8 +30,8 @@ namespace app::sys
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
 		constexpr static bool DEBUG_MODE = app::Console::DEBUG_MODE && true;
-		static app::Registry & s_registry;
 	protected: // Protected Member Variables
+		app::Registry & m_registry;
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables

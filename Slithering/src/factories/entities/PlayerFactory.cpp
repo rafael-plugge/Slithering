@@ -52,9 +52,8 @@ app::Entity const app::fact::ent::PlayerFactory::create()
 		m_registry.assign<decltype(input)>(playerEntity, std::move(input));
 	}
 	{
-		auto motion = comp::Motion();
+		auto & motion = m_registry.get<comp::Motion>(playerEntity);
 		motion.speed = 3.0f;
-		m_registry.assign<decltype(motion)>(playerEntity, std::move(motion));
 	}
 	{
 		auto player = tag::Player();

@@ -12,6 +12,7 @@
 #include <src/systems/InputSystem.h>
 #include <src/systems/MotionSystem.h>
 #include <src/systems/CameraTrackingSystem.h>
+#include <src/systems/SegmentSystem.h>
 
 // render systems
 #include <src/systems/RenderSystem.h>
@@ -28,8 +29,9 @@ namespace app
 			, sys::InputSystem
 			, sys::MotionSystem
 			, sys::CameraTrackingSystem
+			, sys::SegmentSystem
 		>;
-		using UpdateSystems = std::array<UpdateSystem, 4>;
+		using UpdateSystems = std::array<UpdateSystem, 5>;
 		using RenderSystem = std::variant<
 			  sys::RenderSystem
 		>;
