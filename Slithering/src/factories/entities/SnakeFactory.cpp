@@ -39,7 +39,7 @@ app::Entity const app::fact::ent::SnakeFactory::create()
 			segmentEntityParams.entity = segmentFactoryParams.tail;
 			segmentImageParams.position += m_params.offset;
 			segmentFactoryParams.tail = m_registry.create();
-			segmentFactoryParams.offset += m_params.offset;
+			segmentFactoryParams.offset = m_params.offset;
 			auto entity = segmentFactory.create();
 			if (!firstBody.has_value()) { firstBody = entity; }
 		}
@@ -61,7 +61,7 @@ app::Entity const app::fact::ent::SnakeFactory::create()
 			segmentImageParams.position += m_params.offset;
 			segmentImageParams.fill = m_params.tailFill;
 			segmentFactoryParams.tail.reset();
-			segmentFactoryParams.offset += m_params.offset;
+			segmentFactoryParams.offset = m_params.offset;
 			segmentFactory.create();
 		}
 	}
