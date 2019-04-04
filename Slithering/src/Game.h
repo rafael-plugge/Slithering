@@ -31,7 +31,7 @@ namespace app
 			, sys::CameraTrackingSystem
 			, sys::SegmentSystem
 		>;
-		using UpdateSystems = std::array<UpdateSystem, 5>;
+		using UpdateSystems = std::array<UpdateSystem, 6>;
 		using RenderSystem = std::variant<
 			  sys::RenderSystem
 		>;

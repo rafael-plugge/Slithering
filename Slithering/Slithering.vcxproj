@@ -22,33 +22,33 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{AAD793F7-8D93-4743-BB7F-0DD493DD7B1E}</ProjectGuid>
     <RootNamespace>Slithering</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>Slithering</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -185,11 +185,13 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
   <ItemGroup>
     <ClCompile Include="src\commands\base\BaseCommand.cpp" />
     <ClCompile Include="src\commands\base\DefaultCommand.cpp" />
+    <ClCompile Include="src\commands\movement\ForwardCommand.cpp" />
     <ClCompile Include="src\commands\movement\MoveCommand.cpp" />
     <ClCompile Include="src\commands\movement\TurnCommand.cpp" />
     <ClCompile Include="src\commands\movement\TurnLeftCommand.cpp" />
     <ClCompile Include="src\commands\movement\TurnRightCommand.cpp" />
     <ClCompile Include="src\components\Camera.cpp" />
+    <ClCompile Include="src\components\Commandable.cpp" />
     <ClCompile Include="src\components\Dimension.cpp" />
     <ClCompile Include="src\components\Input.cpp" />
     <ClCompile Include="src\components\Layer.cpp" />
@@ -247,11 +249,13 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
   <ItemGroup>
     <ClInclude Include="src\commands\base\BaseCommand.h" />
     <ClInclude Include="src\commands\base\DefaultCommand.h" />
+    <ClInclude Include="src\commands\movement\ForwardCommand.h" />
     <ClInclude Include="src\commands\movement\MoveCommand.h" />
     <ClInclude Include="src\commands\movement\TurnCommand.h" />
     <ClInclude Include="src\commands\movement\TurnLeftCommand.h" />
     <ClInclude Include="src\commands\movement\TurnRightCommand.h" />
     <ClInclude Include="src\components\Camera.h" />
+    <ClInclude Include="src\components\Commandable.h" />
     <ClInclude Include="src\components\Dimension.h" />
     <ClInclude Include="src\components\Input.h" />
     <ClInclude Include="src\components\Layer.h" />
@@ -302,6 +306,9 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
   </ItemGroup>
   <ItemGroup>
     <Text Include="res\neural_network.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

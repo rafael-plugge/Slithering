@@ -1,9 +1,11 @@
 ﻿#include "stdafx.h"
 #include "SegmentFactory.h"
 #include <src/factories/entities/ImageFactory.h>
+//#include <src/input/Commands.h>
 // components
 #include <src/components/Motion.h>
 #include <src/components/Segment.h>
+#include <src/components/Commandable.h>
 
 app::fact::ent::SegmentFactory::SegmentFactory(Parameters & params)
 	: ImageFactory(params.imageFactoryParams)
@@ -17,8 +19,13 @@ app::Entity const app::fact::ent::SegmentFactory::create()
 
 	{
 		auto motion = comp::Motion();
-		motion.speed = 0.0f;
+		motion.speed = m_params.speed;
 		m_registry.assign<decltype(motion)>(segmentEntity, std::move(motion));
+	}
+	{
+		auto commandable = comp::Commandable();
+		commandable.loop.push_back(inp::Command(std::in_place_type<com::ForwardCommand>, segmentEntity));
+		m_registry.assign<decltype(commandable)>(segmentEntity, std::move(commandable));
 	}
 
 	comp::Segment::apply(m_registry, segmentEntity

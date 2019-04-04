@@ -4,6 +4,7 @@
 // Components
 #include <src/components/Input.h>
 #include <src/components/Motion.h>
+#include <src/components/Commandable.h>
 
 // Tags
 #include <src/tags/Player.h>
@@ -53,7 +54,7 @@ app::Entity const app::fact::ent::PlayerFactory::create()
 	}
 	{
 		auto & motion = m_registry.get<comp::Motion>(playerEntity);
-		motion.speed = 3.0f;
+		motion.speed = m_params.snakeFactoryParams.speed;
 	}
 	{
 		auto player = tag::Player();

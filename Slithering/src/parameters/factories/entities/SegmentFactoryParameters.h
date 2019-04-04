@@ -18,6 +18,7 @@ namespace app::par::fact::ent
 		par::fact::ent::ImageFactoryParameters imageFactoryParams;
 		std::optional<app::Entity> head, tail;
 		math::Vector2f offset;
+		std::float_t speed;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
