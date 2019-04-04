@@ -1,6 +1,10 @@
 ﻿#pragma once
 
 #include "BaseSystem.h"
+// components
+#include <src/components/Location.h>
+#include <src/components/Motion.h>
+#include <src/components/Segment.h>
 
 namespace app::sys
 {
@@ -9,6 +13,12 @@ namespace app::sys
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
+		struct SnakeSection
+		{
+			app::comp::Segment & segment;
+			app::comp::Location & location;
+			app::comp::Motion & motion;
+		};
 	public: // Constructors/Destructor/Assignments
 		SegmentSystem() = default;
 		virtual ~SegmentSystem() = default;

@@ -77,7 +77,7 @@ std::vector<app::Entity> app::fact::GameFactory::createPlayer()
 			imageParams.zIndex = 1000u;
 		}
 		{
-			snakeParams.amount = 5u;
+			snakeParams.amount = 10u;
 			snakeParams.segmentFill = sf::Color::Green;
 			snakeParams.tailFill = sf::Color::Yellow;
 			snakeParams.offset = { -55.0f, 0.0f };

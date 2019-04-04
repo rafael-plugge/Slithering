@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="app::Game" Collapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAABAABIAAAAAAIiAEBLAAAAgAAEVAAA=</HashCode>
+      <FileName>src\Game.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::Console" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAgAAAAAAAAAAAAAAAAgAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>src\utilities\Console.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::sys::BaseSystem" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAEAAAAAAAAAAAABAgAAAAAAAAAAIAAAAgAAAEAAA=</HashCode>
+      <FileName>src\systems\BaseSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::sys::CameraTrackingSystem" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAEAAAAAAAAAAAAAAAAIAAAAgAAAEAAA=</HashCode>
+      <FileName>src\systems\CameraTrackingSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::sys::CommandSystem" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAACAAAAAAAAAAAAAAAAAAAAAIAAAAgAAAEAAA=</HashCode>
+      <FileName>src\systems\CommandSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::sys::DebugSystem" Collapsed="true">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAECAAAAAAAAAAAAAAAEAAAAAAAAIAAAAgAAAEAAA=</HashCode>
+      <FileName>src\systems\DebugSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::sys::InputSystem" Collapsed="true">
+    <Position X="14.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAEAAAAAAAAAAAAAAAAJAAAAgAAAFAAA=</HashCode>
+      <FileName>src\systems\InputSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::sys::MotionSystem" Collapsed="true">
+    <Position X="16.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAgAAAAAAAAAAAAAAIAAAAgAAAEAAA=</HashCode>
+      <FileName>src\systems\MotionSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::sys::RenderSystem" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAQACAAAAAAAAAAQAKBAAAAAAEAKAAAAiABAEAAA=</HashCode>
+      <FileName>src\systems\RenderSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::sys::SegmentSystem" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAKAAAAAAAAAAAAAIAAAAgAAAEAAA=</HashCode>
+      <FileName>src\systems\SegmentSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::fact::GameFactory" Collapsed="true">
+    <Position X="2.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAIAAAAAQAAAAAAFAAAAAQBgggAAAAA=</HashCode>
+      <FileName>src\factories\GameFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::fact::BaseFactory&lt;T&gt;" Collapsed="true">
+    <Position X="6" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAABABgAAAAAAA=</HashCode>
+      <FileName>src\factories\base\BaseFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::fact::EntityFactory" Collapsed="true">
+    <Position X="7.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAABgAACIgAA=</HashCode>
+      <FileName>src\factories\base\EntityFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::fact::ent::CameraFactory" Collapsed="true">
+    <Position X="5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAABAAAAAABgAAAIAAA=</HashCode>
+      <FileName>src\factories\entities\CameraFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::fact::ent::ImageFactory" Collapsed="true">
+    <Position X="8.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAEAAAAAAAAAAAAAAAAAAAAAIAAABgAAAIAAA=</HashCode>
+      <FileName>src\factories\entities\ImageFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::fact::ent::PlayerFactory" Collapsed="true">
+    <Position X="7.25" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAEAAAAAAAAAAAAABgAAAIAAA=</HashCode>
+      <FileName>src\factories\entities\PlayerFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::fact::ent::SegmentFactory" Collapsed="true">
+    <Position X="9.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAEABgAAAIAAA=</HashCode>
+      <FileName>src\factories\entities\SegmentFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::fact::ent::SnakeFactory" Collapsed="true">
+    <Position X="7.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAQAAAAAAAAAAAAAgAAAAAAAAAABgAAAIAAA=</HashCode>
+      <FileName>src\factories\entities\SnakeFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::util::Random" Collapsed="true">
+    <Position X="23.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAABQAAAAIAABAAAAAYgAAAAAAA=</HashCode>
+      <FileName>src\utilities\Random.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::math::Rect&lt;T&gt;" Collapsed="true">
+    <Position X="3.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAIAAAAAACAAAAAhAAAAACCAAAAAQAhgAAAAAAA=</HashCode>
+      <FileName>src\math\Rect.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::math::Vector2&lt;T&gt;" Collapsed="true">
+    <Position X="13.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAhAQAAAAApoQAAAAABAAAAAQBgACAAAAA=</HashCode>
+      <FileName>src\math\Vector2.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::vis::RenderVisitor" Collapsed="true">
+    <Position X="27" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAhAAAEAAAAAAAEAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>src\visitors\RenderVisitor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::inp::Keyhandler&lt;KeyType&gt;" Collapsed="true">
+    <Position X="17.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAMAAABAAAAAAIABAIAAAgAAEAAA=</HashCode>
+      <FileName>src\input\Keyhandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::inp::Mousehandler&lt;ButtonType&gt;" Collapsed="true">
+    <Position X="15.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAEQAgAAQAgQAAAAAAAACAAAAIgAAAECAA=</HashCode>
+      <FileName>src\input\MouseHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::sin::Registry" Collapsed="true">
+    <Position X="25.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAQAAAABAAAAAAAAAgAAAAEAA=</HashCode>
+      <FileName>src\singletons\RegistrySingleton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::com::BaseCommand" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACABAEAAAAAAAAAAAAAAggAAAAAAA=</HashCode>
+      <FileName>src\commands\base\BaseCommand.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::com::DefaultCommand" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>src\commands\base\DefaultCommand.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::com::ForwardCommand" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAgAAAAAAk=</HashCode>
+      <FileName>src\commands\movement\ForwardCommand.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::com::MoveCommand" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAIAAAAAAAAAIgAAAAAAg=</HashCode>
+      <FileName>src\commands\movement\MoveCommand.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::com::TurnCommand" Collapsed="true">
+    <Position X="10.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAgACAAAAg=</HashCode>
+      <FileName>src\commands\movement\TurnCommand.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::com::TurnLeftCommand" Collapsed="true">
+    <Position X="9.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAQAAAAAAgAAAAAAI=</HashCode>
+      <FileName>src\commands\movement\TurnLeftCommand.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="app::com::TurnRightCommand" Collapsed="true">
+    <Position X="11.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAgAEAAAgA=</HashCode>
+      <FileName>src\commands\movement\TurnRightCommand.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="app::comp::Camera" Collapsed="true">
+    <Position X="20" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\components\Camera.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::comp::Commandable" Collapsed="true">
+    <Position X="23.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\components\Commandable.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::comp::Dimension" Collapsed="true">
+    <Position X="25.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\components\Dimension.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::comp::Input" Collapsed="true">
+    <Position X="20" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAIAAAAAAAAAAAAAAAAAAAAhAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>src\components\Input.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::comp::Layer" Collapsed="true">
+    <Position X="23.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\components\Layer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::comp::Location" Collapsed="true">
+    <Position X="25.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\components\Location.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::comp::Motion" Collapsed="true">
+    <Position X="27" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAIAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\components\Motion.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::comp::NeuralNetwork" Collapsed="true">
+    <Position X="20" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>src\components\NeuraNetwork.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::comp::Render" Collapsed="true">
+    <Position X="27" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAEAAAAAAAAAIAAAAAAABAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>src\components\Render.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::comp::Segment" Collapsed="true">
+    <Position X="20" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAEAAAAAAAAABAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\components\Segment.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::util::overload&lt;..._Types&gt;" Collapsed="true">
+    <Position X="21.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\utilities\Variant.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::inp::InputCommand&lt;_InputCode&gt;" Collapsed="true">
+    <Position X="21.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\input\Commands.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::tag::Player" Collapsed="true">
+    <Position X="23.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAQAAABA=</HashCode>
+      <FileName>src\tags\Player.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::par::fact::ent::CameraFactoryParameters" Collapsed="true">
+    <Position X="21.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAIIAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\parameters\factories\entities\CameraFactoryParameters.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::par::fact::ent::ImageFactoryParameters" Collapsed="true">
+    <Position X="27" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CACBAAAAACAAAAIAAIAAIABAAAEAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>src\parameters\factories\entities\ImageFactoryParameters.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::par::fact::ent::PlayerFactoryParameters" Collapsed="true">
+    <Position X="25.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAQAACAAAAgAAAAAAAAAAAAAAAAAAACgCAAA=</HashCode>
+      <FileName>src\parameters\factories\entities\PlayerFactoryParameters.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::par::fact::ent::SegmentFactoryParameters" Collapsed="true">
+    <Position X="21.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAgAAAAAAAEAAAAAAAAAAAAQAAAAAAAAAAAgA=</HashCode>
+      <FileName>src\parameters\factories\entities\SegmentFactoryParameters.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::par::fact::ent::SnakeFactoryParameters" Collapsed="true">
+    <Position X="23.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAQAAAEAAAAAACAAAAgQAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\parameters\factories\entities\SnakeFactoryParameters.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::par::fact::BaseFactoryParameters" Collapsed="true">
+    <Position X="11.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\parameters\factories\base\BaseFactoryParameters.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="app::par::fact::EntityFactoryParameters" Collapsed="true">
+    <Position X="11.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\parameters\factories\base\EntityFactoryParameters.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="app::Entity" Collapsed="true">
+    <Position X="21.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>stdafx.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::Registry" Collapsed="true">
+    <Position X="21.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>stdafx.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::inp::KeyCode" Collapsed="true">
+    <Position X="23.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>stdafx.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::inp::KeyHandler" Collapsed="true">
+    <Position X="17.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>stdafx.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::inp::ButtonCode" Collapsed="true">
+    <Position X="20" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>stdafx.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::inp::MouseHandler" Collapsed="true">
+    <Position X="15.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>stdafx.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::time::seconds" Collapsed="true">
+    <Position X="23.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\utilities\Time.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::time::milliseconds" Collapsed="true">
+    <Position X="27" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\utilities\Time.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::time::microseconds" Collapsed="true">
+    <Position X="25.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\utilities\Time.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::time::nanoseconds" Collapsed="true">
+    <Position X="20" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\utilities\Time.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::math::Rectd" Collapsed="true">
+    <Position X="6.5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\math\Rect.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::math::Rectf" Collapsed="true">
+    <Position X="0.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\math\Rect.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::math::Recti" Collapsed="true">
+    <Position X="3.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\math\Rect.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::math::Rectu" Collapsed="true">
+    <Position X="3.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\math\Rect.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::math::Vector2d" Collapsed="true">
+    <Position X="10.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\math\Vector2.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::math::Vector2f" Collapsed="true">
+    <Position X="16.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\math\Vector2.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::math::Vector2i" Collapsed="true">
+    <Position X="14.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\math\Vector2.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="app::math::Vector2u" Collapsed="true">
+    <Position X="13.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\math\Vector2.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="app::inp::Actions" Collapsed="true">
+    <Position X="20" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAACAAAAAIQAAAAAAAAAA=</HashCode>
+      <FileName>src\input\Actions.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
