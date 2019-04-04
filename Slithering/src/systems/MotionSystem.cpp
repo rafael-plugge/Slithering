@@ -16,7 +16,6 @@ void app::sys::MotionSystem::update(app::time::seconds const & dt)
 	m_registry.view<comp::Motion, comp::Location>()
 		.each([&, this](app::Entity const entity, comp::Motion & motion, comp::Location & location)
 	{
-		if (segmentView.contains(entity) && segmentView.get<comp::Segment>(entity).parent.has_value()) { return; }
 		auto const & velocity = math::toVector(motion.direction.value_or(location.orientation)) * motion.speed;
 		location.position += velocity;
 	});

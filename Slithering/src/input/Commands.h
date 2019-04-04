@@ -5,6 +5,7 @@
 #include <src/commands/movement/MoveCommand.h>
 #include <src/commands/movement/TurnLeftCommand.h>
 #include <src/commands/movement/TurnRightCommand.h>
+#include <src/commands/movement/ForwardCommand.h>
 
 namespace app::inp
 {
@@ -13,6 +14,7 @@ namespace app::inp
 		, com::MoveCommand
 		, com::TurnLeftCommand
 		, com::TurnRightCommand
+		, com::ForwardCommand
 	>;
 
 	template<typename _InputCode>

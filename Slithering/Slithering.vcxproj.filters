@@ -230,6 +230,12 @@
     <ClCompile Include="src\systems\SegmentSystem.cpp">
       <Filter>Source Files\systems</Filter>
     </ClCompile>
+    <ClCompile Include="src\components\Commandable.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\movement\ForwardCommand.cpp">
+      <Filter>Source Files\commands\movement</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -394,10 +400,21 @@
     <ClInclude Include="src\systems\SegmentSystem.h">
       <Filter>Source Files\systems</Filter>
     </ClInclude>
+    <ClInclude Include="src\components\Commandable.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\commands\movement\ForwardCommand.h">
+      <Filter>Source Files\commands\movement</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="res\neural_network.txt">
       <Filter>Resource Files</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ClassDiagram.cd">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
