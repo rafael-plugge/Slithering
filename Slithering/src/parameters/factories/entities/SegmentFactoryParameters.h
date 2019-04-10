@@ -1,21 +1,24 @@
-﻿#ifndef _COMP_MOTION_H
-#define _COMP_MOTION_H
+﻿#ifndef _SEGMENT_FACTORY_PARAMETERS_H
+#define _SEGMENT_FACTORY_PARAMETERS_H
 
-namespace app::comp
+#include <src/parameters/factories/entities/ImageFactoryParameters.h>
+
+namespace app::par::fact::ent
 {
-	struct Motion
+	struct SegmentFactoryParameters
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
 	public: // Public Static Functions
-		static void apply(app::Registry & registry, app::Entity const entity, std::float_t speed = 0.0f, std::optional<std::float_t> direction = std::nullopt);
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
+		par::fact::ent::ImageFactoryParameters imageFactoryParams;
+		std::optional<app::Entity> head, tail;
+		math::Vector2f offset;
 		std::float_t speed;
-		std::optional<std::float_t> direction;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
@@ -27,4 +30,4 @@ namespace app::comp
 	};
 }
 
-#endif // !_COMP_MOTION_H
+#endif // !_SEGMENT_FACTORY_PARAMETERS_H

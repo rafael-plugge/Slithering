@@ -9,6 +9,7 @@ namespace app::comp
 	{
 	public: // Constructors/Destructor/Assignments
 	public: // Public Static Functions
+		static void apply(app::Registry & registry, app::Entity const entity, math::Vector2f size = math::Vector2f(), std::optional<math::Vector2f> origin = std::nullopt);
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables

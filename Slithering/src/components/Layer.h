@@ -10,6 +10,7 @@ namespace app::comp
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
 	public: // Public Static Functions
+		static void apply(app::Registry & registry, app::Entity const entity, std::uint16_t zIndex = 1000u);
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables

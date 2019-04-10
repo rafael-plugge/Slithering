@@ -1,26 +1,26 @@
-﻿#ifndef _FACTORIES_PLAYER_H
-#define _FACTORIES_PLAYER_H
+﻿#ifndef _SEGMENT_FACTORY_H
+#define _SEGMENT_FACTORY_H
 
-#include <src/factories/entities/SnakeFactory.h>
-#include <src/parameters/factories/entities/PlayerFactoryParameters.h>
+#include <src/factories/entities/ImageFactory.h>
+#include <src/parameters/factories/entities/SegmentFactoryParameters.h>
 
 namespace app::fact::ent
 {
-	class PlayerFactory : public SnakeFactory
+	class SegmentFactory : public ImageFactory
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
-		using Parameters = app::par::fact::ent::PlayerFactoryParameters;
 	private: // Private Usings/Typedefs/Enums
+		using Parameters = par::fact::ent::SegmentFactoryParameters;
 	public: // Constructors/Destructor/Assignments
-		PlayerFactory(Parameters & params);
-		~PlayerFactory() = default;
+		SegmentFactory(Parameters & params);
+		virtual ~SegmentFactory() = default;
 
-		PlayerFactory(PlayerFactory const &) = default;
-		PlayerFactory & operator=(PlayerFactory const &) = default;
+		SegmentFactory(SegmentFactory const &) = default;
+		SegmentFactory & operator=(SegmentFactory const &) = default;
 
-		PlayerFactory(PlayerFactory &&) = default;
-		PlayerFactory & operator=(PlayerFactory &&) = default;
+		SegmentFactory(SegmentFactory &&) = default;
+		SegmentFactory & operator=(SegmentFactory &&) = default;
 
 	public: // Public Static Functions
 	public: // Public Member Functions
@@ -39,4 +39,4 @@ namespace app::fact::ent
 	};
 }
 
-#endif // !_FACTORIES_PLAYER_H
+#endif // !_SEGMENT_FACTORY_H

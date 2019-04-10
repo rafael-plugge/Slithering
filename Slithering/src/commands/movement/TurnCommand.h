@@ -29,7 +29,7 @@ namespace app::com
 	protected: // Protected Static Variables
 		constexpr static float TURN_RATE = 2.0f;
 	protected: // Protected Member Variables
-		app::Entity const m_entity;
+		app::Entity m_entity;
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables

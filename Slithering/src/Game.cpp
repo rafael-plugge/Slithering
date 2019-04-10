@@ -2,10 +2,6 @@
 #include <src/Game.h>
 #include <src/singletons/RegistrySingleton.h>
 
-// systems
-#include <src/systems/InputSystem.h>
-#include <src/systems/RenderSystem.h>
-
 app::Game::Game()
 	: m_gameLoop(true)
 	, m_registry(app::sin::Registry::get())
@@ -14,7 +10,9 @@ app::Game::Game()
 	, m_updateSystems({
 		  UpdateSystem(std::in_place_type<sys::DebugSystem>)
 		, UpdateSystem(std::in_place_type<sys::InputSystem>, m_keyHandler, m_mouseHandler)
+		, UpdateSystem(std::in_place_type<sys::SegmentSystem>)
 		, UpdateSystem(std::in_place_type<sys::MotionSystem>)
+		, UpdateSystem(std::in_place_type<sys::CameraTrackingSystem>)
 	})
 	, m_renderSystems{
 		RenderSystem(std::in_place_type<sys::RenderSystem>, m_gameLoop)
@@ -179,7 +177,7 @@ void app::Game::pollEvents()
 	for (RenderSystem & renderSystem : m_renderSystems)
 		std::visit(util::overload{
 			  [this](sys::RenderSystem & sys) { sys.pollEvents(m_keyHandler, m_mouseHandler); }
-			, [](auto & sys) {}
+			, [](auto const & sys) constexpr {}
 		}, renderSystem);
 }
 

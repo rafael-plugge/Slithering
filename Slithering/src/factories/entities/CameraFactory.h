@@ -13,7 +13,7 @@ namespace app::fact::ent
 	private: // Private Usings/Typedefs/Enums
 		using Parameters = par::fact::ent::CameraFactoryParameters;
 	public: // Constructors/Destructor/Assignments
-		CameraFactory(Parameters const & params);
+		CameraFactory(Parameters & params);
 		virtual ~CameraFactory() = default;
 
 		CameraFactory(CameraFactory const &) = default;

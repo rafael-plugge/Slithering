@@ -1,5 +1,4 @@
-﻿#ifndef _BASE_COMMAND_H
-#define _BASE_COMMAND_H
+﻿#pragma once
 
 namespace app::com
 {
@@ -10,10 +9,10 @@ namespace app::com
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
 		BaseCommand();
-		virtual ~BaseCommand() = default;
+		~BaseCommand() = default;
 
-		BaseCommand(BaseCommand const &) = default;
-		BaseCommand & operator=(BaseCommand const &) = default;
+		BaseCommand(BaseCommand const & other);
+		BaseCommand & operator=(BaseCommand const & other);
 
 		BaseCommand(BaseCommand &&) = default;
 		BaseCommand & operator=(BaseCommand &&) = default;
@@ -34,5 +33,3 @@ namespace app::com
 	private: // Private Member Variables
 	};
 }
-
-#endif // !_BASE_COMMAND_H
