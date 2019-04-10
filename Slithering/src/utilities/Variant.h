@@ -14,13 +14,13 @@ namespace app::util
 	//		[](float & num) { num += 4.0f; }
 	//	}, number);
 	//
-	// The above will increment example will increment the variant by
+	// The above example will increment the variant by
 	//   one if the variant is of type int;
 	//   two if the variant is of type double;
 	//   and four if the variant is of type float.
 	//
-	template<class... Ts> struct overload : Ts... { using Ts::operator()...; };
-	template<class... Ts> overload(Ts...)->overload<Ts...>;
+	template<class... _Types> struct overload : _Types... { using _Types::operator()...; };
+	template<class... _Types> overload(_Types...)->overload<_Types...>;
 }
 
 #endif // !_UTILITIES_VARIANT_H

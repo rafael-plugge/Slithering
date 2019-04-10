@@ -13,7 +13,7 @@ namespace app::fact::ent
 		using Parameters = par::fact::ent::ImageFactoryParameters;
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		ImageFactory(Parameters const & params);
+		ImageFactory(Parameters & params);
 		virtual ~ImageFactory() = default;
 
 		ImageFactory(ImageFactory const &) = default;
@@ -24,18 +24,19 @@ namespace app::fact::ent
 
 	public: // Public Static Functions
 	public: // Public Member Functions
-		virtual app::Entity const create() final override;
+		virtual app::Entity const create() override;
 	public: // Public Static Variables
 	public: // Public Member Variables
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
 	protected: // Protected Member Variables
-		Parameters const & m_params;
+		EntityFactory::Parameters const & m_entityParams;
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables
 	private: // Private Member Variables
+		Parameters const & m_params;
 	};
 }
 

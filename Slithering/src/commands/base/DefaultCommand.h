@@ -1,21 +1,30 @@
-﻿#ifndef _COMP_MOTION_H
-#define _COMP_MOTION_H
+﻿#ifndef _DEFAULT_COMMAND_H
+#define _DEFAULT_COMMAND_H
 
-namespace app::comp
+#include "BaseCommand.h"
+
+namespace app::com
 {
-	struct Motion
+	class DefaultCommand : public BaseCommand
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
+		DefaultCommand() = default;
+		virtual ~DefaultCommand() = default;
+
+		DefaultCommand(DefaultCommand const &) = default;
+		DefaultCommand & operator=(DefaultCommand const &) = default;
+
+		DefaultCommand(DefaultCommand &&) = default;
+		DefaultCommand & operator=(DefaultCommand &&) = default;
+
 	public: // Public Static Functions
-		static void apply(app::Registry & registry, app::Entity const entity, std::float_t speed = 0.0f, std::optional<std::float_t> direction = std::nullopt);
 	public: // Public Member Functions
+		virtual void execute() const override {}
 	public: // Public Static Variables
 	public: // Public Member Variables
-		std::float_t speed;
-		std::optional<std::float_t> direction;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
@@ -27,4 +36,4 @@ namespace app::comp
 	};
 }
 
-#endif // !_COMP_MOTION_H
+#endif // !_DEFAULT_COMMAND_H

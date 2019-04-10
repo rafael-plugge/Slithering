@@ -5,7 +5,7 @@
 
 namespace app::par::fact::ent
 {
-	struct CameraFactoryParameters : public EntityFactoryParameters
+	struct CameraFactoryParameters
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
@@ -17,6 +17,7 @@ namespace app::par::fact::ent
 	public: // Public Member Variables
 		math::Vector2f position, size;
 		std::optional<app::Entity> target;
+		EntityFactoryParameters entityFactoryParams;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables

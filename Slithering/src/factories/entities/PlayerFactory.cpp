@@ -1,70 +1,65 @@
 ﻿#include "stdafx.h"
 #include <src/factories/entities/PlayerFactory.h>
-#include <src/utilities/Makers.h>
 
 // Components
-#include <src/components/Location.h>
-#include <src/components/Dimension.h>
-#include <src/components/Layer.h>
-#include <src/components/Render.h>
 #include <src/components/Input.h>
 #include <src/components/Motion.h>
+#include <src/components/Commandable.h>
 
 // Tags
 #include <src/tags/Player.h>
 
-app::fact::ent::PlayerFactory::PlayerFactory(Parameters const & params)
-	: EntityFactory(params)
+app::fact::ent::PlayerFactory::PlayerFactory(Parameters & params)
+	: SnakeFactory(params.snakeFactoryParams)
 	, m_params(params)
 {
 }
 
 app::Entity const app::fact::ent::PlayerFactory::create()
 {
-	using Key = sf::Keyboard::Key;
-	using Button = sf::Mouse::Button;
-	using KeyCommand = comp::Input::KeyCommand;
-	using MouseCommand = comp::Input::MouseCommand;
-	using Command = comp::Input::Command;
+	app::Entity const playerEntity = SnakeFactory::create();
+	{
+		auto input = comp::Input();
+		input.keyUpCommands.insert(input.keyUpCommands.end()
+			, m_params.keyUps.cbegin()
+			, m_params.keyUps.cend());
+		input.keyUpCommands.shrink_to_fit();
+	
+		input.keyDownCommands.insert(input.keyDownCommands.end()
+			, m_params.keyDowns.cbegin()
+			, m_params.keyDowns.cend());
+		input.keyDownCommands.shrink_to_fit();
 
-	app::Entity const playerEntity = EntityFactory::create();
+		input.keyPressedCommands.insert(input.keyPressedCommands.end()
+			, m_params.keyPresses.cbegin()
+			, m_params.keyPresses.cend());
+		input.keyPressedCommands.shrink_to_fit();
 
-	auto location = comp::Location();
-	location.position = m_params.position;
-	location.orientation = 0.0f;
-	m_registry.assign<decltype(location)>(playerEntity, std::move(location));
+		input.mouseDownCommands.insert(input.mouseDownCommands.end()
+			, m_params.mouseDowns.cbegin()
+			, m_params.mouseDowns.cend());
+		input.mouseDownCommands.shrink_to_fit();
 
-	auto dimensions = comp::Dimension();
-	dimensions.size = { 100.0f, 100.0f };
-	dimensions.origin = dimensions.size / 2.0f;
-	m_registry.assign<decltype(dimensions)>(playerEntity, std::move(dimensions));
+		input.mouseUpCommands.insert(input.mouseUpCommands.end()
+			, m_params.mouseUps.cbegin()
+			, m_params.mouseUps.cend());
+		input.mouseUpCommands.shrink_to_fit();
 
-	auto input = comp::Input();
-	input.keyUpCommands.reserve(0);
-	input.keyDownCommands = util::make_vector({
-		  KeyCommand{ { Key::Left, Key::A }, Command(std::in_place_type<com::TurnLeftCommand>, playerEntity) }
-		, KeyCommand{ { Key::Right, Key::D }, Command(std::in_place_type<com::TurnRightCommand>, playerEntity) }
-	});
-	input.keyPressedCommands.reserve(0);
-	input.mouseDownCommands.reserve(0);
-	input.mouseUpCommands.reserve(0);
-	input.mousePressedCommands.reserve(0);
-	m_registry.assign<decltype(input)>(playerEntity, std::move(input));
+		input.mousePressedCommands.insert(input.mousePressedCommands.end()
+			, m_params.mousePresses.cbegin()
+			, m_params.mousePresses.cend());
+		input.mousePressedCommands.shrink_to_fit();
 
-	auto motion = comp::Motion();
-	motion.speed = 3.0f;
-	m_registry.assign<decltype(motion)>(playerEntity, std::move(motion));
-
-	auto layer = comp::Layer();
-	layer.zIndex = m_params.zIndex;
-	m_registry.assign<decltype(layer)>(playerEntity, std::move(layer));
-
-	auto render = comp::Render();
-	render.fill = sf::Color(0u, 255u, 0u, 255u);
-	m_registry.assign<decltype(render)>(playerEntity, std::move(render));
-
-	auto player = tag::Player();
-	m_registry.assign<decltype(player)>(entt::tag_t{}, playerEntity, std::move(player));
+		m_registry.assign<decltype(input)>(playerEntity, std::move(input));
+	}
+	{
+		auto & motion = m_registry.get<comp::Motion>(playerEntity);
+		motion.speed = m_params.snakeFactoryParams.speed;
+	}
+	{
+		auto player = tag::Player();
+		m_registry.assign<decltype(player)>(entt::tag_t{}, playerEntity, std::move(player));
+	}
 
 	return playerEntity;
 }

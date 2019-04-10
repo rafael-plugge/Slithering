@@ -1,29 +1,24 @@
-﻿#ifndef _UTIL_REGISTRY_H
-#define _UTIL_REGISTRY_H
+﻿#pragma once
 
-namespace app::sin
+#include <src/input/Commands.h>
+
+namespace app::comp
 {
-	class Registry
+	struct Commandable
 	{
+	public: // Public Usings/Typedefs/Enums
+	protected: // Protected Usings/Typedefs/Enums
+	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		Registry() = delete;
-		virtual ~Registry() = delete;
-
-		Registry(Registry const &) = delete;
-		Registry(Registry &&) = delete;
-
-		Registry & operator=(Registry const &) = delete;
-		Registry & operator=(Registry &&) = delete;
-
 	public: // Public Static Functions
-		static app::Registry & get();
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
+		std::queue<std::vector<inp::Command>> runOnce;
+		std::vector<inp::Command> loop;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
-		static std::shared_ptr<app::Registry> s_uptrRegistry;
 	protected: // Protected Member Variables
 	private: // Private Static Functions
 	private: // Private Member Functions
@@ -31,5 +26,3 @@ namespace app::sin
 	private: // Private Member Variables
 	};
 }
-
-#endif // !_UTIL_REGISTRY_H

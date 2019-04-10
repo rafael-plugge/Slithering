@@ -1,28 +1,29 @@
-﻿#ifndef _MOVE_COMMAND_H
-#define _MOVE_COMMAND_H
+﻿#ifndef _CAMERA_TRACKING_SYSTEM_H
+#define _CAMERA_TRACKING_SYSTEM_H
 
-#include "../base/BaseCommand.h"
+#include "BaseSystem.h"
 
-namespace app::com
+namespace app::sys
 {
-	class MoveCommand : public BaseCommand
+	class CameraTrackingSystem : public BaseSystem
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
-		MoveCommand(app::Entity entity, bool moveRight);
-		virtual ~MoveCommand() = default;
+		CameraTrackingSystem() = default;
+		virtual ~CameraTrackingSystem() = default;
 
-		MoveCommand(MoveCommand const &) = default;
-		MoveCommand & operator=(MoveCommand const &) = default;
+		CameraTrackingSystem(CameraTrackingSystem const &) = default;
+		CameraTrackingSystem & operator=(CameraTrackingSystem const &) = default;
 
-		MoveCommand(MoveCommand &&) = default;
-		MoveCommand & operator=(MoveCommand &&) = default;
+		CameraTrackingSystem(CameraTrackingSystem &&) = default;
+		CameraTrackingSystem & operator=(CameraTrackingSystem &&) = default;
 
 	public: // Public Static Functions
 	public: // Public Member Functions
-		virtual void execute() const final override;
+		virtual void init() final override;
+		virtual void update(app::time::seconds const & dt) final override;
 	public: // Public Static Variables
 	public: // Public Member Variables
 	protected: // Protected Static Functions
@@ -32,11 +33,8 @@ namespace app::com
 	private: // Private Static Functions
 	private: // Private Member Functions
 	private: // Private Static Variables
-		constexpr static std::float_t s_MOVE_AMOUNT = 10.0f;
 	private: // Private Member Variables
-		app::Entity m_entity;
-		bool m_moveRight;
 	};
 }
 
-#endif // !_MOVE_COMMAND_H
+#endif // !_CAMERA_TRACKING_SYSTEM_H
