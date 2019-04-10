@@ -8,12 +8,13 @@
 #include <src/factories/entities/PlayerFactory.h>
 #include <src/factories/entities/CameraFactory.h>
 #include <src/factories/entities/SnakeFactory.h>
+#include <src/factories/entities/FoodFactory.h>
 
 std::vector<app::Entity> app::fact::GameFactory::create()
 {
 	auto gameEntities = std::vector<app::Entity>();
 
-	GameFactory::insertInto(gameEntities, this->createImages());
+	GameFactory::insertInto(gameEntities, this->createFood());
 	GameFactory::insertInto(gameEntities, this->createSnake());
 	GameFactory::insertInto(gameEntities, this->createPlayer());
 	GameFactory::insertInto(gameEntities, this->createCameras());
@@ -87,6 +88,7 @@ std::vector<app::Entity> app::fact::GameFactory::createPlayer()
 			params.keyDowns = util::make_vector({
 				  inp::KeyCommand{ { inp::KeyCode::Left, inp::KeyCode::A }, inp::Command(std::in_place_type<com::TurnLeftCommand>, entityParams.entity.value()) }
 				, inp::KeyCommand{ { inp::KeyCode::Right, inp::KeyCode::D }, inp::Command(std::in_place_type<com::TurnRightCommand>, entityParams.entity.value()) }
+				, inp::KeyCommand{ { inp::KeyCode::R }, inp::Command(std::in_place_type<com::ResetCommand>, entityParams.entity.value(), imageParams.position) }
 			});
 		}
 		entities.push_back(playerFactory.create());
@@ -114,6 +116,26 @@ std::vector<app::Entity> app::fact::GameFactory::createSnake()
 		params.tailFill = sf::Color::Yellow;
 		params.offset = math::Vector2f{ 55.0f, 55.0f };
 		entities.push_back(snakeFactory.create());
+	}
+
+	return std::move(entities);
+}
+
+std::vector<app::Entity> app::fact::GameFactory::createFood()
+{
+	auto entities = std::vector<app::Entity>();
+	auto params = par::fact::ent::FoodFactoryParameters();
+	auto & imageParams = params.imageFactoryParams;
+	auto & entityParams = imageParams.entityFactoryParams;
+	auto foodFactory = fact::ent::FoodFactory(params);
+
+	{
+		imageParams.position = { 200.0f, 200.0f };
+		imageParams.size = { 50.0f, 50.0f };
+		imageParams.origin = imageParams.size / 2.0f;
+		imageParams.fill = sf::Color::Cyan;
+		imageParams.zIndex = 900u;
+		entities.emplace_back(foodFactory.create());
 	}
 
 	return std::move(entities);

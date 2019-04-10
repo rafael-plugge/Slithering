@@ -5,6 +5,7 @@
 #include <src/components/Input.h>
 #include <src/components/Motion.h>
 #include <src/components/Commandable.h>
+#include <src/components/Collision.h>
 
 // Tags
 #include <src/tags/Player.h>
@@ -55,6 +56,11 @@ app::Entity const app::fact::ent::PlayerFactory::create()
 	{
 		auto & motion = m_registry.get<comp::Motion>(playerEntity);
 		motion.speed = m_params.snakeFactoryParams.speed;
+	}
+	{
+		auto collision = comp::Collision();
+		collision.bounds = math::Rectf();
+		m_registry.assign<decltype(collision)>(playerEntity, std::move(collision));
 	}
 	{
 		auto player = tag::Player();

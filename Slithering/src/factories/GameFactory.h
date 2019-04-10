@@ -36,6 +36,7 @@ namespace app::fact
 		std::vector<app::Entity> createImages();
 		std::vector<app::Entity> createPlayer();
 		std::vector<app::Entity> createSnake();
+		std::vector<app::Entity> createFood();
 	private: // Private Static Variables
 	private: // Private Member Variables
 		std::optional<app::Entity> m_cameraTarget;

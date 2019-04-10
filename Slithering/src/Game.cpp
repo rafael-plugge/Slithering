@@ -12,6 +12,8 @@ app::Game::Game()
 		, UpdateSystem(std::in_place_type<sys::InputSystem>, m_keyHandler, m_mouseHandler)
 		, UpdateSystem(std::in_place_type<sys::SegmentSystem>)
 		, UpdateSystem(std::in_place_type<sys::MotionSystem>)
+		, UpdateSystem(std::in_place_type<sys::FoodSystem>)
+		, UpdateSystem(std::in_place_type<sys::CollisionTrackingSystem>)
 		, UpdateSystem(std::in_place_type<sys::CameraTrackingSystem>)
 	})
 	, m_renderSystems{

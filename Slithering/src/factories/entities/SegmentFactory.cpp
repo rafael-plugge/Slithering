@@ -1,11 +1,12 @@
 ﻿#include "stdafx.h"
 #include "SegmentFactory.h"
 #include <src/factories/entities/ImageFactory.h>
-//#include <src/input/Commands.h>
+
 // components
 #include <src/components/Motion.h>
 #include <src/components/Segment.h>
 #include <src/components/Commandable.h>
+#include <src/components/Collision.h>
 
 app::fact::ent::SegmentFactory::SegmentFactory(Parameters & params)
 	: ImageFactory(params.imageFactoryParams)
