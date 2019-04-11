@@ -38,6 +38,7 @@ app::Entity const app::fact::ent::SnakeFactory::create()
 			segmentFactoryParams.head = segmentEntityParams.entity;
 			segmentEntityParams.entity = segmentFactoryParams.tail;
 			segmentImageParams.position += m_params.offset;
+			segmentImageParams.zIndex = m_params.bodyZIndex;
 			segmentFactoryParams.tail = m_registry.create();
 			segmentFactoryParams.offset = m_params.offset;
 			auto entity = segmentFactory.create();
@@ -60,6 +61,7 @@ app::Entity const app::fact::ent::SnakeFactory::create()
 			segmentEntityParams.entity = segmentFactoryParams.tail;
 			segmentImageParams.position += m_params.offset;
 			segmentImageParams.fill = m_params.tailFill;
+			segmentImageParams.zIndex = m_params.tailZIndex;
 			segmentFactoryParams.tail.reset();
 			segmentFactoryParams.offset = m_params.offset;
 			segmentFactory.create();

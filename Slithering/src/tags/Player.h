@@ -19,6 +19,7 @@ namespace app::tag
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
+		app::Entity entity;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables

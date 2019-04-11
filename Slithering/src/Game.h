@@ -13,6 +13,10 @@
 #include <src/systems/MotionSystem.h>
 #include <src/systems/CameraTrackingSystem.h>
 #include <src/systems/SegmentSystem.h>
+#include <src/systems/FoodSystem.h>
+#include <src/systems/CollisionTrackingSystem.h>
+#include <src/systems/DestroySystem.h>
+#include <src/systems/NeuralNetworkSystem.h>
 
 // render systems
 #include <src/systems/RenderSystem.h>
@@ -30,8 +34,12 @@ namespace app
 			, sys::MotionSystem
 			, sys::CameraTrackingSystem
 			, sys::SegmentSystem
+			, sys::FoodSystem
+			, sys::CollisionTrackingSystem
+			, sys::NeuralNetworkSystem
+			, sys::DestroySystem
 		>;
-		using UpdateSystems = std::array<UpdateSystem, 6>;
+		using UpdateSystems = std::array<UpdateSystem, 10>;
 		using RenderSystem = std::variant<
 			  sys::RenderSystem
 		>;
