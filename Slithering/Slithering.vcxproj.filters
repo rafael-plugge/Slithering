@@ -63,7 +63,7 @@
     <Filter Include="Source Files\commands\movement">
       <UniqueIdentifier>{705a3033-7b6c-4e0d-8079-ca65ab95d9c4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\commands\debug">
+    <Filter Include="Source Files\commands\utilities">
       <UniqueIdentifier>{4afaff7e-a025-4d63-b016-6e4966d41fbc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -257,8 +257,29 @@
     <ClCompile Include="src\systems\CollisionTrackingSystem.cpp">
       <Filter>Source Files\systems</Filter>
     </ClCompile>
-    <ClCompile Include="src\commands\debug\ResetCommand.cpp">
-      <Filter>Source Files\commands\debug</Filter>
+    <ClCompile Include="src\commands\utilities\ResetCommand.cpp">
+      <Filter>Source Files\commands\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\Destroy.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\DestroySystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\movement\SpeedCommand.cpp">
+      <Filter>Source Files\commands\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factories\entities\AiFactory.cpp">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parameters\factories\entities\AiFactoryParameters.cpp">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\singletons\NeuralNetworkSingleton.cpp">
+      <Filter>Source Files\singletons</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\NeuralNetworkSystem.cpp">
+      <Filter>Source Files\systems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -448,8 +469,29 @@
     <ClInclude Include="src\systems\CollisionTrackingSystem.h">
       <Filter>Source Files\systems</Filter>
     </ClInclude>
-    <ClInclude Include="src\commands\debug\ResetCommand.h">
-      <Filter>Source Files\commands\debug</Filter>
+    <ClInclude Include="src\commands\utilities\ResetCommand.h">
+      <Filter>Source Files\commands\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Destroy.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\DestroySystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\commands\movement\SpeedCommand.h">
+      <Filter>Source Files\commands\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factories\entities\AiFactory.h">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parameters\factories\entities\AiFactoryParameters.h">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\singletons\NeuralNetworkSingleton.h">
+      <Filter>Source Files\singletons</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\NeuralNetworkSystem.h">
+      <Filter>Source Files\systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

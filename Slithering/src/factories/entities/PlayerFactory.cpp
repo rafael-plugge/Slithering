@@ -64,6 +64,7 @@ app::Entity const app::fact::ent::PlayerFactory::create()
 	}
 	{
 		auto player = tag::Player();
+		player.entity = playerEntity;
 		m_registry.assign<decltype(player)>(entt::tag_t{}, playerEntity, std::move(player));
 	}
 

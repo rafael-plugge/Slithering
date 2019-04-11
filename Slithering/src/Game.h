@@ -15,6 +15,8 @@
 #include <src/systems/SegmentSystem.h>
 #include <src/systems/FoodSystem.h>
 #include <src/systems/CollisionTrackingSystem.h>
+#include <src/systems/DestroySystem.h>
+#include <src/systems/NeuralNetworkSystem.h>
 
 // render systems
 #include <src/systems/RenderSystem.h>
@@ -34,8 +36,10 @@ namespace app
 			, sys::SegmentSystem
 			, sys::FoodSystem
 			, sys::CollisionTrackingSystem
+			, sys::NeuralNetworkSystem
+			, sys::DestroySystem
 		>;
-		using UpdateSystems = std::array<UpdateSystem, 8>;
+		using UpdateSystems = std::array<UpdateSystem, 10>;
 		using RenderSystem = std::variant<
 			  sys::RenderSystem
 		>;

@@ -2,6 +2,7 @@
 
 #include "BaseSystem.h"
 #include <src/math/Rect.h>
+#include <src/factories/entities/FoodFactory.h>
 
 namespace app::sys
 {
@@ -33,14 +34,17 @@ namespace app::sys
 	private: // Private Static Functions
 		constexpr static bool check(math::Rectf const & left, math::Rectf const & right);
 	private: // Private Member Functions
+		void onFoodDestruction(app::Registry & registry, app::Entity const entity);
+		void spawnFood(math::Vector2f position);
 	private: // Private Static Variables
 	private: // Private Member Variables
+		bool m_foodDestroyed;
+		app::par::fact::ent::FoodFactoryParameters m_foodFactoryParams;
+		std::optional<app::fact::ent::FoodFactory> m_foodFactory;
 	};
 
 	static_assert(std::is_default_constructible<FoodSystem>::value, "FoodSystem must be default constructible");
 	static_assert(std::is_destructible<FoodSystem>::value, "FoodSystem must be destructible");
 	static_assert(std::is_copy_constructible<FoodSystem>::value, "FoodSystem must be copy constructible");
-	static_assert(std::is_copy_assignable<FoodSystem>::value, "FoodSystem must be copy assignable");
 	static_assert(std::is_move_constructible<FoodSystem>::value, "FoodSystem must be move constructible");
-	static_assert(std::is_move_assignable<FoodSystem>::value, "FoodSystem must be move assignable");
 }

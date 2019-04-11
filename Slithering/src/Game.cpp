@@ -15,6 +15,8 @@ app::Game::Game()
 		, UpdateSystem(std::in_place_type<sys::FoodSystem>)
 		, UpdateSystem(std::in_place_type<sys::CollisionTrackingSystem>)
 		, UpdateSystem(std::in_place_type<sys::CameraTrackingSystem>)
+		, UpdateSystem(std::in_place_type<sys::NeuralNetworkSystem>)
+		, UpdateSystem(std::in_place_type<sys::DestroySystem>)
 	})
 	, m_renderSystems{
 		RenderSystem(std::in_place_type<sys::RenderSystem>, m_gameLoop)
