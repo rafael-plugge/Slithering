@@ -42,6 +42,7 @@ void app::sys::RenderSystem::pollEvents(app::inp::KeyHandler & keyHandler, app::
 				break;
 			case EventType::KeyPressed:
 				keyHandler.updateKey(m_event.key.code, true);
+				if (m_event.key.code == sf::Keyboard::Key::Escape) { m_window.close(); m_running = false; }
 				break;
 			case EventType::KeyReleased:
 				keyHandler.updateKey(m_event.key.code, false);

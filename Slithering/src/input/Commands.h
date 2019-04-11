@@ -6,6 +6,8 @@
 #include <src/commands/movement/TurnLeftCommand.h>
 #include <src/commands/movement/TurnRightCommand.h>
 #include <src/commands/movement/ForwardCommand.h>
+#include <src/commands/utilities/ResetCommand.h>
+#include <src/commands/movement/SpeedCommand.h>
 
 namespace app::inp
 {
@@ -15,6 +17,8 @@ namespace app::inp
 		, com::TurnLeftCommand
 		, com::TurnRightCommand
 		, com::ForwardCommand
+		, com::ResetCommand
+		, com::SpeedCommand
 	>;
 
 	template<typename _InputCode>
@@ -55,6 +59,14 @@ namespace app::inp
 	static_assert(std::is_copy_assignable<MouseCommand>::value, "MouseCommand must be copy assignable");
 	static_assert(std::is_move_constructible<MouseCommand>::value, "MouseCommand must be move constructible");
 	static_assert(std::is_move_assignable<MouseCommand>::value, "MouseCommand must be move assignable");
+
+	using AiCommand = InputCommand<bool>;
+	static_assert(std::is_default_constructible<AiCommand>::value, "AiCommand must be default constructible");
+	static_assert(std::is_destructible<AiCommand>::value, "AiCommand must be destructible");
+	static_assert(std::is_copy_constructible<AiCommand>::value, "AiCommand must be copy constructible");
+	static_assert(std::is_copy_assignable<AiCommand>::value, "AiCommand must be copy assignable");
+	static_assert(std::is_move_constructible<AiCommand>::value, "AiCommand must be move constructible");
+	static_assert(std::is_move_assignable<AiCommand>::value, "AiCommand must be move assignable");
 }
 
 #endif // !_INPUT_COMMANDS_H

@@ -1,5 +1,4 @@
-﻿#ifndef _PLAYER_FACTORY_PARAMETERS_H
-#define _PLAYER_FACTORY_PARAMETERS_H
+﻿#pragma once
 
 #include <src/parameters/factories/entities/SnakeFactoryParameters.h>
 #include <src/input/Commands.h>
@@ -29,5 +28,3 @@ namespace app::par::fact::ent
 	private: // Private Member Variables
 	};
 }
-
-#endif // !_PLAYER_FACTORY_PARAMETERS_H
