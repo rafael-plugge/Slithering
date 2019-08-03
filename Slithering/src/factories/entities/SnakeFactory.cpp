@@ -5,6 +5,7 @@
 #include <src/components/Motion.h>
 #include <src/components/Commandable.h>
 #include <src/components/Segment.h>
+#include <src/components/WrapAround.h>
 
 app::fact::ent::SnakeFactory::SnakeFactory(SnakeFactory::Parameters & params)
 	: ImageFactory(params.imageFactoryParams)
@@ -53,6 +54,10 @@ app::Entity const app::fact::ent::SnakeFactory::create()
 			}
 			comp::Motion::apply(m_registry, snakeHeadEntity, m_params.speed);
 			comp::Segment::apply(m_registry, snakeHeadEntity, std::nullopt, firstBody);
+			{
+				auto wrapAround = comp::WrapAround();
+				m_registry.assign<decltype(wrapAround)>(snakeHeadEntity, std::move(wrapAround));
+			}
 		}
 
 		// Tail segment

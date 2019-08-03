@@ -16,6 +16,7 @@ app::Game::Game()
 		, UpdateSystem(std::in_place_type<sys::CollisionTrackingSystem>)
 		, UpdateSystem(std::in_place_type<sys::CameraTrackingSystem>)
 		, UpdateSystem(std::in_place_type<sys::NeuralNetworkSystem>)
+		, UpdateSystem(std::in_place_type<sys::WrapAroundWorldSystem>)
 		, UpdateSystem(std::in_place_type<sys::DestroySystem>)
 	})
 	, m_renderSystems{

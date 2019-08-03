@@ -38,6 +38,7 @@ namespace app::fact
 		std::vector<app::Entity> createAi();
 		std::vector<app::Entity> createSnake();
 		std::vector<app::Entity> createFood();
+		std::vector<app::Entity> createWorld();
 	private: // Private Static Variables
 	private: // Private Member Variables
 		std::optional<app::Entity> m_cameraTarget;

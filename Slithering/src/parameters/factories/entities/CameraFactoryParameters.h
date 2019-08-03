@@ -2,6 +2,7 @@
 #define _CAMERA_FACTORY_PARAMETERS_H
 
 #include "../base/EntityFactoryParameters.h"
+#include <src/math/Rect.h>
 
 namespace app::par::fact::ent
 {
@@ -16,6 +17,7 @@ namespace app::par::fact::ent
 	public: // Public Static Variables
 	public: // Public Member Variables
 		math::Vector2f position, size;
+		math::Rectf viewport;
 		std::optional<app::Entity> target;
 		EntityFactoryParameters entityFactoryParams;
 	protected: // Protected Static Functions
