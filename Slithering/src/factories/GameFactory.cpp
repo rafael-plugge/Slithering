@@ -17,6 +17,7 @@ std::vector<app::Entity> app::fact::GameFactory::create()
 	auto gameEntities = std::vector<app::Entity>();
 
 	GameFactory::insertInto(gameEntities, this->createWorld());
+	GameFactory::insertInto(gameEntities, this->createImages());
 	GameFactory::insertInto(gameEntities, this->createFood());
 	GameFactory::insertInto(gameEntities, this->createSnake());
 	GameFactory::insertInto(gameEntities, this->createPlayer());
@@ -39,14 +40,17 @@ std::vector<app::Entity> app::fact::GameFactory::createCameras()
 		params.size = math::Vector2f{ 1366.0f, 768.0f };
 		params.viewport = { 0.0f, 0.0f, 1.0f, 1.0f };
 		params.target = m_cameraTarget;
+		params.baseIndex = 0u;
 		entities.push_back(cameraFactory.create());
 	}
 	{
 		entityParams.entity.reset();
+		m_minimapCamera = entityParams.entity = EntityFactory(entityParams).create();
 		params.position = { };
 		params.size = math::Vector2f{ 2000, 2000 };
 		params.viewport = { 0.0f, 0.0f, (300.0f / 1366.0f), (300.0f / 768.0f) };
 		params.target.reset();
+		params.baseIndex = 1u;
 		entities.push_back(cameraFactory.create());
 	}
 
@@ -59,13 +63,14 @@ std::vector<app::Entity> app::fact::GameFactory::createImages()
 	auto params = par::fact::ent::ImageFactoryParameters();
 	auto imageFactory = fact::ent::ImageFactory(params);
 
-	// Create image
+	// Black background
 	{
-		params.position = { 100.0f, 100.0f };
-		params.fill = sf::Color(0u, 255u, 255u, 255u);
-		params.size = { 200.0f, 200.0f };
+		params.entityFactoryParams.entity.reset();
+		params.position = { 0.0f, 0.0f };
+		params.fill = sf::Color::Black;
+		params.size = { 2000.0f, 2000.0f };
 		params.origin = params.size / 2.0f;
-		params.zIndex = 500u;
+		params.zIndex = 0u;
 		entities.push_back(imageFactory.create());
 	}
 
@@ -224,6 +229,16 @@ std::vector<app::Entity> app::fact::GameFactory::createWorld()
 	auto worldFactory = fact::ent::WorldFactory(params);
 
 	{
+		{
+			auto & borderParams = params.borderFactoryParams;
+			auto & borderImageParams = borderParams.imageFactoryParams;
+
+			borderParams.thickness = 10.0f;
+			borderImageParams.fill = sf::Color::White;
+			borderImageParams.orientation = 0.0f;
+			borderImageParams.zIndex = 500u;
+		}
+
 		auto const distanceFromCenter = 1000.0f;
 		params.bounds = math::Rectf{ -distanceFromCenter, -distanceFromCenter, distanceFromCenter * 2.0f, distanceFromCenter * 2.0f };
 		entities.push_back(worldFactory.create());

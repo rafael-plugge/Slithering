@@ -65,6 +65,7 @@ namespace app::sys
 		sf::View m_view;
 	private: // Private Static Functions
 		static void sortLayers(app::Registry & registry, app::Entity entity);
+		static void sortCameras(app::Registry & registry, app::Entity entity);
 	private: // Private Member Functions
 	private: // Private Static Variables
 	private: // Private Member Variables

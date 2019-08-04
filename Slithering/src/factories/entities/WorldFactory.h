@@ -1,11 +1,11 @@
 ﻿#pragma once
 
-#include <src/factories/base/EntityFactory.h>
+#include <src/factories/entities/BorderFactory.h>
 #include <src/parameters/factories/entities/WorldFactoryParameters.h>
 
 namespace app::fact::ent
 {
-	class WorldFactory : public EntityFactory
+	class WorldFactory : public BorderFactory
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
@@ -30,9 +30,12 @@ namespace app::fact::ent
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
 	protected: // Protected Member Variables
-		EntityFactory::Parameters const & m_entityParams;
+		BorderFactory::Parameters & m_borderParams;
+		ImageFactory::Parameters & m_imageParams;
+		EntityFactory::Parameters & m_entityParams;
 	private: // Private Static Functions
 	private: // Private Member Functions
+		void createBorders();
 	private: // Private Static Variables
 	private: // Private Member Variables
 		Parameters const & m_params;

@@ -64,8 +64,11 @@ void app::sys::RenderSystem::pollEvents(app::inp::KeyHandler & keyHandler, app::
 
 void app::sys::RenderSystem::init()
 {
+	m_registry.construction<comp::Camera>().connect<&app::sys::RenderSystem::sortCameras>();
+	m_registry.destruction<comp::Layer>().connect<&app::sys::RenderSystem::sortCameras>();
 	m_registry.construction<comp::Layer>().connect<&app::sys::RenderSystem::sortLayers>();
 	m_registry.destruction<comp::Layer>().connect<&app::sys::RenderSystem::sortLayers>();
+	sys::RenderSystem::sortCameras(m_registry, 0u);
 	sys::RenderSystem::sortLayers(m_registry, 0u);
 }
 
@@ -73,9 +76,12 @@ void app::sys::RenderSystem::update(app::time::seconds const & dt)
 {
 	m_window.clear(sf::Color::Black);
 	auto const & renderView = m_registry.view<comp::Layer, comp::Location, comp::Dimension, comp::Render>(entt::persistent_t());
-	m_registry.view<comp::Camera, comp::Location, comp::Dimension>()
-		.each([&, this](app::Entity const cameraEntity, comp::Camera const & camera, comp::Location const & cameraLocation, comp::Dimension const & cameraDimension)
+	auto const & cameraView = m_registry.view<comp::Camera, comp::Location, comp::Dimension>(entt::persistent_t());
+	m_registry.view<comp::Camera>()
+		.each([&, this](app::Entity const cameraEntity, comp::Camera const & camera)
 	{
+		// comp::Location, comp::Dimension
+		auto const & [cameraLocation, cameraDimension] = cameraView.get<comp::Location, comp::Dimension>(cameraEntity);
 		m_view.setCenter(cameraLocation.position.x, cameraLocation.position.y);
 		m_view.setRotation(cameraLocation.orientation);
 		m_view.setSize(cameraDimension.size.x, cameraDimension.size.y);
@@ -105,4 +111,9 @@ void app::sys::RenderSystem::update(app::time::seconds const & dt)
 void app::sys::RenderSystem::sortLayers(app::Registry & registry, app::Entity entity)
 {
 	registry.sort<comp::Layer>([&](comp::Layer const & lhs, comp::Layer const & rhs) { return lhs.zIndex < rhs.zIndex; });
+}
+
+void app::sys::RenderSystem::sortCameras(app::Registry & registry, app::Entity entity)
+{
+	registry.sort<comp::Camera>([&](comp::Camera const & lhs, comp::Camera const & rhs) { return lhs.baseIndex < rhs.baseIndex; });
 }

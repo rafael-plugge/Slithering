@@ -293,6 +293,18 @@
     <ClCompile Include="src\components\WrapAround.cpp">
       <Filter>Source Files\components</Filter>
     </ClCompile>
+    <ClCompile Include="src\factories\entities\BorderFactory.cpp">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parameters\factories\entities\BorderFactoryParameters.cpp">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\RangeSize.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\Range.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -516,6 +528,18 @@
     </ClInclude>
     <ClInclude Include="src\components\WrapAround.h">
       <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factories\entities\BorderFactory.h">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parameters\factories\entities\BorderFactoryParameters.h">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities\RangeSize.h">
+      <Filter>Source Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities\Range.h">
+      <Filter>Source Files\utilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

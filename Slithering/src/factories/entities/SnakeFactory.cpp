@@ -16,6 +16,8 @@ app::fact::ent::SnakeFactory::SnakeFactory(SnakeFactory::Parameters & params)
 
 app::Entity const app::fact::ent::SnakeFactory::create()
 {
+	constexpr std::size_t _Size = 4u;
+	using iterator = std::array<std::size_t, _Size>::iterator;
 	assert(m_entityParams.entity.has_value());
 	auto segmentFactoryParams = par::fact::ent::SegmentFactoryParameters();
 	auto & segmentImageParams = segmentFactoryParams.imageFactoryParams;
