@@ -10,11 +10,13 @@
 #include <src/factories/entities/SnakeFactory.h>
 #include <src/factories/entities/FoodFactory.h>
 #include <src/factories/entities/AiFactory.h>
+#include <src/factories/entities/WorldFactory.h>
 
 std::vector<app::Entity> app::fact::GameFactory::create()
 {
 	auto gameEntities = std::vector<app::Entity>();
 
+	GameFactory::insertInto(gameEntities, this->createWorld());
 	GameFactory::insertInto(gameEntities, this->createFood());
 	GameFactory::insertInto(gameEntities, this->createSnake());
 	GameFactory::insertInto(gameEntities, this->createPlayer());
@@ -35,7 +37,16 @@ std::vector<app::Entity> app::fact::GameFactory::createCameras()
 		entityParams.entity = EntityFactory(entityParams).create();
 		params.position = (math::Vector2f{ 1366.0f, 768.0f } / 2.0f);
 		params.size = math::Vector2f{ 1366.0f, 768.0f };
+		params.viewport = { 0.0f, 0.0f, 1.0f, 1.0f };
 		params.target = m_cameraTarget;
+		entities.push_back(cameraFactory.create());
+	}
+	{
+		entityParams.entity.reset();
+		params.position = { };
+		params.size = math::Vector2f{ 2000, 2000 };
+		params.viewport = { 0.0f, 0.0f, (300.0f / 1366.0f), (300.0f / 768.0f) };
+		params.target.reset();
 		entities.push_back(cameraFactory.create());
 	}
 
@@ -200,6 +211,22 @@ std::vector<app::Entity> app::fact::GameFactory::createFood()
 		spawnFood({ -100.0f, 100.0f });
 		spawnFood({ 100.0f, -100.0f });
 		spawnFood({ 500.0f, -400.0f });
+	}
+
+	return std::move(entities);
+}
+
+std::vector<app::Entity> app::fact::GameFactory::createWorld()
+{
+	auto entities = std::vector<app::Entity>();
+	auto params = par::fact::ent::WorldFactoryParams();
+	auto & entityParams = params.entityFactoryParams;
+	auto worldFactory = fact::ent::WorldFactory(params);
+
+	{
+		auto const distanceFromCenter = 1000.0f;
+		params.bounds = math::Rectf{ -distanceFromCenter, -distanceFromCenter, distanceFromCenter * 2.0f, distanceFromCenter * 2.0f };
+		entities.push_back(worldFactory.create());
 	}
 
 	return std::move(entities);

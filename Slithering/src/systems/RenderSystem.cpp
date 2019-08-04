@@ -79,6 +79,7 @@ void app::sys::RenderSystem::update(app::time::seconds const & dt)
 		m_view.setCenter(cameraLocation.position.x, cameraLocation.position.y);
 		m_view.setRotation(cameraLocation.orientation);
 		m_view.setSize(cameraDimension.size.x, cameraDimension.size.y);
+		m_view.setViewport(camera.viewport);
 		m_window.setView(m_view);
 		m_registry.view<comp::Layer>()
 			.each([&, this](app::Entity const entity, comp::Layer const & layer)

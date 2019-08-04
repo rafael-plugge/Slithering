@@ -281,6 +281,18 @@
     <ClCompile Include="src\systems\NeuralNetworkSystem.cpp">
       <Filter>Source Files\systems</Filter>
     </ClCompile>
+    <ClCompile Include="src\factories\entities\WorldFactory.cpp">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parameters\factories\entities\WorldFactoryParameters.cpp">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\WrapAroundWorldSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\WrapAround.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -492,6 +504,18 @@
     </ClInclude>
     <ClInclude Include="src\systems\NeuralNetworkSystem.h">
       <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factories\entities\WorldFactory.h">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parameters\factories\entities\WorldFactoryParameters.h">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\WrapAroundWorldSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\WrapAround.h">
+      <Filter>Source Files\components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

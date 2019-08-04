@@ -1,11 +1,8 @@
-﻿#ifndef _COMP_CAMERA_H
-#define _COMP_CAMERA_H
-
-#include <src/math/Rect.h>
+﻿#pragma once
 
 namespace app::comp
 {
-	struct Camera
+	struct WrapAround
 	{
 	public: // Public Usings/Typedefs/Enums
 	protected: // Protected Usings/Typedefs/Enums
@@ -15,8 +12,6 @@ namespace app::comp
 	public: // Public Member Functions
 	public: // Public Static Variables
 	public: // Public Member Variables
-		std::optional<app::Entity> target;
-		math::Rectf viewport;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
@@ -27,5 +22,3 @@ namespace app::comp
 	private: // Private Member Variables
 	};
 }
-
-#endif // !_COMP_CAMERA_H

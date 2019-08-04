@@ -17,6 +17,7 @@
 #include <src/systems/CollisionTrackingSystem.h>
 #include <src/systems/DestroySystem.h>
 #include <src/systems/NeuralNetworkSystem.h>
+#include <src/systems/WrapAroundWorldSystem.h>
 
 // render systems
 #include <src/systems/RenderSystem.h>
@@ -37,9 +38,10 @@ namespace app
 			, sys::FoodSystem
 			, sys::CollisionTrackingSystem
 			, sys::NeuralNetworkSystem
+			, sys::WrapAroundWorldSystem
 			, sys::DestroySystem
 		>;
-		using UpdateSystems = std::array<UpdateSystem, 10>;
+		using UpdateSystems = std::array<UpdateSystem, 11>;
 		using RenderSystem = std::variant<
 			  sys::RenderSystem
 		>;

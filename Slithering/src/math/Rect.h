@@ -22,6 +22,8 @@ namespace app::math
 	public: // Public Member Functions
 		math::Vector2<T> halfSize() const { return math::Vector2<T>{ this->w, this->h } / static_cast<T>(2); }
 		math::Vector2<T> center() const { return math::Vector2<T>{ this->x, this->y } + this->halfSize(); }
+		math::Vector2<T> topLeft() const { return math::Vector2<T>{ this->x, this->y}; }
+		math::Vector2<T> bottomRight() const { return math::Vector2<T>{ this->x + this->w, this->y + this->h }; }
 
 		operator std::string() const;
 		operator sf::Rect<T>() const;
