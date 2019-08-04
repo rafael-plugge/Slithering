@@ -19,6 +19,7 @@ namespace app::par::fact::ent
 		math::Vector2f position, size;
 		math::Rectf viewport;
 		std::optional<app::Entity> target;
+		std::uint16_t baseIndex;
 		EntityFactoryParameters entityFactoryParams;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
