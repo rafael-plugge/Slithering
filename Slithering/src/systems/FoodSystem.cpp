@@ -15,9 +15,10 @@
 #include <src/components/Layer.h>
 #include <src/components/Render.h>
 #include <src/components/Destroy.h>
+#include <src/components/FiniteStateMachine.h>
 
 // Contains implementation only free functions
-namespace impl
+namespace app::impl
 {
 	struct TailSection
 	{
@@ -34,7 +35,6 @@ namespace impl
 
 	void createSegment(app::Registry & registry, TailSection tail)
 	{
-		using namespace app;
 		auto segmentView = registry.view<comp::Location, comp::Dimension, comp::Motion, comp::Render, comp::Layer>();
 		Entity const parentEntity = tail.segment.parent.value();
 		comp::Segment & parent = registry.get<app::comp::Segment>(parentEntity);
@@ -70,6 +70,14 @@ namespace impl
 			factory.create();
 		}
 	}
+	void onFsmConsumption(app::Registry& registry, app::Entity const snakeEntity)
+	{
+		if (!registry.has<comp::FiniteStateMachine>(snakeEntity)) { return; }
+
+		cout::wrl("FSM ate food");
+		auto& fsm = registry.get<comp::FiniteStateMachine>(snakeEntity);
+		fsm.nearestFood.reset();
+	}
 }
 
 void app::sys::FoodSystem::init()
@@ -99,6 +107,7 @@ void app::sys::FoodSystem::update(app::time::seconds const & dt)
 				!FoodSystem::check(collision.bounds, snakeCollision.bounds) || m_registry.has<comp::Destroy>(foodEntity)) { return; }
 
 			impl::createSegment(m_registry, impl::findTail(m_registry, snakeEntity, segment));
+			impl::onFsmConsumption(m_registry, snakeEntity);
 			m_registry.assign<comp::Destroy>(foodEntity);
 		});
 	});

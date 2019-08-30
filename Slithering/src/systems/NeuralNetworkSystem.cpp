@@ -9,8 +9,6 @@
 
 void app::sys::NeuralNetworkSystem::init()
 {
-	auto & player = m_registry.get<tag::Player>();
-	m_playerEntity = player.entity;
 }
 
 void app::sys::NeuralNetworkSystem::update(app::time::seconds const & dt)

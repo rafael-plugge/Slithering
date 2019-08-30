@@ -10,6 +10,7 @@ namespace app
 	public: // Public Usings/Typedefs/Enums
 		using SupportedTypes = std::variant<
 			  std::string
+			, std::stringstream
 			, std::uint8_t
 			, std::uint16_t
 			, std::uint32_t
@@ -37,6 +38,7 @@ namespace app
 		{
 			std::visit(app::util::overload{
 				  [](std::string const & text) { std::cout << text; }
+				, [](std::stringstream const& textStream) { std::cout << textStream.str(); }
 				, [](auto const & num) { std::cout << std::to_string(num); }
 			}, message);
 		}

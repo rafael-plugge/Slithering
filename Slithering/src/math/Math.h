@@ -23,6 +23,10 @@ namespace app::math
 	}
 	template<typename T> constexpr math::Vector2<T> toVectorRad(T const & rad) { return math::Vector2<T>{ std::cos(rad), std::sin(rad) }; }
 	template<typename T> constexpr math::Vector2<T> toVector(T const & deg) { return toVectorRad(toRadians(deg)); }
+	template<typename _Types> constexpr _Types angleBetween(Vector2<_Types> const& left, Vector2<_Types> const& right)
+	{
+		return static_cast<_Types>(math::toDegrees(std::atan2(Vector2<_Types>::det(left, right), Vector2<_Types>::dot(left, right))));
+	}
 }
 
 #endif // !_MATH_H
