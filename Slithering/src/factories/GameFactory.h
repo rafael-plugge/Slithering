@@ -43,6 +43,7 @@ namespace app::fact
 	private: // Private Static Variables
 	private: // Private Member Variables
 		std::optional<app::Entity> m_cameraTarget;
+		std::optional<app::Entity> m_minimapCamera;
 	};
 }
 

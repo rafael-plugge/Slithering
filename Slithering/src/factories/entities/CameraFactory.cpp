@@ -29,6 +29,7 @@ app::Entity const app::fact::ent::CameraFactory::create()
 	auto camera = comp::Camera();
 	camera.target = m_params.target;
 	camera.viewport = m_params.viewport;
+	camera.baseIndex = m_params.baseIndex;
 	m_registry.assign<decltype(camera)>(entity, std::move(camera));
 
 	return entity;

@@ -20,6 +20,7 @@ namespace app::comp
 		std::optional<sf::IntRect> source;
 		math::Vector2f border;
 		math::Vector2f offset;
+		std::optional<app::Entity> camera = std::nullopt;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables

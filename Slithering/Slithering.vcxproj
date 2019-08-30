@@ -210,6 +210,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClCompile Include="src\factories\base\BaseFactory.cpp" />
     <ClCompile Include="src\factories\base\EntityFactory.cpp" />
     <ClCompile Include="src\factories\entities\AiFactory.cpp" />
+    <ClCompile Include="src\factories\entities\BorderFactory.cpp" />
     <ClCompile Include="src\factories\entities\CameraFactory.cpp" />
     <ClCompile Include="src\factories\entities\FoodFactory.cpp" />
     <ClCompile Include="src\factories\entities\FsmFactory.cpp" />
@@ -231,6 +232,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClCompile Include="src\parameters\factories\base\BaseFactoryParameters.cpp" />
     <ClCompile Include="src\parameters\factories\base\EntityFactoryParameters.cpp" />
     <ClCompile Include="src\parameters\factories\entities\AiFactoryParameters.cpp" />
+    <ClCompile Include="src\parameters\factories\entities\BorderFactoryParameters.cpp" />
     <ClCompile Include="src\parameters\factories\entities\CameraFactoryParameters.cpp" />
     <ClCompile Include="src\parameters\factories\entities\FoodFactoryParameters.cpp" />
     <ClCompile Include="src\parameters\factories\entities\FsmFactoryParameters.cpp" />
@@ -261,6 +263,8 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClCompile Include="src\utilities\GameSettings.cpp" />
     <ClCompile Include="src\utilities\Makers.cpp" />
     <ClCompile Include="src\utilities\Random.cpp" />
+    <ClCompile Include="src\utilities\Range.cpp" />
+    <ClCompile Include="src\utilities\RangeSize.cpp" />
     <ClCompile Include="src\utilities\Time.cpp" />
     <ClCompile Include="src\utilities\Variant.cpp" />
     <ClCompile Include="src\visitors\RenderVisitor.cpp" />
@@ -299,6 +303,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClInclude Include="src\factories\base\BaseFactory.h" />
     <ClInclude Include="src\factories\base\EntityFactory.h" />
     <ClInclude Include="src\factories\entities\AiFactory.h" />
+    <ClInclude Include="src\factories\entities\BorderFactory.h" />
     <ClInclude Include="src\factories\entities\CameraFactory.h" />
     <ClInclude Include="src\factories\entities\FoodFactory.h" />
     <ClInclude Include="src\factories\entities\FsmFactory.h" />
@@ -319,6 +324,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClInclude Include="src\parameters\factories\base\BaseFactoryParameters.h" />
     <ClInclude Include="src\parameters\factories\base\EntityFactoryParameters.h" />
     <ClInclude Include="src\parameters\factories\entities\AiFactoryParameters.h" />
+    <ClInclude Include="src\parameters\factories\entities\BorderFactoryParameters.h" />
     <ClInclude Include="src\parameters\factories\entities\CameraFactoryParameters.h" />
     <ClInclude Include="src\parameters\factories\entities\FoodFactoryParameters.h" />
     <ClInclude Include="src\parameters\factories\entities\FsmFactoryParameters.h" />
@@ -349,6 +355,8 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClInclude Include="src\utilities\GameSettings.h" />
     <ClInclude Include="src\utilities\Makers.h" />
     <ClInclude Include="src\utilities\Random.h" />
+    <ClInclude Include="src\utilities\Range.h" />
+    <ClInclude Include="src\utilities\RangeSize.h" />
     <ClInclude Include="src\utilities\Time.h" />
     <ClInclude Include="src\utilities\Variant.h" />
     <ClInclude Include="src\visitors\RenderVisitor.h" />

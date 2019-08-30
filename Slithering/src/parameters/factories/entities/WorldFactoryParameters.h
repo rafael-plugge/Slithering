@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <src/parameters/factories/base/EntityFactoryParameters.h>
+#include <src/parameters/factories/entities/BorderFactoryParameters.h>
 #include <src/math/Rect.h>
 
 namespace app::par::fact::ent
@@ -17,6 +18,7 @@ namespace app::par::fact::ent
 	public: // Public Member Variables
 		EntityFactoryParameters entityFactoryParams;
 		math::Rectf bounds;
+		BorderFactoryParameters borderFactoryParams;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
