@@ -36,6 +36,7 @@ namespace app::fact
 		std::vector<app::Entity> createImages();
 		std::vector<app::Entity> createPlayer();
 		std::vector<app::Entity> createAi();
+		std::vector<app::Entity> createFsm();
 		std::vector<app::Entity> createSnake();
 		std::vector<app::Entity> createFood();
 		std::vector<app::Entity> createWorld();

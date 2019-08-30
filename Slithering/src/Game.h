@@ -18,6 +18,8 @@
 #include <src/systems/DestroySystem.h>
 #include <src/systems/NeuralNetworkSystem.h>
 #include <src/systems/WrapAroundWorldSystem.h>
+#include <src/systems/FsmSystem.h>
+#include <src/systems/CommandSystem.h>
 
 // render systems
 #include <src/systems/RenderSystem.h>
@@ -32,6 +34,7 @@ namespace app
 		using UpdateSystem = std::variant<
 			  sys::DebugSystem
 			, sys::InputSystem
+			, sys::CommandSystem
 			, sys::MotionSystem
 			, sys::CameraTrackingSystem
 			, sys::SegmentSystem
@@ -39,9 +42,10 @@ namespace app
 			, sys::CollisionTrackingSystem
 			, sys::NeuralNetworkSystem
 			, sys::WrapAroundWorldSystem
+			, sys::FsmSystem
 			, sys::DestroySystem
 		>;
-		using UpdateSystems = std::array<UpdateSystem, 11>;
+		using UpdateSystems = std::array<UpdateSystem, 13>;
 		using RenderSystem = std::variant<
 			  sys::RenderSystem
 		>;

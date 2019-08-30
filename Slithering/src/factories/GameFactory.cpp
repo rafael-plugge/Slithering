@@ -2,6 +2,7 @@
 #include "GameFactory.h"
 #include <src/utilities/Makers.h>
 #include <src/input/Commands.h>
+#include <src/singletons/SettingsSingleton.h>
 
 // factories
 #include <src/factories/entities/ImageFactory.h>
@@ -11,6 +12,7 @@
 #include <src/factories/entities/FoodFactory.h>
 #include <src/factories/entities/AiFactory.h>
 #include <src/factories/entities/WorldFactory.h>
+#include <src/factories/entities/FsmFactory.h>
 
 std::vector<app::Entity> app::fact::GameFactory::create()
 {
@@ -22,6 +24,7 @@ std::vector<app::Entity> app::fact::GameFactory::create()
 	GameFactory::insertInto(gameEntities, this->createSnake());
 	GameFactory::insertInto(gameEntities, this->createPlayer());
 	GameFactory::insertInto(gameEntities, this->createAi());
+	GameFactory::insertInto(gameEntities, this->createFsm());
 	GameFactory::insertInto(gameEntities, this->createCameras());
 
 	return std::move(gameEntities);
@@ -34,25 +37,42 @@ std::vector<app::Entity> app::fact::GameFactory::createCameras()
 	auto & entityParams = params.entityFactoryParams;
 	auto cameraFactory = fact::ent::CameraFactory(params);
 
+	if (app::sin::Settings::get().playerEnabled)
 	{
-		entityParams.entity = EntityFactory(entityParams).create();
-		params.position = (math::Vector2f{ 1366.0f, 768.0f } / 2.0f);
-		params.size = math::Vector2f{ 1366.0f, 768.0f };
-		params.viewport = { 0.0f, 0.0f, 1.0f, 1.0f };
-		params.target = m_cameraTarget;
-		params.baseIndex = 0u;
-		entities.push_back(cameraFactory.create());
+		{
+			entityParams.entity = EntityFactory(entityParams).create();
+			params.position = (math::Vector2f{ 1366.0f, 768.0f } / 2.0f);
+			params.size = math::Vector2f{ 1366.0f, 768.0f };
+			params.viewport = { 0.0f, 0.0f, 1.0f, 1.0f };
+			params.target = m_cameraTarget;
+			params.baseIndex = 0u;
+			entities.push_back(cameraFactory.create());
+		}
+		{
+			entityParams.entity.reset();
+			params.position = { };
+			params.size = math::Vector2f{ 2000, 2000 };
+			params.viewport = { 0.0f, 0.0f, (300.0f / 1366.0f), (300.0f / 768.0f) };
+			params.baseIndex = 1u;
+			params.target.reset();
+			entities.push_back(cameraFactory.create());
+		}
 	}
+	else // Player is disabled therefore make one camera centered on middle of map.
 	{
-		entityParams.entity.reset();
-		m_minimapCamera = entityParams.entity = EntityFactory(entityParams).create();
-		params.position = { };
-		params.size = math::Vector2f{ 2000, 2000 };
-		params.viewport = { 0.0f, 0.0f, (300.0f / 1366.0f), (300.0f / 768.0f) };
-		params.target.reset();
-		params.baseIndex = 1u;
-		entities.push_back(cameraFactory.create());
+		auto const ratio = math::Vector2f{ 2000.0f, 2000.0f } / math::Vector2f{ 1366.0f, 768.0f };
+		{
+			entityParams.entity.reset();
+			entityParams.entity = EntityFactory(entityParams).create();
+			params.size = math::Vector2f{ 1366.0f, 768.0f } * 2.7f;
+			params.position = { 0.0f, 0.0f };
+			params.viewport = { 0.0f, 0.0f, 1.0f, 1.0f };
+			params.target.reset();
+			params.baseIndex = 0u;
+			entities.push_back(cameraFactory.create());
+		}
 	}
+
 
 	return std::move(entities);
 }
@@ -86,11 +106,12 @@ std::vector<app::Entity> app::fact::GameFactory::createPlayer()
 	auto & entityParams = imageParams.entityFactoryParams;
 	auto playerFactory = fact::ent::PlayerFactory(params);
 
+	if (app::sin::Settings::get().playerEnabled) // Player is enabled
 	{
 		m_cameraTarget = EntityFactory(entityParams).create();
 		{
 			imageParams.position = { 500.0f, 500.0f };
-			imageParams.size = { 100.0f, 100.0f };
+			imageParams.size = { 40.0f, 40.0f };
 			imageParams.origin = imageParams.size / 2.0f;
 			imageParams.fill = sf::Color::Green;
 			imageParams.zIndex = 3000u;
@@ -99,9 +120,9 @@ std::vector<app::Entity> app::fact::GameFactory::createPlayer()
 			snakeParams.amount = 3u;
 			snakeParams.segmentFill = sf::Color::Green;
 			snakeParams.bodyZIndex = 2900u;
-			snakeParams.tailFill = sf::Color::Yellow;
+			snakeParams.tailFill = sf::Color::Green;
 			snakeParams.tailZIndex = 2800u;
-			snakeParams.offset = { -55.0f, 0.0f };
+			snakeParams.offset = { -25.0f, 0.0f };
 			snakeParams.speed = 3.0f;
 		}
 		{
@@ -136,19 +157,20 @@ std::vector<app::Entity> app::fact::GameFactory::createAi()
 		}
 		{
 			imageParams.position = { 500.0f, 500.0f };
-			imageParams.size = { 100.0f, 100.0f };
+			imageParams.size = { 40.0f, 40.0f };
 			imageParams.origin = imageParams.size / 2.0f;
-			imageParams.fill = sf::Color::Red;
+			imageParams.fill = sf::Color::Yellow;
 			imageParams.zIndex = 1000u;
+			imageParams.orientation = 90.0f;
 		}
 		{
 			snakeParams.amount = 3u;
-			snakeParams.segmentFill = sf::Color::Red;
+			snakeParams.segmentFill = sf::Color::Yellow;
 			snakeParams.bodyZIndex = 900u;
 			snakeParams.tailFill = sf::Color::Yellow;
 			snakeParams.tailZIndex = 800u;
-			snakeParams.offset = { -55.0f, 0.0f };
-			snakeParams.speed = 3.0f;
+			snakeParams.offset = { -25.0f, 0.0f };
+			snakeParams.speed = 0.0f;
 		}
 		{
 			params.aiCommands = {
@@ -164,6 +186,42 @@ std::vector<app::Entity> app::fact::GameFactory::createAi()
 	return std::move(entities);
 }
 
+std::vector<app::Entity> app::fact::GameFactory::createFsm()
+{
+	auto entities = std::vector<app::Entity>();
+	auto params = par::fact::ent::FsmFactoryParameters();
+	auto& snakeParams = params.snakeFactoryParams;
+	auto& imageParams = snakeParams.imageFactoryParams;
+	auto& entityParams = imageParams.entityFactoryParams;
+	auto fsmFactory = fact::ent::FsmFactory(params);
+
+	{
+		{
+			entityParams.entity = EntityFactory(entityParams).create();
+		}
+		{
+			imageParams.position = { -2000.0f, 2000.0f };
+			imageParams.size = { 40.0f, 40.0f };
+			imageParams.origin = imageParams.size / 2.0f;
+			imageParams.fill = sf::Color::Magenta;
+			imageParams.zIndex = 1010u;
+		}
+		{
+			snakeParams.amount = 3u;
+			snakeParams.segmentFill = sf::Color::Magenta;
+			snakeParams.bodyZIndex = 910u;
+			snakeParams.tailFill = sf::Color::Magenta;
+			snakeParams.tailZIndex = 810u;
+			snakeParams.offset = { -25.0f, 0.0f };
+			snakeParams.speed = 2.0f;
+		}
+
+		entities.emplace_back(fsmFactory.create());
+	}
+
+	return std::move(entities);
+}
+
 std::vector<app::Entity> app::fact::GameFactory::createSnake()
 {
 	auto entities = std::vector<app::Entity>();
@@ -172,20 +230,43 @@ std::vector<app::Entity> app::fact::GameFactory::createSnake()
 	auto & entityParams = imageParams.entityFactoryParams;
 	auto snakeFactory = fact::ent::SnakeFactory(params);
 
+	imageParams.size = { 40.0f, 40.0f };
+	imageParams.origin = imageParams.size / 2.0f;
+	imageParams.fill = sf::Color::White;
+	params.segmentFill = sf::Color::White;
+	params.tailFill = sf::Color::White;
+	params.amount = 5u;
+	params.bodyZIndex = 900u;
+	params.tailZIndex = 800u;
+	params.offset = math::Vector2f{ -25.0f, 0.0f };
+	params.speed = 1.0f;
 	{
-		m_cameraTarget = entityParams.entity = EntityFactory(entityParams).create();
-		imageParams.position = { 700.0f, 200.0f };
-		imageParams.size = { 100.0f, 100.0f };
-		imageParams.origin = imageParams.size / 2.0f;
-		imageParams.fill = sf::Color::Blue;
-		params.amount = 5u;
-		params.segmentFill = sf::Color::Green;
-		params.bodyZIndex = 900u;
-		params.tailFill = sf::Color::Yellow;
-		params.tailZIndex = 800u;
-		params.offset = math::Vector2f{ 55.0f, 55.0f };
-		params.speed = 0.0f;
+		entityParams.entity = EntityFactory(entityParams).create();
+		imageParams.position = { 950.0f, 950.0f };
+		imageParams.orientation = 90.0f;
 		entities.push_back(snakeFactory.create());
+		entityParams.entity.reset();
+	}
+	{
+		entityParams.entity = EntityFactory(entityParams).create();
+		imageParams.position = { -950.0f, -950.0f };
+		imageParams.orientation = 0.0f;
+		entities.push_back(snakeFactory.create());
+		entityParams.entity.reset();
+	}
+	{
+		entityParams.entity = EntityFactory(entityParams).create();
+		imageParams.position = { 950.0f, 950.0f };
+		imageParams.orientation = 180.0f;
+		entities.push_back(snakeFactory.create());
+		entityParams.entity.reset();
+	}
+	{
+		entityParams.entity = EntityFactory(entityParams).create();
+		imageParams.position = { -950.0f, -950.0f };
+		imageParams.orientation = -90.0f;
+		entities.push_back(snakeFactory.create());
+		entityParams.entity.reset();
 	}
 
 	return std::move(entities);

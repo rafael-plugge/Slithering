@@ -293,6 +293,27 @@
     <ClCompile Include="src\components\WrapAround.cpp">
       <Filter>Source Files\components</Filter>
     </ClCompile>
+    <ClCompile Include="src\components\FiniteStateMachine.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parameters\factories\entities\FsmFactoryParameters.cpp">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factories\entities\FsmFactory.cpp">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\FsmSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\CommandSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\singletons\SettingsSingleton.cpp">
+      <Filter>Source Files\singletons</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\GameSettings.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
     <ClCompile Include="src\factories\entities\BorderFactory.cpp">
       <Filter>Source Files\factories\entities</Filter>
     </ClCompile>
@@ -528,6 +549,27 @@
     </ClInclude>
     <ClInclude Include="src\components\WrapAround.h">
       <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\FiniteStateMachine.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parameters\factories\entities\FsmFactoryParameters.h">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factories\entities\FsmFactory.h">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\FsmSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\CommandSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\singletons\SettingsSingleton.h">
+      <Filter>Source Files\singletons</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities\GameSettings.h">
+      <Filter>Source Files\utilities</Filter>
     </ClInclude>
     <ClInclude Include="src\factories\entities\BorderFactory.h">
       <Filter>Source Files\factories\entities</Filter>
