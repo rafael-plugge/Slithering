@@ -259,6 +259,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClCompile Include="src\systems\SegmentSystem.cpp" />
     <ClCompile Include="src\systems\WrapAroundWorldSystem.cpp" />
     <ClCompile Include="src\tags\Player.cpp" />
+    <ClCompile Include="src\training\TrainingSet.cpp" />
     <ClCompile Include="src\utilities\Console.cpp" />
     <ClCompile Include="src\utilities\GameSettings.cpp" />
     <ClCompile Include="src\utilities\Makers.cpp" />
@@ -351,6 +352,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClInclude Include="src\systems\SegmentSystem.h" />
     <ClInclude Include="src\systems\WrapAroundWorldSystem.h" />
     <ClInclude Include="src\tags\Player.h" />
+    <ClInclude Include="src\training\TrainingSet.h" />
     <ClInclude Include="src\utilities\Console.h" />
     <ClInclude Include="src\utilities\GameSettings.h" />
     <ClInclude Include="src\utilities\Makers.h" />

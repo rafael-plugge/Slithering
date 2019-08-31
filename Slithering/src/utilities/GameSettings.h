@@ -14,13 +14,17 @@ namespace app
 		{
 			auto text = std::stringstream();
 			text << "Game Settings:\n"
-				<< " => Player Enabled [" << (this->playerEnabled ? "y" : "n") << "]"
+				<< " => Player Enabled [" << (this->playerEnabled ? "yes" : "no") << "]\n"
+				<< " => FSM Enabled [" << (this->fsmEnabled ? "yes" : "no") << "]\n"
+				<< " => AI Enabled [" << (this->aiEnabled ? "yes" : "no") << "]\n"
 				<< "";
 			return text.str();
 		}
 	public: // Public Static Variables
 	public: // Public Member Variables
-		bool playerEnabled = true;
+		bool playerEnabled;
+		bool fsmEnabled;
+		bool aiEnabled;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables
