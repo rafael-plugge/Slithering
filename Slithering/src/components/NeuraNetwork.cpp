@@ -1,9 +1,9 @@
 ﻿#include "stdafx.h"
 #include "NeuraNetwork.h"
 
-void app::comp::NeuralNetwork::New(Network & mlp, bool const & restart)
+void app::comp::NeuralNetwork::New(nn::Network & mlp, bool const & restart)
 {
-	auto defaultMlp = Network(InputLayers, FirstHiddenLayers, SecondHiddenLayers, OutputLayers, Alpha, Momentum);
+	auto defaultMlp = nn::Network(nn::InputLayers, nn::FirstHiddenLayers, nn::SecondHiddenLayers, nn::OutputLayers, nn::Alpha, nn::Momentum);
 	if (restart) { mlp.swap(defaultMlp); return; }
 
 	try

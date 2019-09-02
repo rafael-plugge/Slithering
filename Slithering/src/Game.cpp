@@ -16,6 +16,7 @@ app::Game::Game()
 		, UpdateSystem(std::in_place_type<sys::FoodSystem>)
 		, UpdateSystem(std::in_place_type<sys::CollisionTrackingSystem>)
 		, UpdateSystem(std::in_place_type<sys::CameraTrackingSystem>)
+		, UpdateSystem(std::in_place_type<sys::NeuralNetworkTrainingSystem>, m_gameLoop)
 		, UpdateSystem(std::in_place_type<sys::NeuralNetworkSystem>)
 		, UpdateSystem(std::in_place_type<sys::FsmSystem>)
 		, UpdateSystem(std::in_place_type<sys::WrapAroundWorldSystem>)
@@ -35,6 +36,15 @@ app::Game::~Game()
 bool app::Game::init()
 {
 	return this->createEntities() && this->initSystems();
+}
+
+void app::Game::deinit()
+{
+	for (UpdateSystem& updateSystem : m_updateSystems)
+		std::visit(util::overload{
+			  [this](sys::NeuralNetworkTrainingSystem& sys) { sys.deinit(); }
+			, [](auto const& sys) constexpr {}
+		}, updateSystem);
 }
 
 bool app::Game::initSystems()

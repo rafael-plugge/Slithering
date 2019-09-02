@@ -326,6 +326,15 @@
     <ClCompile Include="src\utilities\Range.cpp">
       <Filter>Source Files\utilities</Filter>
     </ClCompile>
+    <ClCompile Include="src\systems\NeuralNetworkTrainingSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\TrainingSet.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\NeuralNetworkTypes.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -581,6 +590,15 @@
       <Filter>Source Files\utilities</Filter>
     </ClInclude>
     <ClInclude Include="src\utilities\Range.h">
+      <Filter>Source Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\NeuralNetworkTrainingSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\TrainingSet.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities\NeuralNetworkTypes.h">
       <Filter>Source Files\utilities</Filter>
     </ClInclude>
   </ItemGroup>
