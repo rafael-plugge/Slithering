@@ -32,23 +32,24 @@ void app::sys::NeuralNetworkTrainingSystem::update(app::time::seconds const& dt)
 	{
 		nn::Network& mlp = *nn.pMlp;
 
+		if (m_counter > maximumTrainingLoops) { return; }
 		m_registry.view<comp::TrainingSet>()
 			.each([&, this](app::Entity const trainingEntity, comp::TrainingSet const& set)
 		{
+			if (m_counter > maximumTrainingLoops) { return; }
 			nn::InputData const& input = set.input;
 			nn::OutputData const& output = set.output;
 			mlp.train(input, output);
 			++m_counter;
-
-			if (m_counter > maximumTrainingLoops) { return; }
 		});
-		if (m_counter > maximumTrainingLoops) { return; }
 	});
 	m_signalEnd = m_counter > maximumTrainingLoops;
 }
 
 void app::sys::NeuralNetworkTrainingSystem::deinit()
 {
+	if (!m_train.value_or(false)) { return; }
+
 	m_registry.view<comp::NeuralNetwork>()
 		.each([&, this](app::Entity const entity, comp::NeuralNetwork const& nn)
 	{
