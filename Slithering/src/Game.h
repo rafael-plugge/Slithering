@@ -20,6 +20,7 @@
 #include <src/systems/WrapAroundWorldSystem.h>
 #include <src/systems/FsmSystem.h>
 #include <src/systems/CommandSystem.h>
+#include <src/systems/NeuralNetworkTrainingSystem.h>
 
 // render systems
 #include <src/systems/RenderSystem.h>
@@ -43,9 +44,10 @@ namespace app
 			, sys::NeuralNetworkSystem
 			, sys::WrapAroundWorldSystem
 			, sys::FsmSystem
+			, sys::NeuralNetworkTrainingSystem
 			, sys::DestroySystem
 		>;
-		using UpdateSystems = std::array<UpdateSystem, 13>;
+		using UpdateSystems = std::array<UpdateSystem, 14>;
 		using RenderSystem = std::variant<
 			  sys::RenderSystem
 		>;
@@ -63,6 +65,7 @@ namespace app
 	public: // Public Static Functions
 	public: // Public Member Functions
 		bool init();
+		void deinit();
 		constexpr bool const & isRunning() const { return m_gameLoop; }
 		void pollEvents();
 		void update(app::time::seconds const & dt);

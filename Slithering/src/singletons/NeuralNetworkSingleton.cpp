@@ -1,20 +1,19 @@
 ﻿#include "stdafx.h"
 #include "NeuralNetworkSingleton.h"
 
-std::unique_ptr<app::comp::NeuralNetwork::Network> app::sin::NeuralNetwork::s_mlp = nullptr;
+std::shared_ptr<app::nn::Network> app::sin::NeuralNetwork::s_mlp = nullptr;
 
-app::comp::NeuralNetwork::Network * const app::sin::NeuralNetwork::get()
+app::nn::Network * const app::sin::NeuralNetwork::get()
 {
-	using NeuralNetwork = app::comp::NeuralNetwork;
 	if (!s_mlp)
 	{
-		s_mlp = std::make_unique<NeuralNetwork::Network>(
-			  NeuralNetwork::InputLayers
-			, NeuralNetwork::FirstHiddenLayers
-			, NeuralNetwork::SecondHiddenLayers
-			, NeuralNetwork::OutputLayers
-			, NeuralNetwork::Alpha
-			, NeuralNetwork::Momentum);
+		s_mlp = std::make_shared<app::nn::Network>(
+			  app::nn::InputLayers
+			, app::nn::FirstHiddenLayers
+			, app::nn::SecondHiddenLayers
+			, app::nn::OutputLayers
+			, app::nn::Alpha
+			, app::nn::Momentum);
 	}
 	return s_mlp.get();
 }

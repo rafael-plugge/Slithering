@@ -4,6 +4,7 @@
 
 // components
 #include <src/components/NeuraNetwork.h>
+#include <src/components/Commandable.h>
 
 app::fact::ent::AiFactory::AiFactory(Parameters & params)
 	: SnakeFactory(params.snakeFactoryParams)
@@ -19,12 +20,9 @@ app::Entity const app::fact::ent::AiFactory::create()
 	{
 		auto neuralNetwork = comp::NeuralNetwork();
 		neuralNetwork.pMlp = app::sin::NeuralNetwork::get();
-		comp::NeuralNetwork::New(*neuralNetwork.pMlp, true);
+		comp::NeuralNetwork::New(*neuralNetwork.pMlp, false);
 
-		neuralNetwork.aiCommands.insert(neuralNetwork.aiCommands.end()
-			, m_params.aiCommands.cbegin()
-			, m_params.aiCommands.cend());
-		neuralNetwork.aiCommands.shrink_to_fit();
+		neuralNetwork.commands = m_params.commands;
 
 		m_registry.assign<decltype(neuralNetwork)>(aiEntity, std::move(neuralNetwork));
 	}

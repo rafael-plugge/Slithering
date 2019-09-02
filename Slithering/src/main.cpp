@@ -1,11 +1,11 @@
 ﻿#include "stdafx.h"
-#include "Game.h"
+#include <src/Game.h>
 #include <src/singletons/SettingsSingleton.h>
 
 std::vector<std::string> collectArguments(int argc, char** argv) noexcept;
 bool setStartSettings(std::vector<std::string> const & arguments);
 bool caseInsensitiveStringEquality(std::string const& left, std::string const& right);
-void askSetting(std::string const& msg, bool& flag);
+template<typename _Type> void askSetting(std::string const& msg, _Type& setting);
 void playerSettings(app::Settings& settings);
 void fsmSettings(app::Settings& settings);
 void aiSettings(app::Settings& settings);
@@ -49,8 +49,8 @@ std::optional<bool> presetSettings(std::vector<std::string> const& arguments, ap
 		if (caseInsensitiveStringEquality(arguments.at(1), noStr)) { settings.fsmEnabled = false; }
 
 		if (arguments.size() <= 2) { return std::nullopt; }
-		if (caseInsensitiveStringEquality(arguments.at(2), yesStr)) { settings.aiEnabled = true; }
-		if (caseInsensitiveStringEquality(arguments.at(2), noStr)) { settings.aiEnabled = false; }
+		if (caseInsensitiveStringEquality(arguments.at(2), yesStr)) { settings.ai.enabled = true; }
+		if (caseInsensitiveStringEquality(arguments.at(2), noStr)) { settings.ai.enabled = false; }
 
 		if (arguments.size() <= 3) { return std::nullopt; }
 		if (caseInsensitiveStringEquality(arguments.at(3), yesStr))
@@ -103,18 +103,43 @@ bool caseInsensitiveStringEquality(std::string const& left, std::string const& r
 	);
 }
 
-void askSetting(std::string const& msg, bool& flag)
+bool stringIsOnlyDigits(std::string const& str)
 {
-	std::optional<bool const> answer;
+	return !str.empty() && str.find_first_not_of("0123456789") == std::string::npos;
+}
+
+std::optional<long const> stringToLong(std::string const& str)
+{
+	auto iss = std::istringstream(str);
+	long result;
+	iss >> result;
+	if (iss.fail()) { return std::nullopt; }
+	return result;
+
+}
+
+template<typename _Type>
+void askSetting(std::string const& msg, _Type& setting)
+{
+	std::optional<_Type const> answer;
 	do
 	{
 		std::cout << msg;
 		std::string input;
 		std::cin >> input;
-		if (caseInsensitiveStringEquality(input, "y")) { answer.emplace(true); }
-		if (caseInsensitiveStringEquality(input, "n")) { answer.emplace(false); }
+		if constexpr (std::is_same<bool, _Type>::value)
+		{
+			if (caseInsensitiveStringEquality(input, "y")) { answer.emplace(true); }
+			if (caseInsensitiveStringEquality(input, "n")) { answer.emplace(false); }
+		}
+		else if constexpr (std::is_same<long, _Type>::value)
+		{
+			if (stringIsOnlyDigits(input))
+				if (auto const result = stringToLong(input); result.has_value())
+					answer.emplace(result.value());
+		}
 	} while (!answer.has_value());
-	flag = answer.value();
+	setting = answer.value();
 	std::cout << std::endl;
 }
 
@@ -130,7 +155,12 @@ void fsmSettings(app::Settings& settings)
 
 void aiSettings(app::Settings& settings)
 {
-	askSetting("Enable AI [y/n]: ", settings.aiEnabled);
+	askSetting("Enable AI [y/n]: ", settings.ai.enabled);
+	if (!settings.ai.enabled) { return; }
+	askSetting("Train Ai [y/n]: ", settings.ai.train);
+	askSetting("Reset Ai [y/n]: ", settings.ai.reset);
+	if (!settings.ai.train) { return; }
+	askSetting("How many training loops: ", settings.ai.howMany);
 }
 
 bool gameStartSetting()
@@ -173,6 +203,8 @@ int startGame()
 		}
 		game.render(deltaRenderStep);
 	}
+
+	game.deinit();
 
 	return EXIT_SUCCESS;
 }

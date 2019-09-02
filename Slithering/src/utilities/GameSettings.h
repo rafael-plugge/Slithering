@@ -16,7 +16,10 @@ namespace app
 			text << "Game Settings:\n"
 				<< " => Player Enabled [" << (this->playerEnabled ? "yes" : "no") << "]\n"
 				<< " => FSM Enabled [" << (this->fsmEnabled ? "yes" : "no") << "]\n"
-				<< " => AI Enabled [" << (this->aiEnabled ? "yes" : "no") << "]\n"
+				<< " => AI Enabled [" << (this->ai.enabled ? "yes" : "no") << "]\n"
+				<< " => AI Reset [" << (this->ai.reset ? "yes" : "no") << "]\n"
+				<< " => AI Training Enabled [" << (this->ai.train ? "yes" : "no") << "]\n"
+				<< " => AI Training Loops [" << (this->ai.howMany) << "]\n"
 				<< "";
 			return text.str();
 		}
@@ -24,7 +27,13 @@ namespace app
 	public: // Public Member Variables
 		bool playerEnabled;
 		bool fsmEnabled;
-		bool aiEnabled;
+		struct
+		{
+			bool enabled;
+			bool train = false;
+			bool reset = false;
+			long howMany = 0;
+		}ai;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables

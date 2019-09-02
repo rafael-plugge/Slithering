@@ -16,7 +16,7 @@ namespace app::par::fact::ent
 	public: // Public Static Variables
 	public: // Public Member Variables
 		SnakeFactoryParameters snakeFactoryParams;
-		std::array<inp::AiCommand, 3> aiCommands;
+		std::array<inp::Command, 3> commands;
 	protected: // Protected Static Functions
 	protected: // Protected Member Functions
 	protected: // Protected Static Variables

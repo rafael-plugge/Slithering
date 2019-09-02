@@ -18,14 +18,27 @@ std::vector<app::Entity> app::fact::GameFactory::create()
 {
 	auto gameEntities = std::vector<app::Entity>();
 
-	GameFactory::insertInto(gameEntities, this->createWorld());
-	GameFactory::insertInto(gameEntities, this->createImages());
-	GameFactory::insertInto(gameEntities, this->createFood());
-	GameFactory::insertInto(gameEntities, this->createSnake());
-	GameFactory::insertInto(gameEntities, this->createPlayer());
-	GameFactory::insertInto(gameEntities, this->createAi());
-	GameFactory::insertInto(gameEntities, this->createFsm());
-	GameFactory::insertInto(gameEntities, this->createCameras());
+	auto const& settings = app::sin::Settings::get();
+	if (settings.ai.train)
+	{
+		GameFactory::insertInto(gameEntities, this->createWorld());
+		GameFactory::insertInto(gameEntities, this->createImages());
+		GameFactory::insertInto(gameEntities, this->createFood());
+		GameFactory::insertInto(gameEntities, this->createAi());
+		GameFactory::insertInto(gameEntities, this->createCameras());
+	}
+	else
+	{
+		GameFactory::insertInto(gameEntities, this->createWorld());
+		GameFactory::insertInto(gameEntities, this->createImages());
+		GameFactory::insertInto(gameEntities, this->createFood());
+		GameFactory::insertInto(gameEntities, this->createSnake());
+		GameFactory::insertInto(gameEntities, this->createPlayer());
+		GameFactory::insertInto(gameEntities, this->createAi());
+		GameFactory::insertInto(gameEntities, this->createFsm());
+		GameFactory::insertInto(gameEntities, this->createCameras());
+	}
+
 
 	return std::move(gameEntities);
 }
@@ -170,13 +183,13 @@ std::vector<app::Entity> app::fact::GameFactory::createAi()
 			snakeParams.tailFill = sf::Color::Yellow;
 			snakeParams.tailZIndex = 800u;
 			snakeParams.offset = { -25.0f, 0.0f };
-			snakeParams.speed = 0.0f;
+			snakeParams.speed = 2.0f;
 		}
 		{
-			params.aiCommands = {
-				inp::AiCommand{ { }, inp::Command(std::in_place_type<com::DefaultCommand>) },
-				inp::AiCommand{ { }, inp::Command(std::in_place_type<com::TurnLeftCommand>, entityParams.entity.value()) },
-				inp::AiCommand{ { }, inp::Command(std::in_place_type<com::TurnRightCommand>, entityParams.entity.value()) }
+			params.commands = {
+				inp::Command(std::in_place_type<com::TurnLeftCommand>, entityParams.entity.value()),
+				inp::Command(std::in_place_type<com::TurnRightCommand>, entityParams.entity.value()),
+				inp::Command(std::in_place_type<com::DefaultCommand>)
 			};
 		}
 

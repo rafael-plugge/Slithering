@@ -66,9 +66,6 @@
     <Filter Include="Source Files\commands\utilities">
       <UniqueIdentifier>{4afaff7e-a025-4d63-b016-6e4966d41fbc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\training">
-      <UniqueIdentifier>{bd63d60f-f3c3-4adc-b7af-c4fd7696d2c5}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -329,8 +326,14 @@
     <ClCompile Include="src\utilities\Range.cpp">
       <Filter>Source Files\utilities</Filter>
     </ClCompile>
-    <ClCompile Include="src\training\TrainingSet.cpp">
-      <Filter>Source Files\training</Filter>
+    <ClCompile Include="src\systems\NeuralNetworkTrainingSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\TrainingSet.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\NeuralNetworkTypes.cpp">
+      <Filter>Source Files\utilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -589,8 +592,14 @@
     <ClInclude Include="src\utilities\Range.h">
       <Filter>Source Files\utilities</Filter>
     </ClInclude>
-    <ClInclude Include="src\training\TrainingSet.h">
-      <Filter>Source Files\training</Filter>
+    <ClInclude Include="src\systems\NeuralNetworkTrainingSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\TrainingSet.h">
+      <Filter>Source Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utilities\NeuralNetworkTypes.h">
+      <Filter>Source Files\utilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

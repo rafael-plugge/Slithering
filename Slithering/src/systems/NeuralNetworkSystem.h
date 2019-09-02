@@ -33,7 +33,6 @@ namespace app::sys
 	private: // Private Member Functions
 	private: // Private Static Variables
 	private: // Private Member Variables
-		app::Entity m_playerEntity;
 	};
 
 	static_assert(std::is_default_constructible<NeuralNetworkSystem>::value, "NeuralNetworkSystem must be default constructible");
