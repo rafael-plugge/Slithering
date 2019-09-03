@@ -121,7 +121,7 @@
 // Global namespace
 namespace app
 {
-	typedef std::uint32_t Entity;
+	typedef std::uint64_t Entity;
 	typedef entt::Registry<Entity> Registry;
 	namespace inp
 	{

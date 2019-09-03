@@ -8,6 +8,10 @@ namespace app::fact
 	class GameFactory : public BaseFactory<std::vector<app::Entity>>
 	{
 	public: // Public Usings/Typedefs/Enums
+		enum class Com
+		{
+			Left, Right, Straight
+		};
 	protected: // Protected Usings/Typedefs/Enums
 	private: // Private Usings/Typedefs/Enums
 	public: // Constructors/Destructor/Assignments
@@ -40,6 +44,7 @@ namespace app::fact
 		std::vector<app::Entity> createSnake();
 		std::vector<app::Entity> createFood();
 		std::vector<app::Entity> createWorld();
+		std::vector<app::Entity> createTrainingData();
 	private: // Private Static Variables
 	private: // Private Member Variables
 		std::optional<app::Entity> m_cameraTarget;

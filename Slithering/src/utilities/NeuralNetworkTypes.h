@@ -8,7 +8,7 @@ namespace app::nn
 	// Orientation 3
 	// Closest Food Position X Y 4 5
 	constexpr static long InputLayers = 5L;
-	constexpr static long FirstHiddenLayers = 0L;
+	constexpr static long FirstHiddenLayers = 10L;
 	constexpr static long SecondHiddenLayers = 0L;
 	constexpr static long OutputLayers = 3L;
 	constexpr static double Alpha = 0.1;

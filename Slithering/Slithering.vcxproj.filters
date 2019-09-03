@@ -74,14 +74,8 @@
     <ClCompile Include="src\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\systems\BaseSystem.cpp">
-      <Filter>Source Files\systems</Filter>
-    </ClCompile>
     <ClCompile Include="src\utilities\Time.cpp">
       <Filter>Source Files\utilities</Filter>
-    </ClCompile>
-    <ClCompile Include="src\systems\RenderSystem.cpp">
-      <Filter>Source Files\systems</Filter>
     </ClCompile>
     <ClCompile Include="src\components\Location.cpp">
       <Filter>Source Files\components</Filter>
@@ -107,9 +101,6 @@
     <ClCompile Include="src\input\MouseHandler.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
-    <ClCompile Include="src\systems\InputSystem.cpp">
-      <Filter>Source Files\systems</Filter>
-    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -133,9 +124,6 @@
     </ClCompile>
     <ClCompile Include="src\utilities\Random.cpp">
       <Filter>Source Files\utilities</Filter>
-    </ClCompile>
-    <ClCompile Include="src\systems\DebugSystem.cpp">
-      <Filter>Source Files\systems</Filter>
     </ClCompile>
     <ClCompile Include="src\singletons\RegistrySingleton.cpp">
       <Filter>Source Files\singletons</Filter>
@@ -203,9 +191,6 @@
     <ClCompile Include="src\components\Motion.cpp">
       <Filter>Source Files\components</Filter>
     </ClCompile>
-    <ClCompile Include="src\systems\MotionSystem.cpp">
-      <Filter>Source Files\systems</Filter>
-    </ClCompile>
     <ClCompile Include="src\components\Segment.cpp">
       <Filter>Source Files\components</Filter>
     </ClCompile>
@@ -221,17 +206,11 @@
     <ClCompile Include="src\parameters\factories\entities\SegmentFactoryParameters.cpp">
       <Filter>Source Files\parameters\factories\entities</Filter>
     </ClCompile>
-    <ClCompile Include="src\systems\CameraTrackingSystem.cpp">
-      <Filter>Source Files\systems</Filter>
-    </ClCompile>
     <ClCompile Include="src\input\Commands.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
     <ClCompile Include="src\commands\base\DefaultCommand.cpp">
       <Filter>Source Files\commands\base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\systems\SegmentSystem.cpp">
-      <Filter>Source Files\systems</Filter>
     </ClCompile>
     <ClCompile Include="src\components\Commandable.cpp">
       <Filter>Source Files\components</Filter>
@@ -248,23 +227,14 @@
     <ClCompile Include="src\components\Food.cpp">
       <Filter>Source Files\components</Filter>
     </ClCompile>
-    <ClCompile Include="src\systems\FoodSystem.cpp">
-      <Filter>Source Files\systems</Filter>
-    </ClCompile>
     <ClCompile Include="src\components\Collision.cpp">
       <Filter>Source Files\components</Filter>
-    </ClCompile>
-    <ClCompile Include="src\systems\CollisionTrackingSystem.cpp">
-      <Filter>Source Files\systems</Filter>
     </ClCompile>
     <ClCompile Include="src\commands\utilities\ResetCommand.cpp">
       <Filter>Source Files\commands\utilities</Filter>
     </ClCompile>
     <ClCompile Include="src\components\Destroy.cpp">
       <Filter>Source Files\components</Filter>
-    </ClCompile>
-    <ClCompile Include="src\systems\DestroySystem.cpp">
-      <Filter>Source Files\systems</Filter>
     </ClCompile>
     <ClCompile Include="src\commands\movement\SpeedCommand.cpp">
       <Filter>Source Files\commands\movement</Filter>
@@ -278,17 +248,11 @@
     <ClCompile Include="src\singletons\NeuralNetworkSingleton.cpp">
       <Filter>Source Files\singletons</Filter>
     </ClCompile>
-    <ClCompile Include="src\systems\NeuralNetworkSystem.cpp">
-      <Filter>Source Files\systems</Filter>
-    </ClCompile>
     <ClCompile Include="src\factories\entities\WorldFactory.cpp">
       <Filter>Source Files\factories\entities</Filter>
     </ClCompile>
     <ClCompile Include="src\parameters\factories\entities\WorldFactoryParameters.cpp">
       <Filter>Source Files\parameters\factories\entities</Filter>
-    </ClCompile>
-    <ClCompile Include="src\systems\WrapAroundWorldSystem.cpp">
-      <Filter>Source Files\systems</Filter>
     </ClCompile>
     <ClCompile Include="src\components\WrapAround.cpp">
       <Filter>Source Files\components</Filter>
@@ -301,12 +265,6 @@
     </ClCompile>
     <ClCompile Include="src\factories\entities\FsmFactory.cpp">
       <Filter>Source Files\factories\entities</Filter>
-    </ClCompile>
-    <ClCompile Include="src\systems\FsmSystem.cpp">
-      <Filter>Source Files\systems</Filter>
-    </ClCompile>
-    <ClCompile Include="src\systems\CommandSystem.cpp">
-      <Filter>Source Files\systems</Filter>
     </ClCompile>
     <ClCompile Include="src\singletons\SettingsSingleton.cpp">
       <Filter>Source Files\singletons</Filter>
@@ -326,14 +284,62 @@
     <ClCompile Include="src\utilities\Range.cpp">
       <Filter>Source Files\utilities</Filter>
     </ClCompile>
-    <ClCompile Include="src\systems\NeuralNetworkTrainingSystem.cpp">
-      <Filter>Source Files\systems</Filter>
-    </ClCompile>
     <ClCompile Include="src\components\TrainingSet.cpp">
       <Filter>Source Files\components</Filter>
     </ClCompile>
     <ClCompile Include="src\utilities\NeuralNetworkTypes.cpp">
       <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factories\entities\TrainingFactory.cpp">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parameters\factories\entities\TrainingFactoryParameters.cpp">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\BaseSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\CameraTrackingSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\CollisionTrackingSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\CommandSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\DebugSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\DestroySystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\FoodSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\FsmSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\InputSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\MotionSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\NeuralNetworkSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\NeuralNetworkTrainingSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\RenderSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\SegmentSystem.cpp">
+      <Filter>Source Files\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\WrapAroundWorldSystem.cpp">
+      <Filter>Source Files\systems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -364,15 +370,6 @@
     <ClInclude Include="src\math\Vector2.h">
       <Filter>Source Files\math</Filter>
     </ClInclude>
-    <ClInclude Include="src\systems\BaseSystem.h">
-      <Filter>Source Files\systems</Filter>
-    </ClInclude>
-    <ClInclude Include="src\systems\InputSystem.h">
-      <Filter>Source Files\systems</Filter>
-    </ClInclude>
-    <ClInclude Include="src\systems\RenderSystem.h">
-      <Filter>Source Files\systems</Filter>
-    </ClInclude>
     <ClInclude Include="src\tags\Player.h">
       <Filter>Source Files\tags</Filter>
     </ClInclude>
@@ -399,9 +396,6 @@
     </ClInclude>
     <ClInclude Include="src\utilities\Random.h">
       <Filter>Source Files\utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="src\systems\DebugSystem.h">
-      <Filter>Source Files\systems</Filter>
     </ClInclude>
     <ClInclude Include="src\singletons\RegistrySingleton.h">
       <Filter>Source Files\singletons</Filter>
@@ -469,9 +463,6 @@
     <ClInclude Include="src\components\Motion.h">
       <Filter>Source Files\components</Filter>
     </ClInclude>
-    <ClInclude Include="src\systems\MotionSystem.h">
-      <Filter>Source Files\systems</Filter>
-    </ClInclude>
     <ClInclude Include="src\components\Segment.h">
       <Filter>Source Files\components</Filter>
     </ClInclude>
@@ -487,17 +478,11 @@
     <ClInclude Include="src\parameters\factories\entities\SegmentFactoryParameters.h">
       <Filter>Source Files\parameters\factories\entities</Filter>
     </ClInclude>
-    <ClInclude Include="src\systems\CameraTrackingSystem.h">
-      <Filter>Source Files\systems</Filter>
-    </ClInclude>
     <ClInclude Include="src\input\Commands.h">
       <Filter>Source Files\input</Filter>
     </ClInclude>
     <ClInclude Include="src\commands\base\DefaultCommand.h">
       <Filter>Source Files\commands\base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\systems\SegmentSystem.h">
-      <Filter>Source Files\systems</Filter>
     </ClInclude>
     <ClInclude Include="src\components\Commandable.h">
       <Filter>Source Files\components</Filter>
@@ -514,23 +499,14 @@
     <ClInclude Include="src\components\Food.h">
       <Filter>Source Files\components</Filter>
     </ClInclude>
-    <ClInclude Include="src\systems\FoodSystem.h">
-      <Filter>Source Files\systems</Filter>
-    </ClInclude>
     <ClInclude Include="src\components\Collision.h">
       <Filter>Source Files\components</Filter>
-    </ClInclude>
-    <ClInclude Include="src\systems\CollisionTrackingSystem.h">
-      <Filter>Source Files\systems</Filter>
     </ClInclude>
     <ClInclude Include="src\commands\utilities\ResetCommand.h">
       <Filter>Source Files\commands\utilities</Filter>
     </ClInclude>
     <ClInclude Include="src\components\Destroy.h">
       <Filter>Source Files\components</Filter>
-    </ClInclude>
-    <ClInclude Include="src\systems\DestroySystem.h">
-      <Filter>Source Files\systems</Filter>
     </ClInclude>
     <ClInclude Include="src\commands\movement\SpeedCommand.h">
       <Filter>Source Files\commands\movement</Filter>
@@ -544,17 +520,11 @@
     <ClInclude Include="src\singletons\NeuralNetworkSingleton.h">
       <Filter>Source Files\singletons</Filter>
     </ClInclude>
-    <ClInclude Include="src\systems\NeuralNetworkSystem.h">
-      <Filter>Source Files\systems</Filter>
-    </ClInclude>
     <ClInclude Include="src\factories\entities\WorldFactory.h">
       <Filter>Source Files\factories\entities</Filter>
     </ClInclude>
     <ClInclude Include="src\parameters\factories\entities\WorldFactoryParameters.h">
       <Filter>Source Files\parameters\factories\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="src\systems\WrapAroundWorldSystem.h">
-      <Filter>Source Files\systems</Filter>
     </ClInclude>
     <ClInclude Include="src\components\WrapAround.h">
       <Filter>Source Files\components</Filter>
@@ -567,12 +537,6 @@
     </ClInclude>
     <ClInclude Include="src\factories\entities\FsmFactory.h">
       <Filter>Source Files\factories\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="src\systems\FsmSystem.h">
-      <Filter>Source Files\systems</Filter>
-    </ClInclude>
-    <ClInclude Include="src\systems\CommandSystem.h">
-      <Filter>Source Files\systems</Filter>
     </ClInclude>
     <ClInclude Include="src\singletons\SettingsSingleton.h">
       <Filter>Source Files\singletons</Filter>
@@ -592,14 +556,62 @@
     <ClInclude Include="src\utilities\Range.h">
       <Filter>Source Files\utilities</Filter>
     </ClInclude>
-    <ClInclude Include="src\systems\NeuralNetworkTrainingSystem.h">
-      <Filter>Source Files\systems</Filter>
-    </ClInclude>
     <ClInclude Include="src\components\TrainingSet.h">
       <Filter>Source Files\components</Filter>
     </ClInclude>
     <ClInclude Include="src\utilities\NeuralNetworkTypes.h">
       <Filter>Source Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\factories\entities\TrainingFactory.h">
+      <Filter>Source Files\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parameters\factories\entities\TrainingFactoryParameters.h">
+      <Filter>Source Files\parameters\factories\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\BaseSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\CameraTrackingSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\CollisionTrackingSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\CommandSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\DebugSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\DestroySystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\FoodSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\FsmSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\InputSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\MotionSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\NeuralNetworkSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\NeuralNetworkTrainingSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\RenderSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\SegmentSystem.h">
+      <Filter>Source Files\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\WrapAroundWorldSystem.h">
+      <Filter>Source Files\systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

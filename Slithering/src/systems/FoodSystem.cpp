@@ -16,6 +16,7 @@
 #include <src/components/Render.h>
 #include <src/components/Destroy.h>
 #include <src/components/FiniteStateMachine.h>
+#include <src/components/NeuraNetwork.h>
 
 // Contains implementation only free functions
 namespace app::impl
@@ -77,6 +78,14 @@ namespace app::impl
 		cout::wrl("FSM ate food");
 		auto& fsm = registry.get<comp::FiniteStateMachine>(snakeEntity);
 		fsm.nearestFood.reset();
+	}
+	void onNnConsumption(app::Registry& registry, app::Entity const snakeEntity)
+	{
+		if (!registry.has<comp::NeuralNetwork>(snakeEntity)) { return; }
+
+		cout::wrl("NN ate food");
+		auto& nn = registry.get<comp::NeuralNetwork>(snakeEntity);
+		nn.neareastFood.reset();
 	}
 }
 

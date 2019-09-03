@@ -5,7 +5,7 @@
 
 // components
 #include <src/components/NeuraNetwork.h>
-#include <src/components/Commandable.h>
+#include <src/components/Collision.h>
 
 app::fact::ent::AiFactory::AiFactory(Parameters & params)
 	: SnakeFactory(params.snakeFactoryParams)
@@ -27,6 +27,11 @@ app::Entity const app::fact::ent::AiFactory::create()
 		neuralNetwork.commands = m_params.commands;
 
 		m_registry.assign<decltype(neuralNetwork)>(aiEntity, std::move(neuralNetwork));
+	}
+	{
+		auto collision = comp::Collision();
+		collision.bounds = math::Rectf();
+		m_registry.assign<decltype(collision)>(aiEntity, std::move(collision));
 	}
 
 	return aiEntity;

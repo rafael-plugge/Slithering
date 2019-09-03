@@ -219,6 +219,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClCompile Include="src\factories\entities\PlayerFactory.cpp" />
     <ClCompile Include="src\factories\entities\SegmentFactory.cpp" />
     <ClCompile Include="src\factories\entities\SnakeFactory.cpp" />
+    <ClCompile Include="src\factories\entities\TrainingFactory.cpp" />
     <ClCompile Include="src\factories\entities\WorldFactory.cpp" />
     <ClCompile Include="src\factories\GameFactory.cpp" />
     <ClCompile Include="src\Game.cpp" />
@@ -241,6 +242,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClCompile Include="src\parameters\factories\entities\PlayerFactoryParameters.cpp" />
     <ClCompile Include="src\parameters\factories\entities\SegmentFactoryParameters.cpp" />
     <ClCompile Include="src\parameters\factories\entities\SnakeFactoryParameters.cpp" />
+    <ClCompile Include="src\parameters\factories\entities\TrainingFactoryParameters.cpp" />
     <ClCompile Include="src\parameters\factories\entities\WorldFactoryParameters.cpp" />
     <ClCompile Include="src\singletons\NeuralNetworkSingleton.cpp" />
     <ClCompile Include="src\singletons\RegistrySingleton.cpp" />
@@ -315,6 +317,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClInclude Include="src\factories\entities\PlayerFactory.h" />
     <ClInclude Include="src\factories\entities\SegmentFactory.h" />
     <ClInclude Include="src\factories\entities\SnakeFactory.h" />
+    <ClInclude Include="src\factories\entities\TrainingFactory.h" />
     <ClInclude Include="src\factories\entities\WorldFactory.h" />
     <ClInclude Include="src\factories\GameFactory.h" />
     <ClInclude Include="src\Game.h" />
@@ -336,6 +339,7 @@ C:\windows\system32\xcopy /Y /f "$(ProjectDir)deps\bin\$(IntDir)*.pdb" "$(Target
     <ClInclude Include="src\parameters\factories\entities\PlayerFactoryParameters.h" />
     <ClInclude Include="src\parameters\factories\entities\SegmentFactoryParameters.h" />
     <ClInclude Include="src\parameters\factories\entities\SnakeFactoryParameters.h" />
+    <ClInclude Include="src\parameters\factories\entities\TrainingFactoryParameters.h" />
     <ClInclude Include="src\parameters\factories\entities\WorldFactoryParameters.h" />
     <ClInclude Include="src\singletons\NeuralNetworkSingleton.h" />
     <ClInclude Include="src\singletons\RegistrySingleton.h" />
