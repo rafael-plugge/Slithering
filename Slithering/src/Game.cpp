@@ -72,8 +72,10 @@ bool app::Game::createEntities()
 
 		if constexpr (app::cout::DEBUG_MODE)
 		{
-			cout::wrl("Created Entities:");
-			for (auto const & entity : entities) { cout::wrl({ "  [", entity, "]" }); }
+			auto text = std::stringstream();
+			text << "Created Entities:\n";
+			for (auto const& entity : entities) { text << "  [" << entity << "]\n"; }
+			cout::wrl(text.str());
 		}
 
 		return true;

@@ -3,6 +3,7 @@
 #include <src/utilities/Makers.h>
 #include <src/input/Commands.h>
 #include <src/singletons/SettingsSingleton.h>
+#include <src/math/Math.h>
 
 // factories
 #include <src/factories/entities/ImageFactory.h>
@@ -13,6 +14,7 @@
 #include <src/factories/entities/AiFactory.h>
 #include <src/factories/entities/WorldFactory.h>
 #include <src/factories/entities/FsmFactory.h>
+#include <src/factories/entities/TrainingFactory.h>
 
 std::vector<app::Entity> app::fact::GameFactory::create()
 {
@@ -25,6 +27,7 @@ std::vector<app::Entity> app::fact::GameFactory::create()
 		GameFactory::insertInto(gameEntities, this->createImages());
 		GameFactory::insertInto(gameEntities, this->createFood());
 		GameFactory::insertInto(gameEntities, this->createAi());
+		GameFactory::insertInto(gameEntities, this->createTrainingData());
 		GameFactory::insertInto(gameEntities, this->createCameras());
 	}
 	else
@@ -158,6 +161,8 @@ std::vector<app::Entity> app::fact::GameFactory::createPlayer()
 std::vector<app::Entity> app::fact::GameFactory::createAi()
 {
 	auto entities = std::vector<app::Entity>();
+	if (auto const& settings = app::sin::Settings::get(); !settings.ai.enabled) { return std::move(entities); }
+
 	auto params = par::fact::ent::AiFactoryParameters();
 	auto & snakeParams = params.snakeFactoryParams;
 	auto & imageParams = snakeParams.imageFactoryParams;
@@ -202,6 +207,8 @@ std::vector<app::Entity> app::fact::GameFactory::createAi()
 std::vector<app::Entity> app::fact::GameFactory::createFsm()
 {
 	auto entities = std::vector<app::Entity>();
+	if (auto const& settings = app::sin::Settings::get(); !settings.fsmEnabled) { return std::move(entities); }
+
 	auto params = par::fact::ent::FsmFactoryParameters();
 	auto& snakeParams = params.snakeFactoryParams;
 	auto& imageParams = snakeParams.imageFactoryParams;
@@ -253,34 +260,21 @@ std::vector<app::Entity> app::fact::GameFactory::createSnake()
 	params.tailZIndex = 800u;
 	params.offset = math::Vector2f{ -25.0f, 0.0f };
 	params.speed = 1.0f;
+	auto const& spawnSnake = [&](math::Vector2f const& pos, float const& orientation, sf::Color const& fill)
 	{
+		imageParams.fill = fill;
+		params.segmentFill = fill;
+		params.tailFill = fill;
 		entityParams.entity = EntityFactory(entityParams).create();
-		imageParams.position = { 950.0f, 950.0f };
-		imageParams.orientation = 90.0f;
+		imageParams.position = pos;
+		imageParams.orientation = orientation;
 		entities.push_back(snakeFactory.create());
 		entityParams.entity.reset();
-	}
-	{
-		entityParams.entity = EntityFactory(entityParams).create();
-		imageParams.position = { -950.0f, -950.0f };
-		imageParams.orientation = 0.0f;
-		entities.push_back(snakeFactory.create());
-		entityParams.entity.reset();
-	}
-	{
-		entityParams.entity = EntityFactory(entityParams).create();
-		imageParams.position = { 950.0f, 950.0f };
-		imageParams.orientation = 180.0f;
-		entities.push_back(snakeFactory.create());
-		entityParams.entity.reset();
-	}
-	{
-		entityParams.entity = EntityFactory(entityParams).create();
-		imageParams.position = { -950.0f, -950.0f };
-		imageParams.orientation = -90.0f;
-		entities.push_back(snakeFactory.create());
-		entityParams.entity.reset();
-	}
+	};
+	spawnSnake({ 950.0f, 950.0f }, 90.0f,	sf::Color::White);
+	spawnSnake({ -950.0f, -950.0f }, 0.0f,	sf::Color::White);
+	spawnSnake({ 950.0f, 950.0f }, 180.0f,	sf::Color::White);
+	spawnSnake({ -950.0f, -950.0f }, -90.0f,sf::Color::White);
 
 	return std::move(entities);
 }
@@ -337,6 +331,17 @@ std::vector<app::Entity> app::fact::GameFactory::createWorld()
 		params.bounds = math::Rectf{ -distanceFromCenter, -distanceFromCenter, distanceFromCenter * 2.0f, distanceFromCenter * 2.0f };
 		entities.push_back(worldFactory.create());
 	}
+
+	return std::move(entities);
+}
+
+std::vector<app::Entity> app::fact::GameFactory::createTrainingData()
+{
+	auto entities = std::vector<app::Entity>();
+	if (auto const& settings = app::sin::Settings::get(); !settings.ai.train) { return std::move(entities); }
+	
+	// Was removed due to slow data generation and
+	// limited how many training scenarios we could test because of excessive memory usage.
 
 	return std::move(entities);
 }

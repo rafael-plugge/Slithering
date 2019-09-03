@@ -74,6 +74,7 @@ namespace app::sys::internal
 
 void app::sys::NeuralNetworkSystem::init()
 {
+
 }
 
 void app::sys::NeuralNetworkSystem::update(app::time::seconds const & dt)
