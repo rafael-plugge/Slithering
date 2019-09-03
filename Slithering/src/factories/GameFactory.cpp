@@ -164,6 +164,7 @@ std::vector<app::Entity> app::fact::GameFactory::createAi()
 	auto & entityParams = imageParams.entityFactoryParams;
 	auto aiFactory = fact::ent::AiFactory(params);
 
+	if (auto const & settings = app::sin::Settings::get(); settings.ai.enabled)
 	{
 		{
 			entityParams.entity = EntityFactory(entityParams).create();
