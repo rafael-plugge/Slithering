@@ -187,8 +187,8 @@ std::vector<app::Entity> app::fact::GameFactory::createAi()
 			snakeParams.bodyZIndex = 900u;
 			snakeParams.tailFill = sf::Color::Yellow;
 			snakeParams.tailZIndex = 800u;
-			snakeParams.offset = { -25.0f, 0.0f };
-			snakeParams.speed = 2.0f;
+			snakeParams.offset = { 25.0f, 0.0f };
+			snakeParams.speed = -2.0f;
 		}
 		{
 			params.commands = {
